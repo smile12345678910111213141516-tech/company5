@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Investment Focus | Repowering Partners</title>
+<meta name="description" content="Specialized investment focus on aging, distressed, and underperforming solar assets with technical optimization strategies." />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-6: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+  --text-dark: #1a202c;
+  --text-light: #4a5568;
+  --bg-light: #f7fafc;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 20s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.hero-content h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 18px 40px;
+  background: white;
+  color: var(--text-dark);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Focus Areas Section */
+.focus-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  font-size: 20px;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.focus-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.focus-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-1);
+}
+
+.focus-card:nth-child(1)::before { background: var(--gradient-1); }
+.focus-card:nth-child(2)::before { background: var(--gradient-2); }
+.focus-card:nth-child(3)::before { background: var(--gradient-3); }
+.focus-card:nth-child(4)::before { background: var(--gradient-4); }
+.focus-card:nth-child(5)::before { background: var(--gradient-5); }
+.focus-card:nth-child(6)::before { background: var(--gradient-6); }
+
+.focus-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: white;
+}
+
+.focus-card:nth-child(1) .card-icon { background: var(--gradient-1); }
+.focus-card:nth-child(2) .card-icon { background: var(--gradient-2); }
+.focus-card:nth-child(3) .card-icon { background: var(--gradient-3); }
+.focus-card:nth-child(4) .card-icon { background: var(--gradient-4); }
+.focus-card:nth-child(5) .card-icon { background: var(--gradient-5); }
+.focus-card:nth-child(6) .card-icon { background: var(--gradient-6); }
+
+.card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.card-list {
+  list-style: none;
+}
+
+.card-list li {
+  padding: 8px 0;
+  color: var(--text-light);
+  position: relative;
+  padding-left: 25px;
+}
+
+.card-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #48bb78;
+  font-weight: bold;
+}
+
+/* Statistics Section */
+.stats-showcase {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 20px;
+  margin-top: 100px;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.stat-box {
+  text-align: center;
+  color: white;
+}
+
+.stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 16px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+.footer {
+  background: white;
+  padding: 60px 20px 30px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  margin-bottom: 15px;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-brand p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.footer-column h4 {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-dark);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-content">
+    <a href="index.html" class="logo">
+      <img src="./images/they.png" alt="Repowering Partners" style="height: 40px;">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="focus.html">Focus</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Strategic Investment Focus Areas</h1>
+    <p>We specialize in complex solar scenarios where technical due diligence and operational restructuring unlock substantial value across the U.S. renewable energy landscape.</p>
+    <a href="contact.html" class="cta-button">Submit Asset for Review</a>
+  </div>
+</section>
+
+<!-- Focus Areas Section -->
+<section class="focus-section">
+  <div class="section-header">
+    <h2 class="section-title">Our Investment Target Profile</h2>
+    <p class="section-subtitle">We identify and acquire solar assets with significant optimization potential through technical expertise and market analysis.</p>
+  </div>
+  
+  <div class="focus-grid">
+    <div class="focus-card">
+      <div class="card-icon">⚡</div>
+      <h3 class="card-title">Aging Infrastructure</h3>
+      <ul class="card-list">
+        <li>2010-2016 vintage projects</li>
+        <li>Inverter degradation issues</li>
+        <li>Module LID problems</li>
+        <li>DC cabling replacement needs</li>
+        <li>Tracking system fatigue</li>
+      </ul>
+    </div>
+    
+    <div class="focus-card">
+      <div class="card-icon">📉</div>
+      <h3 class="card-title">Distressed Assets</h3>
+      <ul class="card-list">
+        <li>Lender workouts & receivership</li>
+        <li>PPA renegotiations needed</li>
+        <li>Tax equity restructuring</li>
+        <li>Immediate stabilization required</li>
+        <li>Financial challenges</li>
+      </ul>
+    </div>
+    
+    <div class="focus-card">
+      <div class="card-icon">📊</div>
+      <h3 class="card-title">Underperformance</h3>
+      <ul class="card-list">
+        <li>Below projected energy yield</li>
+        <li>Soiling optimization opportunities</li>
+        <li>Shading & vegetation issues</li>
+        <li>Predictive maintenance gaps</li>
+        <li>SCADA modernization needs</li>
+      </ul>
+    </div>
+    
+    <div class="focus-card">
+      <div class="card-icon">🏭</div>
+      <h3 class="card-title">Utility & C&I Scale</h3>
+      <ul class="card-list">
+        <li>Utility-scale PV facilities</li>
+        <li>Community solar projects</li>
+        <li>C&I rooftop systems</li>
+        <li>Floating solar installations</li>
+        <li>Assets 1MW and larger</li>
+      </ul>
+    </div>
+    
+    <div class="focus-card">
+      <div class="card-icon">🔧</div>
+      <h3 class="card-title">Repowering</h3>
+      <ul class="card-list">
+        <li>AC-side inverter replacement</li>
+        <li>DC-side expansion potential</li>
+        <li>Bifacial technology retrofits</li>
+        <li>Advanced tracking systems</li>
+        <li>Technology upgrade candidates</li>
+      </ul>
+    </div>
+    
+    <div class="focus-card">
+      <div class="card-icon">🗺️</div>
+      <h3 class="card-title">Key Markets</h3>
+      <ul class="card-list">
+        <li>Texas & Florida growth corridors</li>
+        <li>California solar markets</li>
+        <li>Midwest community solar</li>
+        <li>Sun Belt utility territories</li>
+        <li>High-growth U.S. regions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="stats-showcase">
+  <div class="stats-container">
+    <div class="stat-box">
+      <div class="stat-number">40GW+</div>
+      <div class="stat-label">Early-Gen Solar Assets</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">20-40%</div>
+      <div class="stat-label">Energy Yield Improvement</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">15-25</div>
+      <div class="stat-label">Years Asset Life Extension</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">12</div>
+      <div class="stat-label">States Operating</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>Repowering Partners</h3>
+      <p>Transforming underperforming solar assets into optimized, revenue-generating facilities through technical excellence and strategic investment.</p>
+    </div>
+    <div class="footer-column">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="focus.html">Investment Focus</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Resources</h4>
+      <ul class="footer-links">
+        <li><a href="#">Market Analysis</a></li>
+        <li><a href="#">Technical Reports</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Investment Thesis</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:info@repoweringpartners.com">Email Us</a></li>
+        <li><a href="contact.html">Asset Submission</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Press Inquiries</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Repowering Partners. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

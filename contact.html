@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact | Repowering Partners</title>
+<meta name="description" content="Submit your solar asset for confidential evaluation. Complimentary preliminary assessments for projects 1MW-200MW across U.S. markets." />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-light: #999999;
+  --background: #ffffff;
+  --accent: #d4a574;
+  --border: #e5e5e5;
+  --hover: #f5f5f5;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+p {
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--background);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: var(--text-primary);
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* Main Container */
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 160px 40px 100px;
+}
+
+/* Contact Header */
+.contact-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.contact-title {
+  font-size: 56px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.contact-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+/* Contact Form */
+.contact-form {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 60px;
+  margin-bottom: 80px;
+}
+
+.form-group {
+  margin-bottom: 32px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 16px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-light);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  padding-top: 16px;
+}
+
+.submit-button {
+  background: var(--text-primary);
+  color: var(--background);
+  border: none;
+  padding: 16px 48px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+.submit-button:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Alternative Contact */
+.alternative-contact {
+  text-align: center;
+  padding: 60px;
+  background: var(--hover);
+  border-radius: 8px;
+  margin-bottom: 60px;
+}
+
+.alternative-contact h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.contact-method {
+  text-align: center;
+}
+
+.contact-method a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.contact-method a:hover {
+  color: var(--accent);
+}
+
+.contact-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+  background: var(--background);
+  border-top: 1px solid var(--border);
+  padding: 60px 40px 40px;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer-brand h3 {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.footer-column h4 {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+.footer-bottom a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin: 0 16px;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom a:hover {
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .main-container {
+    padding: 120px 20px 60px;
+  }
+  
+  .contact-title {
+    font-size: 36px;
+  }
+  
+  .contact-form {
+    padding: 40px 24px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-methods {
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .footer-bottom a {
+    display: block;
+    margin: 8px 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="./images/they.png" alt="Repowering Partners" style="height: 24px; margin-right: 12px; vertical-align: middle;">
+      Repowering Partners
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="focus.html">Focus</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main-container">
+  <!-- Contact Header -->
+  <div class="contact-header">
+    <div class="eyebrow">Get Started</div>
+    <h1 class="contact-title">Confidential Asset Evaluation</h1>
+    <p class="contact-subtitle">Complimentary preliminary assessments for projects 1MW-200MW across all major U.S. solar markets. All inquiries handled with strict confidentiality.</p>
+  </div>
+
+  <!-- Contact Form -->
+  <form class="contact-form" action="https://formspree.io/f/xoqgkzlr" method="POST">
+    <input type="hidden" name="_subject" value="New Solar Asset Inquiry - Repowering Partners" />
+    <input type="hidden" name="_cc" value="Jim.bakhaus@repoweringpartners.com" />
+    
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="name">Full Name</label>
+        <input type="text" id="name" name="name" class="form-input" required placeholder="John Smith">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-input" required placeholder="john@company.com">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="company">Organization</label>
+      <input type="text" id="company" name="company" class="form-input" placeholder="Asset Owner / Operator / Lender">
+    </div>
+    
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="asset-size">Asset Size (MW)</label>
+        <input type="text" id="asset-size" name="asset-size" class="form-input" placeholder="e.g., 50 MW">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="location">Location (State)</label>
+        <input type="text" id="location" name="location" class="form-input" placeholder="e.g., Texas">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="vintage">Commission Year</label>
+      <input type="text" id="vintage" name="vintage" class="form-input" placeholder="e.g., 2014">
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="message">Asset Overview</label>
+      <textarea id="message" name="message" class="form-textarea" required placeholder="Describe asset condition, performance issues, ownership structure, and timeline..."></textarea>
+    </div>
+    
+    <button type="submit" class="submit-button">Submit Inquiry</button>
+  </form>
+
+  <!-- Alternative Contact -->
+  <div class="alternative-contact">
+    <h3>Alternative Contact Methods</h3>
+    <div class="contact-methods">
+      <div class="contact-method">
+        <div class="contact-label">Email</div>
+        <a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a>
+      </div>
+      <div class="contact-method">
+        <div class="contact-label">Phone</div>
+        <a href="tel:+15551234567">(555) 123-4567</a>
+      </div>
+      <div class="contact-method">
+        <div class="contact-label">LinkedIn</div>
+        <a href="#">LinkedIn Company</a>
+      </div>
+    </div>
+    <p style="margin-top: 32px; font-size: 14px; font-style: italic;">For urgent matters or portfolios requiring immediate attention, please call directly.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>Repowering Partners</h3>
+      <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value through technical excellence and strategic investment.</p>
+    </div>
+    
+    <div class="footer-column">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="focus.html">Investment Focus</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-column">
+      <h4>Resources</h4>
+      <ul class="footer-links">
+        <li><a href="#">Market Insights</a></li>
+        <li><a href="#">Evaluation Criteria</a></li>
+        <li><a href="#">White Papers</a></li>
+        <li><a href="#">Industry Reports</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-column">
+      <h4>Legal</h4>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Disclaimer</a></li>
+        <li><a href="#">Compliance</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2026 Repowering Partners. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

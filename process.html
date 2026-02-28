@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Process | Repowering Partners</title>
+<meta name="description" content="Five disciplined phases for solar asset acquisition and optimization. From initial screening to long-term operations." />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0066cc;
+  --secondary-color: #00a86b;
+  --accent-color: #ff6b35;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+  --border-color: #e1e8ed;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-white);
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-white);
+  border-bottom: 2px solid var(--primary-color);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #004080 100%);
+  padding: 120px 20px 80px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="rgba(255,255,255,0.03)" x="0" y="0" width="100" height="100"/></svg>');
+  background-size: 20px 20px;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: clamp(36px, 6vw, 54px);
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Process Timeline */
+.process-timeline {
+  padding: 100px 20px;
+  background: var(--bg-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.timeline-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.timeline-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary-color);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  width: 45%;
+  background: var(--bg-white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: auto;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: auto;
+}
+
+.timeline-number {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Roboto Mono', monospace;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0,102,204,0.3);
+}
+
+.timeline-step {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.timeline-item-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.timeline-item-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.timeline-item:nth-child(1) .timeline-number { background: var(--primary-color); }
+.timeline-item:nth-child(2) .timeline-number { background: var(--secondary-color); }
+.timeline-item:nth-child(3) .timeline-number { background: var(--accent-color); }
+.timeline-item:nth-child(4) .timeline-number { background: #8b5cf6; }
+.timeline-item:nth-child(5) .timeline-number { background: #06b6d4; }
+
+/* Process Details */
+.process-details {
+  padding: 100px 20px;
+  background: var(--bg-white);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.detail-card {
+  padding: 30px;
+  border-left: 4px solid var(--primary-color);
+  background: var(--bg-light);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.detail-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.detail-card:nth-child(2) { border-color: var(--secondary-color); }
+.detail-card:nth-child(3) { border-color: var(--accent-color); }
+.detail-card:nth-child(4) { border-color: #8b5cf6; }
+
+.detail-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+}
+
+.detail-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Results Section */
+.results-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #008752 100%);
+  color: white;
+  text-align: center;
+}
+
+.results-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.result-item {
+  padding: 30px 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.result-number {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.result-label {
+  font-size: 14px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+.footer {
+  background: var(--text-primary);
+  color: white;
+  padding: 60px 20px 30px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    flex-direction: column !important;
+    padding-left: 60px;
+  }
+  
+  .timeline-content {
+    width: 100%;
+    margin: 0 !important;
+  }
+  
+  .timeline-number {
+    left: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="./images/they.png" alt="Repowering Partners" style="height: 35px; vertical-align: middle; margin-right: 10px;">
+      REPOWERING
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="focus.html">Focus</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Transaction-to-Operations Process</h1>
+    <p class="hero-subtitle">Five disciplined phases ensuring rigorous evaluation and measurable performance improvement. Our systematic approach transforms underperforming assets into optimized, revenue-generating facilities.</p>
+  </div>
+</section>
+
+<!-- Process Timeline -->
+<section class="process-timeline">
+  <div class="container">
+    <div class="timeline-header">
+      <h2 class="timeline-title">Our Methodology</h2>
+      <p class="timeline-subtitle">Each phase builds on the previous, ensuring comprehensive evaluation and value maximization throughout the asset lifecycle.</p>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-step">Phase 01</div>
+          <h3 class="timeline-item-title">Initial Screening</h3>
+          <p class="timeline-item-description">Rapid asset qualification based on vintage, technology, location, and distress indicators. We assess remaining useful life, performance ratios, and market context to prioritize opportunities with the highest potential for value creation.</p>
+        </div>
+        <div class="timeline-number">01</div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-step">Phase 02</div>
+          <h3 class="timeline-item-title">Due Diligence</h3>
+          <p class="timeline-item-description">Integrated technical and financial review including on-site inspections, production data analysis, O&M record review, and evaluation of PPAs, leases, and interconnection agreements. Our engineering team identifies specific improvement opportunities and quantifies potential returns.</p>
+        </div>
+        <div class="timeline-number">02</div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-step">Phase 03</div>
+          <h3 class="timeline-item-title">Transaction Execution</h3>
+          <p class="timeline-item-description">Tax-efficient acquisition structuring with legal, tax, and financing coordination. We minimize friction while protecting investor interests and ensuring operational continuity. Our team handles complex restructurings, including tax equity flips and lender workouts.</p>
+        </div>
+        <div class="timeline-number">03</div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-step">Phase 04</div>
+          <h3 class="timeline-item-title">Repowering & Optimization</h3>
+          <p class="timeline-item-description">Prioritized improvement plan implementation: component replacements, protocol enhancements, and system optimizations with transparent stakeholder communication. We execute upgrades systematically to maximize production while minimizing downtime.</p>
+        </div>
+        <div class="timeline-number">04</div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-step">Phase 05</div>
+          <h3 class="timeline-item-title">Asset Management</h3>
+          <p class="timeline-item-description">Steady-state operations with continuous monitoring, preventive maintenance, and strategic planning for future capital improvements and value creation. We implement data-driven maintenance protocols and performance optimization strategies.</p>
+        </div>
+        <div class="timeline-number">05</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Details -->
+<section class="process-details">
+  <div class="container">
+    <div class="timeline-header">
+      <h2 class="timeline-title">Process Excellence</h2>
+      <p class="timeline-subtitle">Our methodology combines technical expertise with commercial acumen to deliver superior outcomes.</p>
+    </div>
+    
+    <div class="details-grid">
+      <div class="detail-card">
+        <h3 class="detail-title">Technical Assessment Protocol</h3>
+        <p class="detail-description">Comprehensive evaluation including IV curve testing, thermal imaging, electroluminescence analysis, and performance modeling. Our proprietary diagnostic tools identify hidden degradation patterns and failure modes.</p>
+      </div>
+      
+      <div class="detail-card">
+        <h3 class="detail-title">Financial Structuring</h3>
+        <p class="detail-description">Tax-efficient acquisition structures maximizing IRR while maintaining compliance. We optimize depreciation schedules, utilize existing tax benefits, and structure investments for long-term value creation.</p>
+      </div>
+      
+      <div class="detail-card">
+        <h3 class="detail-title">Operational Integration</h3>
+        <p class="detail-description">Seamless transition of operations with minimal disruption. We establish clear KPIs, implement monitoring systems, and develop maintenance protocols tailored to each asset's specific needs.</p>
+      </div>
+      
+      <div class="detail-card">
+        <h3 class="detail-title">Performance Optimization</h3>
+        <p class="detail-description">Continuous improvement through data analytics and predictive maintenance. We leverage machine learning algorithms to forecast performance degradation and proactively address issues before they impact production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+  <div class="container">
+    <h2 class="results-title">Timeline & Results</h2>
+    <div class="results-grid">
+      <div class="result-item">
+        <div class="result-number">90-180</div>
+        <div class="result-label">Days to Stabilization</div>
+      </div>
+      <div class="result-item">
+        <div class="result-number">12-24</div>
+        <div class="result-label">Months Full Repowering</div>
+      </div>
+      <div class="result-item">
+        <div class="result-number">20-40%</div>
+        <div class="result-label">Energy Yield Increase</div>
+      </div>
+      <div class="result-item">
+        <div class="result-number">15-25</div>
+        <div class="result-label">Years Life Extension</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Repowering Partners</h3>
+      <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">Systematic approach to solar asset optimization and value creation.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Navigation</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="focus.html">Investment Focus</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Resources</h3>
+      <ul class="footer-links">
+        <li><a href="#">Technical Papers</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Market Analysis</a></li>
+        <li><a href="#">Due Diligence</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <ul class="footer-links">
+        <li><a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a></li>
+        <li><a href="contact.html">Asset Submission</a></li>
+        <li><a href="#">Technical Team</a></li>
+        <li><a href="#">Investment Team</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2026 Repowering Partners. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
