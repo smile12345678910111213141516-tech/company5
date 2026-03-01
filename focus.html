@@ -4,387 +4,504 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Investment Focus | Repowering Partners</title>
-<meta name="description" content="Specialized investment focus on aging, distressed, and underperforming solar assets with technical optimization strategies." />
+<meta name="description" content="Repowering Partners specializes in acquiring aging, distressed, and underperforming solar assets. Learn about our strategic investment focus areas." />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Repowering Partners" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="./images/they.png" />
+<link rel="mask-icon" href="./images/they.png" color="#0a0a0a" />
+<meta name="theme-color" content="#0a0a0a" />
+<meta name="msapplication-TileColor" content="#0a0a0a" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --color-black: #0a0a0a;
+  --color-dark: #1a1a1a;
+  --color-gray-dark: #333333;
+  --color-gray: #666666;
+  --color-gray-light: #999999;
+  --color-gray-lighter: #e5e5e5;
+  --color-gray-lightest: #f5f5f5;
+  --color-white: #ffffff;
+  --color-off-white: #fafafa;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.875rem;
+  --spacing-md: 1.25rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 5rem;
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-:root {
-  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-  --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-  --gradient-6: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-  --text-dark: #1a202c;
-  --text-light: #4a5568;
-  --bg-light: #f7fafc;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  overflow-x: hidden;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-gray-dark);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: var(--spacing-md);
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  max-width: 65ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
 }
 
 /* Navigation */
 .nav {
   position: fixed;
   top: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(20px);
+  left: 0;
+  right: 0;
   z-index: 1000;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid var(--color-gray-lighter);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
 }
 
-.nav-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+.nav__inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  position: relative;
 }
 
-.logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none;
-}
-
-.nav-links {
+.nav__logo {
+  position: relative;
   display: flex;
-  gap: 30px;
+  align-items: center;
+  height: 72px;
+  overflow: visible;
+}
+
+.nav__logo img {
+  height: 60px;
+  width: auto;
+  max-width: none;
+  filter: grayscale(100%);
+  transition: var(--transition);
+  display: block;
+  transform: translateY(6px);
+  margin: 0;
+}
+
+.nav__logo:hover img {
+  filter: grayscale(100%) brightness(0.8);
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--spacing-lg);
   list-style: none;
 }
 
-.nav-links a {
-  color: var(--text-light);
-  text-decoration: none;
+.nav__links a {
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-gray);
+  position: relative;
 }
 
-.nav-links a:hover {
-  color: var(--text-dark);
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-black);
+  transition: var(--transition);
+}
+
+.nav__links a:hover {
+  color: var(--color-black);
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu */
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .nav__toggle {
+    display: block;
+    z-index: 1001;
+  }
+  
+  .nav__links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-sm);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    border-bottom: 1px solid var(--color-gray-lighter);
+  }
+  
+  .nav__links.is-active {
+    transform: translateY(0);
+  }
+  
+  .nav__links a {
+    font-size: 0.9375rem;
+  }
+  
+  .nav__logo img {
+    height: 40px;
+    transform: translateY(0);
+    margin: 0;
+  }
 }
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--color-black);
+  color: var(--color-white);
+  min-height: auto;
+  padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: float 20s linear infinite;
-}
-
-@keyframes float {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-.hero-content {
-  text-align: center;
-  color: white;
-  z-index: 1;
+.hero__content {
   position: relative;
-  padding: 40px 20px;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.hero-content h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(36px, 6vw, 64px);
-  font-weight: 700;
-  margin-bottom: 30px;
-  line-height: 1.1;
+.hero__eyebrow {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-sm);
+  display: block;
 }
 
-.hero-content p {
-  font-size: 20px;
-  margin-bottom: 40px;
-  opacity: 0.9;
-  max-width: 600px;
+.hero h1 {
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero__subtitle {
+  font-size: 1.0625rem;
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-lg);
+  max-width: 60ch;
+  line-height: 1.6;
   margin-left: auto;
   margin-right: auto;
 }
 
-.cta-button {
-  display: inline-block;
-  padding: 18px 40px;
-  background: white;
-  color: var(--text-dark);
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
-/* Focus Areas Section */
-.focus-section {
-  padding: 100px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.section-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.section-subtitle {
-  font-size: 20px;
-  color: var(--text-light);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.focus-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-}
-
-.focus-card {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.focus-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-1);
-}
-
-.focus-card:nth-child(1)::before { background: var(--gradient-1); }
-.focus-card:nth-child(2)::before { background: var(--gradient-2); }
-.focus-card:nth-child(3)::before { background: var(--gradient-3); }
-.focus-card:nth-child(4)::before { background: var(--gradient-4); }
-.focus-card:nth-child(5)::before { background: var(--gradient-5); }
-.focus-card:nth-child(6)::before { background: var(--gradient-6); }
-
-.focus-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-}
-
-.card-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 15px;
-  display: flex;
+/* Buttons */
+.btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
-  font-size: 28px;
-  color: white;
-}
-
-.focus-card:nth-child(1) .card-icon { background: var(--gradient-1); }
-.focus-card:nth-child(2) .card-icon { background: var(--gradient-2); }
-.focus-card:nth-child(3) .card-icon { background: var(--gradient-3); }
-.focus-card:nth-child(4) .card-icon { background: var(--gradient-4); }
-.focus-card:nth-child(5) .card-icon { background: var(--gradient-5); }
-.focus-card:nth-child(6) .card-icon { background: var(--gradient-6); }
-
-.card-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 24px;
+  padding: 0.625rem 1.25rem;
   font-weight: 600;
-  margin-bottom: 15px;
-  color: var(--text-dark);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-.card-list {
+.btn--primary {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn--primary:hover {
+  background: var(--color-gray-lightest);
+  transform: translateY(-1px);
+}
+
+/* Sections */
+.section {
+  padding: var(--spacing-2xl) 0;
+}
+
+.section--alt {
+  background-color: var(--color-off-white);
+}
+
+.section__header {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section__eyebrow {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-xs);
+  display: block;
+}
+
+.section__intro {
+  font-size: 1.0625rem;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+/* Grid Systems */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.grid--3cols {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Cards */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-lighter);
+  padding: var(--spacing-lg);
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: var(--color-gray-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+}
+
+.card__title {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-black);
+}
+
+.card__content {
+  color: var(--color-gray);
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+/* List Styling */
+.list--check {
   list-style: none;
+  padding: 0;
 }
 
-.card-list li {
-  padding: 8px 0;
-  color: var(--text-light);
+.list--check li {
   position: relative;
-  padding-left: 25px;
+  padding-left: 1.25rem;
+  margin-bottom: 0.375rem;
+  color: var(--color-gray);
+  font-size: 0.875rem;
 }
 
-.card-list li::before {
-  content: '✓';
+.list--check li::before {
+  content: '—';
   position: absolute;
   left: 0;
-  color: #48bb78;
-  font-weight: bold;
-}
-
-/* Statistics Section */
-.stats-showcase {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 80px 20px;
-  margin-top: 100px;
-}
-
-.stats-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-}
-
-.stat-box {
-  text-align: center;
-  color: white;
-}
-
-.stat-number {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.stat-label {
-  font-size: 16px;
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: var(--color-black);
+  font-weight: 500;
 }
 
 /* Footer */
 .footer {
-  background: white;
-  padding: 60px 20px 30px;
-  border-top: 1px solid #e2e8f0;
+  background: var(--color-black);
+  color: var(--color-gray-light);
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-top: 1px solid var(--color-gray-dark);
+  font-size: 0.8125rem;
 }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
+.footer__grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
-.footer-brand h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 24px;
-  margin-bottom: 15px;
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@media (max-width: 900px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.footer-brand p {
-  color: var(--text-light);
-  line-height: 1.6;
+@media (max-width: 500px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
 
-.footer-column h4 {
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 20px;
-  font-size: 16px;
+.footer__brand img {
+  height: auto;
+  max-height: 60px;
+  width: auto;
+  display: block;
+  filter: grayscale(100%) brightness(0.8);
+  margin-bottom: var(--spacing-sm);
+  object-fit: contain;
 }
 
-.footer-links {
+.footer__brand p {
+  color: var(--color-gray-light);
+  max-width: 260px;
+  font-size: 0.8125rem;
+}
+
+.footer h4 {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer__links {
   list-style: none;
 }
 
-.footer-links li {
-  margin-bottom: 12px;
+.footer__links li {
+  margin-bottom: 0.375rem;
 }
 
-.footer-links a {
-  color: var(--text-light);
-  text-decoration: none;
-  transition: color 0.3s ease;
+.footer__links a {
+  color: var(--color-gray-light);
 }
 
-.footer-links a:hover {
-  color: var(--text-dark);
+.footer__links a:hover {
+  color: var(--color-white);
 }
 
-.footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 30px;
-  border-top: 1px solid #e2e8f0;
-  text-align: center;
-  color: var(--text-light);
+.footer__bottom {
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-gray-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .nav-links {
+@media (max-width: 500px) {
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Print */
+@media print {
+  .nav {
     display: none;
   }
   
-  .focus-grid {
-    grid-template-columns: 1fr;
+  body {
+    padding-top: 0;
+    color: #000;
+    font-size: 11pt;
   }
   
-  .stats-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .section {
+    padding: 24pt 0;
   }
 }
 </style>
@@ -392,172 +509,257 @@ body {
 <body>
 
 <!-- Navigation -->
-<nav class="nav">
-  <div class="nav-content">
-    <a href="index.html" class="logo">
-      <img src="./images/they.png" alt="Repowering Partners" style="height: 40px;">
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="focus.html">Focus</a></li>
-      <li><a href="process.html">Process</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Repowering Partners Home">
+        <img src="./images/they.png" alt="Repowering Partners" />
+      </a>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <ul class="nav__links" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html#about" role="menuitem">About</a></li>
+        <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
+        <li role="none"><a href="index.html#capabilities" role="menuitem">Capabilities</a></li>
+        <li role="none"><a href="process.html" role="menuitem">Process</a></li>
+        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Strategic Investment Focus Areas</h1>
-    <p>We specialize in complex solar scenarios where technical due diligence and operational restructuring unlock substantial value across the U.S. renewable energy landscape.</p>
-    <a href="contact.html" class="cta-button">Submit Asset for Review</a>
+<header class="hero" role="banner">
+  <div class="container">
+    <div class="hero__content">
+      <span class="hero__eyebrow">Strategic Investment</span>
+      <h1>Target Profile & Investment Focus</h1>
+      <p class="hero__subtitle">We specialize in complex solar scenarios where technical due diligence and operational restructuring unlock substantial value across the U.S. renewable energy landscape.</p>
+      
+      <div style="margin-top: var(--spacing-xl);">
+        <a href="contact.html" class="btn btn--primary">Submit Asset for Review</a>
+      </div>
+    </div>
   </div>
-</section>
+</header>
 
-<!-- Focus Areas Section -->
-<section class="focus-section">
-  <div class="section-header">
-    <h2 class="section-title">Our Investment Target Profile</h2>
-    <p class="section-subtitle">We identify and acquire solar assets with significant optimization potential through technical expertise and market analysis.</p>
-  </div>
-  
-  <div class="focus-grid">
-    <div class="focus-card">
-      <div class="card-icon">⚡</div>
-      <h3 class="card-title">Aging Infrastructure</h3>
-      <ul class="card-list">
-        <li>2010-2016 vintage projects</li>
-        <li>Inverter degradation issues</li>
-        <li>Module LID problems</li>
-        <li>DC cabling replacement needs</li>
-        <li>Tracking system fatigue</li>
-      </ul>
+<main>
+  <!-- Investment Focus Section -->
+  <section id="focus" class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Target Profile</span>
+        <h2>Strategic Investment Focus Areas</h2>
+        <p class="section__intro">We specialize in complex solar scenarios where technical due diligence and operational restructuring unlock substantial value.</p>
+      </div>
+      
+      <div class="grid grid--3cols">
+        <article class="card">
+          <h3 class="card__title">Aging Infrastructure</h3>
+          <div class="card__content">
+            <p>2010-2016 vintage projects requiring component replacement:</p>
+            <ul class="list--check" style="margin-top: var(--spacing-sm);">
+              <li>Inverter performance degradation</li>
+              <li>Module LID issues</li>
+              <li>DC cabling replacement</li>
+              <li>Tracking system fatigue</li>
+            </ul>
+          </div>
+        </article>
+        
+        <article class="card">
+          <h3 class="card__title">Distressed Assets</h3>
+          <div class="card__content">
+            <p>Facilities facing financial or operational challenges:</p>
+            <ul class="list--check" style="margin-top: var(--spacing-sm);">
+              <li>Lender workouts & receivership</li>
+              <li>PPA renegotiations</li>
+              <li>Tax equity restructuring</li>
+              <li>Immediate stabilization</li>
+            </ul>
+          </div>
+        </article>
+        
+        <article class="card">
+          <h3 class="card__title">Underperformance</h3>
+          <div class="card__content">
+            <p>Projects below projected energy yield:</p>
+            <ul class="list--check" style="margin-top: var(--spacing-sm);">
+              <li>Soiling optimization</li>
+              <li>Shading & vegetation</li>
+              <li>Predictive maintenance</li>
+              <li>SCADA modernization</li>
+            </ul>
+          </div>
+        </article>
+        
+        <article class="card">
+          <h3 class="card__title">Utility & C&I Scale</h3>
+          <div class="card__content">
+            <p>Assets 1MW and larger including:</p>
+            <ul class="list--check" style="margin-top: var(--spacing-sm);">
+              <li>Utility-scale PV facilities</li>
+              <li>Community solar</li>
+              <li>C&I rooftop systems</li>
+              <li>Floating solar</li>
+            </ul>
+          </div>
+        </article>
+        
+        <article class="card">
+          <h3 class="card__title">Repowering</h3>
+          <div class="card__content">
+            <p>Technology upgrade candidates:</p>
+            <ul class="list--check" style="margin-top: var(--spacing-sm);">
+              <li>AC-side inverter replacement</li>
+              <li>DC-side expansion</li>
+              <li>Bifacial retrofits</li>
+              <li>Advanced tracking</li>
+            </ul>
+          </div>
+        </article>
+        
+        <article class="card">
+          <h3 class="card__title">Key Markets</h3>
+          <div class="card__content">
+            <p>High-growth U.S. solar corridors:</p>
+            <ul class="list--check" style="margin-top: var(--spacing-sm);">
+              <li>Texas & Florida</li>
+              <li>California markets</li>
+              <li>Midwest community solar</li>
+              <li>Sun Belt utilities</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </div>
-    
-    <div class="focus-card">
-      <div class="card-icon">📉</div>
-      <h3 class="card-title">Distressed Assets</h3>
-      <ul class="card-list">
-        <li>Lender workouts & receivership</li>
-        <li>PPA renegotiations needed</li>
-        <li>Tax equity restructuring</li>
-        <li>Immediate stabilization required</li>
-        <li>Financial challenges</li>
-      </ul>
-    </div>
-    
-    <div class="focus-card">
-      <div class="card-icon">📊</div>
-      <h3 class="card-title">Underperformance</h3>
-      <ul class="card-list">
-        <li>Below projected energy yield</li>
-        <li>Soiling optimization opportunities</li>
-        <li>Shading & vegetation issues</li>
-        <li>Predictive maintenance gaps</li>
-        <li>SCADA modernization needs</li>
-      </ul>
-    </div>
-    
-    <div class="focus-card">
-      <div class="card-icon">🏭</div>
-      <h3 class="card-title">Utility & C&I Scale</h3>
-      <ul class="card-list">
-        <li>Utility-scale PV facilities</li>
-        <li>Community solar projects</li>
-        <li>C&I rooftop systems</li>
-        <li>Floating solar installations</li>
-        <li>Assets 1MW and larger</li>
-      </ul>
-    </div>
-    
-    <div class="focus-card">
-      <div class="card-icon">🔧</div>
-      <h3 class="card-title">Repowering</h3>
-      <ul class="card-list">
-        <li>AC-side inverter replacement</li>
-        <li>DC-side expansion potential</li>
-        <li>Bifacial technology retrofits</li>
-        <li>Advanced tracking systems</li>
-        <li>Technology upgrade candidates</li>
-      </ul>
-    </div>
-    
-    <div class="focus-card">
-      <div class="card-icon">🗺️</div>
-      <h3 class="card-title">Key Markets</h3>
-      <ul class="card-list">
-        <li>Texas & Florida growth corridors</li>
-        <li>California solar markets</li>
-        <li>Midwest community solar</li>
-        <li>Sun Belt utility territories</li>
-        <li>High-growth U.S. regions</li>
-      </ul>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Statistics Section -->
-<section class="stats-showcase">
-  <div class="stats-container">
-    <div class="stat-box">
-      <div class="stat-number">40GW+</div>
-      <div class="stat-label">Early-Gen Solar Assets</div>
+  <!-- Additional Focus Areas Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Investment Criteria</span>
+        <h2>What We Look For</h2>
+        <p class="section__intro">Our evaluation framework identifies assets with the highest potential for value creation through operational excellence.</p>
+      </div>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div style="display: grid; gap: var(--spacing-lg);">
+          <div>
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--spacing-sm);">Technical Viability</h3>
+            <p style="color: var(--color-gray); font-size: 0.9375rem;">Assessment of remaining useful life, component degradation rates, and repowering potential. We evaluate structural integrity, electrical systems, and technology compatibility for modern upgrades.</p>
+          </div>
+          
+          <div>
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--spacing-sm);">Market Position</h3>
+            <p style="color: var(--color-gray); font-size: 0.9375rem;">Analysis of offtaker credit quality, PPA terms, interconnection capacity, and local market dynamics. We prioritize assets in markets with favorable renewable energy policies and strong demand.</p>
+          </div>
+          
+          <div>
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--spacing-sm);">Operational History</h3>
+            <p style="color: var(--color-gray); font-size: 0.9375rem;">Review of maintenance records, performance data, and incident reports. We identify patterns of underperformance and opportunities for systematic improvement.</p>
+          </div>
+          
+          <div>
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--spacing-sm);">Financial Structure</h3>
+            <p style="color: var(--color-gray); font-size: 0.9375rem;">Evaluation of existing debt, tax equity positions, and ownership structure. We focus on assets where restructuring can unlock trapped value and improve returns.</p>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: var(--spacing-2xl);">
+          <a href="contact.html" class="btn btn--primary">Request Confidential Evaluation</a>
+        </div>
+      </div>
     </div>
-    <div class="stat-box">
-      <div class="stat-number">20-40%</div>
-      <div class="stat-label">Energy Yield Improvement</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">15-25</div>
-      <div class="stat-label">Years Asset Life Extension</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">12</div>
-      <div class="stat-label">States Operating</div>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-content">
-    <div class="footer-brand">
-      <h3>Repowering Partners</h3>
-      <p>Transforming underperforming solar assets into optimized, revenue-generating facilities through technical excellence and strategic investment.</p>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="./images/they.png" alt="Repowering Partners" />
+        <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value.</p>
+      </div>
+      
+      <div>
+        <h4>Company</h4>
+        <ul class="footer__links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="focus.html">Investment Focus</a></li>
+          <li><a href="index.html#capabilities">Capabilities</a></li>
+          <li><a href="process.html">Process</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer__links">
+          <li><a href="#">Market Insights</a></li>
+          <li><a href="#">Evaluation Criteria</a></li>
+          <li><a href="#">White Papers</a></li>
+          <li><a href="#">Industry Reports</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer__links">
+          <li><a href="mailto:info@repoweringpartners.com">Email</a></li>
+          <li><a href="contact.html">Portfolio Inquiries</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-column">
-      <h4>Navigation</h4>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="focus.html">Investment Focus</a></li>
-        <li><a href="process.html">Process</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    
+    <div class="footer__bottom">
+      <p>&copy; 2026 Repowering Partners</p>
+      <div style="display: flex; gap: var(--spacing-md);">
+        <a href="#" style="color: var(--color-gray-light);">Privacy</a>
+        <a href="#" style="color: var(--color-gray-light);">Terms</a>
+      </div>
     </div>
-    <div class="footer-column">
-      <h4>Resources</h4>
-      <ul class="footer-links">
-        <li><a href="#">Market Analysis</a></li>
-        <li><a href="#">Technical Reports</a></li>
-        <li><a href="#">Case Studies</a></li>
-        <li><a href="#">Investment Thesis</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Connect</h4>
-      <ul class="footer-links">
-        <li><a href="mailto:info@repoweringpartners.com">Email Us</a></li>
-        <li><a href="contact.html">Asset Submission</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Press Inquiries</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 Repowering Partners. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+(function() {
+  const navToggle = document.querySelector('.nav__toggle');
+  const navMenu = document.querySelector('.nav__links');
+  
+  function toggleNav() {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    navMenu.classList.toggle('is-active');
+  }
+  
+  navToggle.addEventListener('click', toggleNav);
+  
+  document.querySelectorAll('.nav__links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-active');
+    });
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-active');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
