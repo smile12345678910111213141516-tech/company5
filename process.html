@@ -146,31 +146,13 @@ a {
   position: relative;
 }
 
-.nav__logo {
+.nav__brand {
   position: relative;
   display: flex;
   align-items: center;
   height: 80px;
-  overflow: visible;
   z-index: 10;
 }
-
-.nav__logo img {
-  height: 65px;
-  width: auto;
-  max-width: none;
-  filter: grayscale(100%);
-  transition: var(--transition);
-  display: block;
-  transform: translateY(0);
-  margin: 0;
-}
-
-.nav__logo:hover img {
-  filter: grayscale(0%) brightness(1.1);
-  transform: scale(1.05);
-}
-
 .nav__links {
   display: flex;
   gap: var(--spacing-xl);
@@ -449,9 +431,9 @@ a {
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="Repowering Partners Home">
-        <img src="./images/they.png" alt="Repowering Partners" />
-      </a>
+      <div class="nav__brand">
+        <span style="font-family: var(--font-serif); font-weight: 700; font-size: 1.125rem; color: var(--color-black);">Repowering Partners</span>
+      </div>
       
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
