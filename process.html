@@ -3,272 +3,305 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Process | Repowering Partners</title>
-<meta name="description" content="Five-phase transaction-to-operations process for solar asset revitalization and performance recovery." />
+<title>Our Process | Repowering Partners</title>
+<meta name="description" content="Learn about our disciplined 5-phase transaction-to-operations process for solar asset acquisition and optimization." />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Repowering Partners" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="./images/they.png" />
+<meta name="theme-color" content="#0a0a0a" />
 
 <!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-<style>
-:root {
-  --color-black: #0a0a0a;
-  --color-gray-dark: #333333;
-  --color-gray: #666666;
-  --color-gray-light: #999999;
-  --color-gray-lighter: #e5e5e5;
-  --color-white: #ffffff;
-  --color-off-white: #fafafa;
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Playfair Display', serif;
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 0.875rem;
-  --spacing-md: 1.25rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: var(--font-sans);
-  font-size: 0.9375rem;
-  line-height: 1.65;
-  color: var(--color-gray-dark);
-  background: var(--color-white);
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-lg);
-}
-
-/* Professional Process Styling */
-.process-container {
-  padding: 4rem 0;
-  background: var(--color-off-white);
-}
-
-.process-header {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto var(--spacing-xl);
-}
-
-.process-header h1 {
-  font-family: var(--font-serif);
-  font-size: 2.5rem;
-  margin-bottom: var(--spacing-md);
-}
-
-.process-header p {
-  color: var(--color-gray);
-  line-height: 1.7;
-  margin-bottom: var(--spacing-lg);
-}
-
-/* Professional Process Steps */
-.professional-process {
-  counter-reset: process-step;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.process-step {
-  position: relative;
-  padding-left: 5rem;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-left: 2px solid var(--color-gray-lighter);
-}
-
-.process-step:last-child {
-  margin-bottom: 0;
-  border-left: 2px solid transparent;
-}
-
-.process-step::before {
-  counter-increment: process-step;
-  content: '0' counter(process-step);
-  position: absolute;
-  left: -2rem;
-  top: 0;
-  width: 60px;
-  height: 60px;
-  background: var(--color-black);
-  color: var(--color-white);
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 2px solid var(--color-white);
-}
-
-.process-step h2 {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-.process-step p {
-  color: var(--color-gray);
-  line-height: 1.7;
-}
-
-/* Enhanced Process Display */
-.enhanced-process {
-  display: grid;
-  gap: 3rem;
-}
-
-.process-card {
-  background: var(--color-white);
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  transition: all 0.3s;
-  border: 1px solid var(--color-gray-lighter);
-}
-
-.process-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-  transform: translateY(-4px);
-}
-
-.process-card h3 {
-  font-family: var(--font-serif);
-  font-size: 1.375rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-.process-card p {
-  color: var(--color-gray);
-  line-height: 1.7;
-}
-
-/* Professional Color Scheme */
-.professional-colors {
-  --primary-dark: #0a0a0a;
-  --accent-color: #1a1a1a;
-  --text-primary: #333333;
-}
-
-/* Clean Layout */
-.clean-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.step-content {
-  padding-left: 1rem;
-}
-
-.step-number {
-  position: absolute;
-  left: -3rem;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  background: var(--color-black);
-  color: var(--color-white);
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .process-step { padding-left: 3rem; }
-  .process-step::before { left: -1.5rem; width: 40px; height: 40px; }
-}
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <!-- Navigation -->
-<nav class="nav" role="navigation">
+<nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">
+      <a href="index.html" class="nav__logo" aria-label="Repowering Partners Home">
         <img src="./images/they.png" alt="Repowering Partners" />
       </a>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <ul class="nav__links" id="nav-menu" role="menubar">
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="index.html#focus" role="menuitem">Focus</a></li>
+        <li role="none"><a href="index.html#capabilities" role="menuitem">Capabilities</a></li>
+        <li role="none"><a href="process.html" role="menuitem" class="is-active">Process</a></li>
+        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Process Header -->
-<header class="process-container">
+<!-- Page Header -->
+<header class="page-header">
   <div class="container">
-    <div class="process-header">
-      <h1>Transaction-to-Operations Process</h1>
-      <p>Five disciplined phases ensuring rigorous evaluation and measurable performance improvement</p>
-    </div>
+    <span class="section__eyebrow">Methodology</span>
+    <h1>Transaction-to-Operations Process</h1>
+    <p class="page-header__intro">Five disciplined phases ensuring rigorous evaluation and measurable performance improvement for every solar asset we acquire.</p>
   </div>
 </header>
 
-<!-- Professional Process Steps -->
-<section class="professional-process">
-  <div class="container">
-    <div class="enhanced-process">
-      <div class="process-card">
-        <div class="process-step">
-          <h2>Initial Screening</h2>
+<main>
+  <!-- Process Steps -->
+  <section class="section">
+    <div class="container">
+      <div class="process process--expanded">
+        <div class="process__step">
+          <h4>Phase 1: Initial Screening</h4>
           <p>Rapid asset qualification based on vintage, technology, location, and distress indicators. We assess remaining useful life, performance ratios, and market context to prioritize opportunities.</p>
-      </div>
-      
-      <div class="process-card">
-        <div class="process-step">
-          <h2>Due Diligence</h2>
+          <ul class="list--check" style="margin-top: var(--spacing-sm);">
+            <li>Technology stack evaluation (modules, inverters, racking)</li>
+            <li>Location and interconnection analysis</li>
+            <li>PPA/lease terms review</li>
+            <li>Initial performance ratio assessment</li>
+            <li>Timeline: 48-72 hours</li>
+          </ul>
+        </div>
+        
+        <div class="process__step">
+          <h4>Phase 2: Due Diligence</h4>
           <p>Integrated technical and financial review including on-site inspections, production data analysis, O&M record review, and evaluation of PPAs, leases, and interconnection agreements.</p>
-      </div>
-      
-      <div class="process-card">
-        <div class="process-step">
-          <h2>Transaction Execution</h2>
+          <ul class="list--check" style="margin-top: var(--spacing-sm);">
+            <li>12-24 month production data analysis</li>
+            <li>On-site equipment inspection</li>
+            <li>Electroluminescence and thermal imaging</li>
+            <li>IV curve tracing and hotspot analysis</li>
+            <li>Environmental and permit compliance review</li>
+            <li>Timeline: 2-4 weeks</li>
+          </ul>
+        </div>
+        
+        <div class="process__step">
+          <h4>Phase 3: Transaction Execution</h4>
           <p>Tax-efficient acquisition structuring with legal, tax, and financing coordination. We minimize friction while protecting investor interests and ensuring operational continuity.</p>
-      </div>
-      
-      <div class="process-card">
-        <div class="process-step">
-          <h2>Repowering & Optimization</h2>
+          <ul class="list--check" style="margin-top: var(--spacing-sm);">
+            <li>Asset purchase agreement negotiation</li>
+            <li>Tax equity structuring and preservation</li>
+            <li>Lender coordination and consent</li>
+            <li>Regulatory filings and approvals</li>
+            <li>Timeline: 4-8 weeks</li>
+          </ul>
+        </div>
+        
+        <div class="process__step">
+          <h4>Phase 4: Repowering & Optimization</h4>
           <p>Prioritized improvement plan implementation: component replacements, protocol enhancements, and system optimizations with transparent stakeholder communication.</p>
-      </div>
-      
-      <div class="process-card">
-        <div class="process-step">
-          <h2>Asset Management</h2>
+          <ul class="list--check" style="margin-top: var(--spacing-sm);">
+            <li>Emergency stabilization (if needed)</li>
+            <li>Inverter replacement or repair</li>
+            <li>Module cleaning and restoration</li>
+            <li>SCADA system upgrades</li>
+            <li>Vegetation management</li>
+            <li>Timeline: 90-180 days</li>
+          </ul>
+        </div>
+        
+        <div class="process__step">
+          <h4>Phase 5: Asset Management</h4>
           <p>Steady-state operations with continuous monitoring, preventive maintenance, and strategic planning for future capital improvements and value creation.</p>
+          <ul class="list--check" style="margin-top: var(--spacing-sm);">
+            <li>24/7 monitoring and alerts</li>
+            <li>Preventive maintenance scheduling</li>
+            <li>Monthly performance reporting</li>
+            <li>Quarterly investor updates</li>
+            <li>Annual improvement planning</li>
+            <li>Timeline: Ongoing</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Timeline Overview -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Efficiency</span>
+        <h2>Typical Transaction Timeline</h2>
+        <p class="section__intro">From initial contact to stabilized operations in as little as 6-12 months.</p>
+      </div>
+      
+      <div class="grid grid--4cols">
+        <div class="card" style="text-align: center;">
+          <span class="stat-item__number" style="display: block; margin-bottom: var(--spacing-xs);">48h</span>
+          <h3 class="card__title" style="font-size: 0.9375rem;">Initial Response</h3>
+          <p class="card__content" style="font-size: 0.8125rem;">Preliminary assessment and NDA execution</p>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+          <span class="stat-item__number" style="display: block; margin-bottom: var(--spacing-xs);">4wk</span>
+          <h3 class="card__title" style="font-size: 0.9375rem;">Due Diligence</h3>
+          <p class="card__content" style="font-size: 0.8125rem;">Technical review and financial modeling</p>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+          <span class="stat-item__number" style="display: block; margin-bottom: var(--spacing-xs);">8wk</span>
+          <h3 class="card__title" style="font-size: 0.9375rem;">Transaction Close</h3>
+          <p class="card__content" style="font-size: 0.8125rem;">Legal, tax, and financing coordination</p>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+          <span class="stat-item__number" style="display: block; margin-bottom: var(--spacing-xs);">6mo</span>
+          <h3 class="card__title" style="font-size: 0.9375rem;">Optimization</h3>
+          <p class="card__content" style="font-size: 0.8125rem;">Repowering and performance improvement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2cols">
+        <div>
+          <span class="section__eyebrow">Seller Experience</span>
+          <h2>What to Expect</h2>
+          <p class="section__intro">We've designed our process to minimize disruption and maximize certainty for asset sellers.</p>
+          
+          <div style="margin-top: var(--spacing-lg);">
+            <div style="margin-bottom: var(--spacing-md);">
+              <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Confidentiality First</h3>
+              <p style="color: var(--color-gray); font-size: 0.9375rem;">All discussions protected by mutual NDAs. We understand the sensitivity of asset transactions.</p>
+            </div>
+            
+            <div style="margin-bottom: var(--spacing-md);">
+              <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Transparent Communication</h3>
+              <p style="color: var(--color-gray); font-size: 0.9375rem;">Regular updates throughout the process with clear milestones and decision points.</p>
+            </div>
+            
+            <div style="margin-bottom: var(--spacing-md);">
+              <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Flexible Deal Structure</h3>
+              <p style="color: var(--color-gray); font-size: 0.9375rem;">We work with you to structure transactions that meet your objectives—whether that's a clean exit or ongoing participation.</p>
+            </div>
+            
+            <div>
+              <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Operational Continuity</h3>
+              <p style="color: var(--color-gray); font-size: 0.9375rem;">Smooth transition with no disruption to offtaker relationships or site operations.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="featured-box">
+          <span class="section__eyebrow" style="color: var(--color-gray-light);">Ready to Start?</span>
+          <h3 style="color: var(--color-white); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Begin the Conversation</h3>
+          <p style="color: var(--color-gray-light); font-size: 0.9375rem; margin-bottom: var(--spacing-md);">Preliminary assessments provided within 48 hours. No obligation, complete confidentiality.</p>
+          <a href="contact.html" class="btn btn--primary" style="width: 100%; text-align: center; justify-content: center;">Submit Asset Information</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta__content">
+        <h2>Have Questions About Our Process?</h2>
+        <p>Our team is ready to discuss how we can work together to optimize your solar assets.</p>
+        <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn--primary">Contact Us</a>
+          <a href="about.html" class="btn btn--secondary">Learn About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <img src="./images/they.png" alt="Repowering Partners" />
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="./images/they.png" alt="Repowering Partners" />
         <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value.</p>
-        <p>&copy; 2026 Repowering Partners</p>
+      </div>
+      
+      <div>
+        <h4>Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#focus">Investment Focus</a></li>
+          <li><a href="index.html#capabilities">Capabilities</a></li>
+          <li><a href="process.html">Process</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer__links">
+          <li><a href="#">Market Insights</a></li>
+          <li><a href="#">Evaluation Criteria</a></li>
+          <li><a href="#">White Papers</a></li>
+          <li><a href="#">Industry Reports</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="mailto:info@repoweringpartners.com">Email</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer__bottom">
+      <p>&copy; 2026 Repowering Partners</p>
+      <div style="display: flex; gap: var(--spacing-md);">
+        <a href="#" style="color: var(--color-gray-light);">Privacy</a>
+        <a href="#" style="color: var(--color-gray-light);">Terms</a>
       </div>
     </div>
   </div>
 </footer>
+
+<script>
+(function() {
+  const navToggle = document.querySelector('.nav__toggle');
+  const navMenu = document.querySelector('.nav__links');
+  
+  function toggleNav() {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    navMenu.classList.toggle('is-active');
+  }
+  
+  navToggle.addEventListener('click', toggleNav);
+  
+  document.querySelectorAll('.nav__links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-active');
+    });
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-active');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>

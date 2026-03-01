@@ -3,96 +3,283 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact | Repowering Partners</title>
-<meta name="description" content="Submit confidential inquiries for solar asset evaluation and partnership opportunities with Repowering Partners." />
+<title>Contact Us | Repowering Partners</title>
+<meta name="description" content="Contact Repowering Partners for confidential solar asset evaluations. Preliminary assessments provided within 48 hours." />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Repowering Partners" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="./images/they.png" />
+<meta name="theme-color" content="#0a0a0a" />
 
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #ffffff;
-}
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+<!-- Navigation -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Repowering Partners Home">
+        <img src="./images/they.png" alt="Repowering Partners" />
+      </a>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <ul class="nav__links" id="nav-menu" role="menubar">
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="index.html#focus" role="menuitem">Focus</a></li>
+        <li role="none"><a href="index.html#capabilities" role="menuitem">Capabilities</a></li>
+        <li role="none"><a href="process.html" role="menuitem">Process</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" class="is-active">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-/* Professional Contact Form */
-.professional-contact {
-  max-width: 600px;
-  margin: 0 auto;
-}
+<!-- Page Header -->
+<header class="page-header">
+  <div class="container">
+    <span class="section__eyebrow">Get in Touch</span>
+    <h1>Contact Us</h1>
+    <p class="page-header__intro">Ready to discuss your solar asset? We provide complimentary preliminary assessments for projects 1MW-200MW across all major U.S. solar markets.</p>
+  </div>
+</header>
 
-.contact-header {
-  text-align: center;
-  padding: 3rem 0;
-  border-bottom: 1px solid #333333;
-}
+<main>
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2cols">
+        <!-- Contact Form -->
+        <div>
+          <h2>Confidential Asset Evaluation</h2>
+          <p class="section__intro">Complete the form below to begin the conversation. All information is kept strictly confidential.</p>
+          
+          <form class="form form--light" action="https://formspree.io/f/xoqgkzlr" method="POST" aria-label="Asset inquiry form" style="margin-top: var(--spacing-lg);">
+            <input type="hidden" name="_subject" value="New Solar Asset Inquiry - Repowering Partners" />
+            <input type="hidden" name="_cc" value="Jim.bakhaus@repoweringpartners.com" />
+            
+            <div class="form__grid">
+              <div class="form__group">
+                <label class="form__label" for="name">Full Name *</label>
+                <input type="text" id="name" name="name" class="form__input" required placeholder="John Smith" />
+              </div>
+              
+              <div class="form__group">
+                <label class="form__label" for="email">Email *</label>
+                <input type="email" id="email" name="email" class="form__input" required placeholder="john@company.com" />
+              </div>
+            </div>
+            
+            <div class="form__group">
+              <label class="form__label" for="company">Organization</label>
+              <input type="text" id="company" name="company" class="form__input" placeholder="Asset Owner / Operator / Lender" />
+            </div>
+            
+            <div class="form__grid">
+              <div class="form__group">
+                <label class="form__label" for="asset-size">Asset Size (MW)</label>
+                <input type="text" id="asset-size" name="asset-size" class="form__input" placeholder="e.g., 50 MW" />
+              </div>
+              
+              <div class="form__group">
+                <label class="form__label" for="location">Location (State)</label>
+                <input type="text" id="location" name="location" class="form__input" placeholder="e.g., Texas" />
+              </div>
+            </div>
+            
+            <div class="form__group">
+              <label class="form__label" for="vintage">Commission Year</label>
+              <input type="text" id="vintage" name="vintage" class="form__input" placeholder="e.g., 2014" />
+            </div>
+            
+            <div class="form__group">
+              <label class="form__label" for="message">Asset Overview *</label>
+              <textarea id="message" name="message" class="form__textarea" required placeholder="Describe asset condition, performance issues, ownership structure, and timeline..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn--primary" style="width: 100%; font-size: 0.8125rem;">Submit Confidential Inquiry</button>
+            
+            <p style="font-size: 0.75rem; margin-top: var(--spacing-sm); opacity: 0.7;">All information kept strictly confidential per our privacy policy.</p>
+          </form>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <div class="featured-box" style="margin-bottom: var(--spacing-lg);">
+            <h3 style="color: var(--color-white); font-size: 1.25rem; margin-bottom: var(--spacing-sm);">What to Expect</h3>
+            <ul class="list--check" style="color: var(--color-gray-light);">
+              <li>Response within 24 hours</li>
+              <li>Preliminary assessment in 48 hours</li>
+              <li>Complete confidentiality guaranteed</li>
+              <li>No obligation initial consultation</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3 class="card__title">Direct Contact</h3>
+            <div class="card__content">
+              <p><strong>Email:</strong><br />
+              <a href="mailto:info@repoweringpartners.com" style="color: var(--color-black);">info@repoweringpartners.com</a></p>
+              
+              <p style="margin-top: var(--spacing-md);"><strong>Office:</strong><br />
+              United States</p>
+              
+              <p style="margin-top: var(--spacing-md);"><strong>Response Time:</strong><br />
+              Preliminary assessments within 48 hours for qualified assets.</p>
+            </div>
+          </div>
+          
+          <div class="card" style="margin-top: var(--spacing-md);">
+            <h3 class="card__title">Asset Types We Evaluate</h3>
+            <div class="card__content">
+              <ul class="list--check">
+                <li>Utility-scale PV (1MW - 200MW+)</li>
+                <li>Community solar facilities</li>
+                <li>C&I rooftop and ground-mount</li>
+                <li>Distressed or underperforming assets</li>
+                <li>2010-2016 vintage projects</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.contact-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
+  <!-- FAQ Section -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      
+      <div class="grid grid--2cols">
+        <div class="card">
+          <h3 class="card__title">What types of assets do you acquire?</h3>
+          <div class="card__content">
+            <p>We focus on utility-scale and commercial solar assets 1MW and larger, particularly those from 2010-2016 vintage facing performance issues, needing equipment replacement, or in financial distress.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 class="card__title">How long does the evaluation process take?</h3>
+          <div class="card__content">
+            <p>Initial screening takes 48-72 hours. Full due diligence typically requires 2-4 weeks depending on asset complexity and information availability.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 class="card__title">Is my information kept confidential?</h3>
+          <div class="card__content">
+            <p>Absolutely. All discussions begin with a mutual non-disclosure agreement. We treat all asset information with the highest level of confidentiality.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 class="card__title">What if my asset has existing debt or tax equity?</h3>
+          <div class="card__content">
+            <p>We have extensive experience structuring transactions that preserve or transfer existing tax equity and work constructively with lenders on workout or consent scenarios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-.contact-header p {
-  color: #999999;
-  font-size: 1.125rem;
-}
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="./images/they.png" alt="Repowering Partners" />
+        <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value.</p>
+      </div>
+      
+      <div>
+        <h4>Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#focus">Investment Focus</a></li>
+          <li><a href="index.html#capabilities">Capabilities</a></li>
+          <li><a href="process.html">Process</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer__links">
+          <li><a href="#">Market Insights</a></li>
+          <li><a href="#">Evaluation Criteria</a></li>
+          <li><a href="#">White Papers</a></li>
+          <li><a href="#">Industry Reports</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="mailto:info@repoweringpartners.com">Email</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer__bottom">
+      <p>&copy; 2026 Repowering Partners</p>
+      <div style="display: flex; gap: var(--spacing-md);">
+        <a href="#" style="color: var(--color-gray-light);">Privacy</a>
+        <a href="#" style="color: var(--color-gray-light);">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-.form-container {
-  background: #1a1a1a;
-  padding: 2.5rem;
-  border-radius: 12px;
-  border: 1px solid #333333;
-}
+<script>
+(function() {
+  const navToggle = document.querySelector('.nav__toggle');
+  const navMenu = document.querySelector('.nav__links');
+  
+  function toggleNav() {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    navMenu.classList.toggle('is-active');
+  }
+  
+  navToggle.addEventListener('click', toggleNav);
+  
+  document.querySelectorAll('.nav__links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-active');
+    });
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-active');
+    }
+  });
+})();
+</script>
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-label {
-  display: block;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #cccccc;
-  margin-bottom: 0.5rem;
-}
-
-.form-input {
-  width: 100%;
-  padding: 1rem;
-  background: #0a0a0a;
-  border: 1px solid #444444;
-  color: #ffffff;
-  font-family: inherit;
-  border-radius: 6px;
-  transition: border-color 0.3s;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: #ff6b35;
-}
-
-.form-textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-
-.submit-button {
-  width: 100%;
-  padding: 1.25rem;
-  background: #ff6b35;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600
-\<Streaming stoppped because the conversation grew too long for this model\>
+</body>
+</html>

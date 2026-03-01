@@ -3,223 +3,48 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About | Repowering Partners</title>
-<meta name="description" content="Learn about Repowering Partners' expertise in solar asset optimization and our multidisciplinary team approach." />
+<title>About Us | Repowering Partners</title>
+<meta name="description" content="Learn about Repowering Partners - strategic partners in solar asset optimization with decades of experience in utility-scale solar development and operations." />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Repowering Partners" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="./images/they.png" />
+<meta name="theme-color" content="#0a0a0a" />
 
 <!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-<style>
-:root {
-  --color-black: #0a0a0a;
-  --color-gray-dark: #333333;
-  --color-gray: #666666;
-  --color-gray-light: #999999;
-  --color-gray-lighter: #e5e5e5;
-  --color-white: #ffffff;
-  --color-off-white: #fafafa;
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Playfair Display', serif;
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 0.875rem;
-  --spacing-md: 1.25rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: var(--font-sans);
-  font-size: 0.9375rem;
-  line-height: 1.65;
-  color: var(--color-gray-dark);
-  background: var(--color-white);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-lg);
-}
-
-/* Navigation */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid var(--color-gray-lighter);
-  backdrop-filter: blur(10px);
-}
-
-.nav__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  padding: 0 var(--spacing-lg);
-}
-
-.nav__logo img {
-  height: 50px;
-  width: auto;
-  filter: grayscale(100%);
-}
-
-.nav__links {
-  display: flex;
-  gap: var(--spacing-lg);
-  list-style: none;
-}
-
-.nav__links a {
-  font-weight: 500;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-gray);
-}
-
-.nav__links a:hover {
-  color: var(--color-black);
-}
-
-/* Page Header */
-.page-header {
-  background: var(--color-off-white);
-  padding: 4rem 0 3rem;
-  text-align: center;
-}
-
-.page-header h1 {
-  font-family: var(--font-serif);
-  font-size: 2.5rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-/* Content Sections */
-.content-section {
-  padding: 4rem 0;
-}
-
-.content-section--alt {
-  background: var(--color-off-white);
-}
-
-.content-section h2 {
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  margin-bottom: var(--spacing-md);
-}
-
-/* Grid Layout */
-.grid-layout {
-  display: grid;
-  gap: 3rem;
-}
-
-.grid-2cols {
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-/* Feature Box */
-.feature-box {
-  background: var(--color-black);
-  color: var(--color-white);
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-.feature-box h3 {
-  color: var(--color-white);
-  margin-bottom: var(--spacing-sm);
-}
-
-@media (max-width: 900px) {
-  .grid-2cols {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Capabilities Grid */
-.capabilities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.capability-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-lighter);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
-
-.capability-card:hover {
-  border-color: var(--color-gray-light);
-  transform: translateY(-2px);
-}
-
-/* Image Wrapper */
-.image-wrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.image-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: grayscale(100%);
-  transition: all 0.3s;
-}
-
-.image-wrapper:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.02);
-}
-
-/* Footer */
-.footer {
-  background: var(--color-black);
-  color: var(--color-gray-light);
-  padding: 3rem 0 2rem;
-  text-align: center;
-}
-
-.footer img {
-  height: 40px;
-  margin-bottom: var(--spacing-sm);
-}
-
-@media (max-width: 768px) {
-  .nav__links { gap: var(--spacing-sm); }
-}
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <!-- Navigation -->
-<nav class="nav" role="navigation">
+<nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">
+      <a href="index.html" class="nav__logo" aria-label="Repowering Partners Home">
         <img src="./images/they.png" alt="Repowering Partners" />
       </a>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="process.html">Process</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <ul class="nav__links" id="nav-menu" role="menubar">
+        <li role="none"><a href="about.html" role="menuitem" class="is-active">About</a></li>
+        <li role="none"><a href="index.html#focus" role="menuitem">Focus</a></li>
+        <li role="none"><a href="index.html#capabilities" role="menuitem">Capabilities</a></li>
+        <li role="none"><a href="process.html" role="menuitem">Process</a></li>
+        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -228,61 +53,219 @@ body {
 <!-- Page Header -->
 <header class="page-header">
   <div class="container">
+    <span class="section__eyebrow">Who We Are</span>
     <h1>About Repowering Partners</h1>
-    <p>Strategic expertise in solar asset optimization and revitalization</p>
+    <p class="page-header__intro">Strategic partners in solar asset optimization, transforming underperforming infrastructure into high-performing, long-term revenue generators.</p>
+  </div>
 </header>
 
-<!-- Who We Are -->
-<section class="content-section">
-  <div class="container">
-    <div class="grid-layout grid-2cols">
-        <div class="image-wrapper">
-          <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India (2).jpg" alt="Solar panel maintenance operations" width="600" height="450" />
-      </div>
-      <div class="content-section">
-      <h2>Strategic Partners in Solar Asset Optimization</h2>
-      <p>Repowering Partners operates at the intersection of renewable energy infrastructure and value-oriented investment. We focus exclusively on acquiring and revitalizing existing solar generation assets.</p>
-      </div>
-      <div class="content-section">
-      <h3>Investment Philosophy</h3>
-      <p>We believe the greatest opportunities lie not in greenfield development, but in optimizing existing assets. With 40+ gigawatts of early-generation solar approaching critical maintenance milestones, we provide the expertise to extend asset lives 15-25 years while improving energy yield 20-40%.</p>
+<main>
+  <!-- About Content -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2cols">
+        <div>
+          <h2>Our Mission</h2>
+          <p class="section__intro">Repowering Partners operates at the intersection of renewable energy infrastructure and value-oriented investment. We focus exclusively on acquiring and revitalizing existing solar generation assets.</p>
+          
+          <p>Our team brings together decades of experience in utility-scale solar development, operations and maintenance, power plant engineering, and structured finance. This multidisciplinary approach enables us to identify value creation opportunities that traditional investors overlook.</p>
+          
+          <p>We believe the greatest opportunities lie not in greenfield development, but in optimizing existing assets. With 40+ gigawatts of early-generation solar approaching critical maintenance milestones, we provide the expertise to extend asset lives 15-25 years while improving energy yield 20-40%.</p>
+        </div>
+        
+        <div class="img-wrapper">
+          <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India (2).jpg" alt="Workers maintaining solar photovoltaic panels" width="600" height="450" loading="lazy" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Capabilities Section -->
-<section class="content-section--alt">
-  <div class="container">
-    <div class="capabilities-grid">
-        <div class="capability-card">
-          <h3>Comprehensive Due Diligence</h3>
-          <p>Our engineering team conducts exhaustive asset evaluations using proprietary diagnostic protocols to identify performance gaps and optimization opportunities.</p>
+  <!-- Investment Philosophy -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Our Approach</span>
+        <h2>Investment Philosophy</h2>
+        <p class="section__intro">Value creation through operational excellence and technical expertise.</p>
       </div>
-      <div class="capability-card">
-          <h3>Performance Analytics</h3>
-          <p>12-24 month production analysis with PVsyst modeling and thermal imaging for precise performance assessment.</p>
-      </div>
-      <div class="capability-card">
-          <h3>Component Forensics</h3>
-          <p>Electroluminescence, IV curve tracing, and hotspot analysis to identify underperforming components.</p>
-      </div>
-      <div class="capability-card">
-          <h3>Financial Modeling</h3>
-          <p>Cash flow projections with yield optimization and tax structuring for investment-grade analysis.</p>
+      
+      <div class="grid grid--3cols">
+        <div class="featured-box">
+          <h3 class="card__title" style="color: var(--color-white);">Operator-First Mindset</h3>
+          <p class="card__content">Direct control over technical execution ensures investment theses grounded in operational reality. We don't just acquire assets—we operate them.</p>
+        </div>
+        
+        <div class="featured-box">
+          <h3 class="card__title" style="color: var(--color-white);">Speed to Value</h3>
+          <p class="card__content">Asset stabilization and improvements within 90-180 days—significantly faster than new development timelines. Quick wins compound into long-term gains.</p>
+        </div>
+        
+        <div class="featured-box">
+          <h3 class="card__title" style="color: var(--color-white);">Risk Mitigation</h3>
+          <p class="card__content">Rigorous diligence and conservative assumptions minimize downside while capturing upside. We identify risks others miss before they become problems.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Differentiators</span>
+        <h2>Why Partners Choose Us</h2>
+        <p class="section__intro">Technical depth and commercial acumen delivering superior outcomes.</p>
+      </div>
+      
+      <div class="grid grid--2cols">
+        <div class="card">
+          <h3 class="card__title">Deep Technical Expertise</h3>
+          <div class="card__content">
+            <p>Our engineering team has evaluated 250+ solar assets across the United States. We understand the nuances of every major equipment manufacturer, inverter topology, and installation practice from the past two decades.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 class="card__title">Offtaker Relationships</h3>
+          <div class="card__content">
+            <p>Deep utility and corporate relationships enable favorable PPA restructurings. We maintain active dialogues with offtakers across all major U.S. solar markets.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 class="card__title">Flexible Capital Structure</h3>
+          <div class="card__content">
+            <p>We can move quickly on opportunities ranging from $1M to $100M+, with the ability to structure transactions that address seller needs including tax equity preservation and earn-out arrangements.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 class="card__title">Long-Term Orientation</h3>
+          <div class="card__content">
+            <p>We're not financial engineers looking for quick flips. Our business model depends on genuine operational improvements that create lasting value for all stakeholders.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__grid">
+        <div>
+          <span class="stat-item__number">250+</span>
+          <span class="stat-item__label">Assets Evaluated</span>
+        </div>
+        <div>
+          <span class="stat-item__number">$400M+</span>
+          <span class="stat-item__label">Assets Under Management</span>
+        </div>
+        <div>
+          <span class="stat-item__number">85+</span>
+          <span class="stat-item__label">MW Repowered</span>
+        </div>
+        <div>
+          <span class="stat-item__number">15+</span>
+          <span class="stat-item__label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta__content">
+        <h2>Ready to Partner With Us?</h2>
+        <p>Whether you're looking to divest an underperforming asset or explore restructuring options, we're here to help.</p>
+        <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn--primary">Contact Us</a>
+          <a href="process.html" class="btn btn--secondary">Our Process</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <img src="./images/they.png" alt="Repowering Partners" />
-    <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value.</p>
-    <p>&copy; 2026 Repowering Partners</p>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="./images/they.png" alt="Repowering Partners" />
+        <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value.</p>
+      </div>
+      
+      <div>
+        <h4>Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#focus">Investment Focus</a></li>
+          <li><a href="index.html#capabilities">Capabilities</a></li>
+          <li><a href="process.html">Process</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer__links">
+          <li><a href="#">Market Insights</a></li>
+          <li><a href="#">Evaluation Criteria</a></li>
+          <li><a href="#">White Papers</a></li>
+          <li><a href="#">Industry Reports</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="mailto:info@repoweringpartners.com">Email</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer__bottom">
+      <p>&copy; 2026 Repowering Partners</p>
+      <div style="display: flex; gap: var(--spacing-md);">
+        <a href="#" style="color: var(--color-gray-light);">Privacy</a>
+        <a href="#" style="color: var(--color-gray-light);">Terms</a>
+      </div>
+    </div>
   </div>
 </footer>
+
+<script>
+(function() {
+  const navToggle = document.querySelector('.nav__toggle');
+  const navMenu = document.querySelector('.nav__links');
+  
+  function toggleNav() {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    navMenu.classList.toggle('is-active');
+  }
+  
+  navToggle.addEventListener('click', toggleNav);
+  
+  document.querySelectorAll('.nav__links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-active');
+    });
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-active');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
