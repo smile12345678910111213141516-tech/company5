@@ -124,16 +124,17 @@ a {
   }
 }
 
-/* Navigation - Compact (height unchanged at 72px) */
+/* Enhanced Navigation with better styling */
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--color-gray-lighter);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
 }
 
@@ -141,75 +142,86 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px; /* UNCHANGED */
-  position: relative; /* Added for logo positioning context */
+  height: 80px;
+  position: relative;
 }
 
-/* LARGER LOGO - extends beyond navbar bounds without increasing navbar height */
 .nav__logo {
   position: relative;
   display: flex;
   align-items: center;
-  height: 72px; /* Match navbar for alignment */
-  overflow: visible; /* allow the larger logo to visually extend without affecting layout */
+  height: 80px;
+  overflow: visible;
+  z-index: 10;
 }
 
-/* Updated: larger navbar logo, but kept navbar height the same.
-   Use width: auto and transform/translate to avoid pushing the nav down.
-*/
 .nav__logo img {
-  height: 60px; /* INCREASED to visually enlarge logo */
+  height: 65px;
   width: auto;
-  max-width: none; /* Allow natural width */
+  max-width: none;
   filter: grayscale(100%);
   transition: var(--transition);
   display: block;
-  transform: translateY(6px); /* visually lower the image so it sits nicely while nav remains 72px */
-  margin: 0; /* remove negative margins that could affect flow */
+  transform: translateY(0);
+  margin: 0;
 }
 
 .nav__logo:hover img {
-  filter: grayscale(100%) brightness(0.8);
-}
-
-/* Alternative: Even larger logo that breaks out of navbar slightly */
-.nav__logo--large img {
-  height: 72px; /* Even larger option if you apply the modifier class */
-  transform: translateY(8px);
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.05);
 }
 
 .nav__links {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl);
   list-style: none;
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .nav__links a {
-  font-weight: 500;
-  font-size: 0.8125rem;
+  font-weight: 600;
+  font-size: 0.875rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-gray);
+  letter-spacing: 0.08em;
+  color: var(--color-gray-dark);
   position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: var(--transition);
 }
 
-.nav__links a::after {
+.nav__links a::before {
   content: '';
   position: absolute;
-  bottom: -4px;
+  top: 0;
   left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-black);
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--color-black), var(--color-gray-dark));
+  border-radius: 25px;
+  opacity: 0;
+  transform: scale(0.8);
   transition: var(--transition);
 }
 
 .nav__links a:hover {
-  color: var(--color-black);
+  color: var(--color-white);
+  transform: translateY(-2px);
 }
 
-.nav__links a:hover::after {
-  width: 100%;
+.nav__links a:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav__links a span {
+  position: relative;
+  z-index: 1;
 }
 
 /* Mobile Menu */
@@ -219,9 +231,19 @@ a {
   border: none;
   cursor: pointer;
   padding: var(--spacing-xs);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.nav__toggle:hover {
+  background: var(--color-gray-lightest);
 }
 
 @media (max-width: 768px) {
+  .nav__inner {
+    height: 72px;
+  }
+  
   .nav__toggle {
     display: block;
     z-index: 1001;
@@ -239,6 +261,8 @@ a {
     transform: translateY(-100%);
     transition: transform 0.3s ease;
     border-bottom: 1px solid var(--color-gray-lighter);
+    border-radius: 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
   
   .nav__links.is-active {
@@ -246,14 +270,13 @@ a {
   }
   
   .nav__links a {
-    font-size: 0.9375rem;
+    font-size: 1rem;
+    padding: var(--spacing-sm);
+    text-align: center;
   }
   
-  /* Smaller logo on mobile to fit better */
   .nav__logo img {
-    height: 40px;
-    transform: translateY(0);
-    margin: 0;
+    height: 45px;
   }
 }
 
@@ -262,12 +285,10 @@ a {
   background: var(--color-black);
   color: var(--color-white);
   min-height: auto;
-  padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
+  padding: calc(80px + var(--spacing-2xl)) 0 var(--spacing-xl);
   position: relative;
   overflow: hidden;
 }
-
-/* hero__background div and styles REMOVED */
 
 .hero__content {
   position: relative;
@@ -362,6 +383,10 @@ a {
 }
 
 @media (max-width: 900px) {
+  .hero {
+    padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
+  }
+  
   .hero__layout {
     grid-template-columns: 1fr;
   }
@@ -378,7 +403,7 @@ a {
 @media (max-width: 600px) {
   .hero__stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
   }
   
@@ -540,139 +565,7 @@ a {
   font-size: 0.9375rem;
 }
 
-/* Stats Bar */
-.stats-bar {
-  background: var(--color-gray-lightest);
-  padding: var(--spacing-lg) 0;
-  border-top: 1px solid var(--color-gray-lighter);
-  border-bottom: 1px solid var(--color-gray-lighter);
-}
-
-.stats-bar__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: var(--spacing-md);
-  text-align: center;
-}
-
-.stat-item__number {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-black);
-  line-height: 1.2;
-}
-
-.stat-item__label {
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-gray);
-  margin-top: 0.25rem;
-}
-
-/* CTA Section */
-.cta {
-  background: var(--color-black);
-  color: var(--color-white);
-  padding: var(--spacing-2xl) 0;
-  position: relative;
-}
-
-.cta::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("./images/Main-Purpose-Of-Solar-Panels-scaled-2560x1280.jpeg.webp");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.08;
-  filter: grayscale(100%);
-}
-
-.cta__content {
-  position: relative;
-  z-index: 1;
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.cta h2 {
-  color: var(--color-white);
-  margin-bottom: var(--spacing-sm);
-}
-
-.cta > .cta__content > p {
-  color: var(--color-gray-light);
-  font-size: 1rem;
-  margin-bottom: var(--spacing-lg);
-}
-
-/* Form - Compact */
-.form {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-md);
-  text-align: left;
-}
-
-.form__group {
-  margin-bottom: var(--spacing-sm);
-}
-
-.form__label {
-  display: block;
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-gray-light);
-  margin-bottom: 0.25rem;
-}
-
-.form__input,
-.form__textarea {
-  width: 100%;
-  padding: 0.625rem 0.875rem;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: var(--radius-sm);
-  color: var(--color-white);
-  font-family: inherit;
-  font-size: 0.9375rem;
-  transition: var(--transition);
-}
-
-.form__input:focus,
-.form__textarea:focus {
-  outline: none;
-  border-color: rgba(255,255,255,0.4);
-  background: rgba(255,255,255,0.08);
-}
-
-.form__textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-
-.form__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-sm);
-}
-
-@media (max-width: 500px) {
-  .form__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Footer */
+/* Footer - Simplified */
 .footer {
   background: var(--color-black);
   color: var(--color-gray-light);
@@ -683,7 +576,7 @@ a {
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
 }
@@ -699,23 +592,6 @@ a {
     grid-template-columns: 1fr;
     text-align: center;
   }
-}
-
-/* Updated footer brand logo styling to preserve aspect-ratio and avoid stretching */
-.footer__brand img {
-  height: auto;
-  max-height: 60px; /* keep it compact but allow a clean size */
-  width: auto;
-  display: block;
-  filter: grayscale(100%) brightness(0.8);
-  margin-bottom: var(--spacing-sm);
-  object-fit: contain;
-}
-
-.footer__brand p {
-  color: var(--color-gray-light);
-  max-width: 260px;
-  font-size: 0.8125rem;
 }
 
 .footer h4 {
@@ -843,11 +719,11 @@ a {
       </button>
       
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="about.html" role="menuitem">About</a></li>
-        <li role="none"><a href="#focus" role="menuitem">Focus</a></li>
-        <li role="none"><a href="#capabilities" role="menuitem">Capabilities</a></li>
-        <li role="none"><a href="process.html" role="menuitem">Process</a></li>
-        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+        <li role="none"><a href="about.html" role="menuitem"><span>About</span></a></li>
+        <li role="none"><a href="focus.html" role="menuitem"><span>Focus</span></a></li>
+        <li role="none"><a href="capabilities.html" role="menuitem"><span>Capabilities</span></a></li>
+        <li role="none"><a href="process.html" role="menuitem"><span>Process</span></a></li>
+        <li role="none"><a href="contact.html" role="menuitem"><span>Contact</span></a></li>
       </ul>
     </div>
   </div>
@@ -890,199 +766,7 @@ a {
   </div>
 </header>
 
-<!-- Stats Bar -->
-<section class="stats-bar">
-  <div class="container">
-    <div class="stats-bar__grid">
-      <div>
-        <span class="stat-item__number">$400M+</span>
-        <span class="stat-item__label">Assets Under Management</span>
-      </div>
-      <div>
-        <span class="stat-item__number">12</span>
-        <span class="stat-item__label">States Operating</span>
-      </div>
-      <div>
-        <span class="stat-item__number">94%</span>
-        <span class="stat-item__label">Performance Recovery</span>
-      </div>
-      <div>
-        <span class="stat-item__number">24mo</span>
-        <span class="stat-item__label">Avg. Repowering Time</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <main>
-  <!-- Investment Focus -->
-  <section id="focus" class="section section--alt">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__eyebrow">Target Profile</span>
-        <h2>Strategic Investment Focus</h2>
-        <p class="section__intro">We specialize in complex solar scenarios where technical due diligence and operational restructuring unlock substantial value.</p>
-      </div>
-      
-      <div class="grid grid--3cols">
-        <article class="card">
-          <h3 class="card__title">Aging Infrastructure</h3>
-          <div class="card__content">
-            <p>2010-2016 vintage projects requiring component replacement:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Inverter performance degradation</li>
-              <li>Module LID issues</li>
-              <li>DC cabling replacement</li>
-              <li>Tracking system fatigue</li>
-            </ul>
-          </div>
-        </article>
-        
-        <article class="card">
-          <h3 class="card__title">Distressed Assets</h3>
-          <div class="card__content">
-            <p>Facilities facing financial or operational challenges:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Lender workouts & receivership</li>
-              <li>PPA renegotiations</li>
-              <li>Tax equity restructuring</li>
-              <li>Immediate stabilization</li>
-            </ul>
-          </div>
-        </article>
-        
-        <article class="card">
-          <h3 class="card__title">Underperformance</h3>
-          <div class="card__content">
-            <p>Projects below projected energy yield:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Soiling optimization</li>
-              <li>Shading & vegetation</li>
-              <li>Predictive maintenance</li>
-              <li>SCADA modernization</li>
-            </ul>
-          </div>
-        </article>
-        
-        <article class="card">
-          <h3 class="card__title">Utility & C&I Scale</h3>
-          <div class="card__content">
-            <p>Assets 1MW and larger including:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Utility-scale PV facilities</li>
-              <li>Community solar</li>
-              <li>C&I rooftop systems</li>
-              <li>Floating solar</li>
-            </ul>
-          </div>
-        </article>
-        
-        <article class="card">
-          <h3 class="card__title">Repowering</h3>
-          <div class="card__content">
-            <p>Technology upgrade candidates:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>AC-side inverter replacement</li>
-              <li>DC-side expansion</li>
-              <li>Bifacial retrofits</li>
-              <li>Advanced tracking</li>
-            </ul>
-          </div>
-        </article>
-        
-        <article class="card">
-          <h3 class="card__title">Key Markets</h3>
-          <div class="card__content">
-            <p>High-growth U.S. solar corridors:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Texas & Florida</li>
-              <li>California markets</li>
-              <li>Midwest community solar</li>
-              <li>Sun Belt utilities</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Capabilities -->
-  <section id="capabilities" class="section">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__eyebrow">Technical Expertise</span>
-        <h2>Integrated Capabilities</h2>
-        <p class="section__intro">From due diligence through long-term operations, our vertically integrated approach delivers measurable performance improvements.</p>
-      </div>
-      
-      <div class="grid grid--2cols" style="margin-bottom: var(--spacing-lg);">
-        <div class="img-wrapper">
-          <img src="./images/Main-Purpose-Of-Solar-Panels-scaled-2560x1280.jpeg.webp" alt="Utility-scale solar maintenance operations" width="600" height="450" loading="lazy" />
-        </div>
-        <div>
-          <h3 style="font-size: 1.25rem; margin-bottom: var(--spacing-sm);">Comprehensive Due Diligence</h3>
-          <p style="font-size: 0.9375rem; color: var(--color-gray); margin-bottom: var(--spacing-md);">Our engineering team conducts exhaustive asset evaluations using proprietary diagnostic protocols.</p>
-          
-          <div style="display: grid; gap: var(--spacing-sm);">
-            <div>
-              <h4 style="font-size: 0.9375rem; margin-bottom: 0.125rem; color: var(--color-black);">Performance Analytics</h4>
-              <p style="color: var(--color-gray); font-size: 0.875rem;">12-24 month production analysis with PVsyst modeling and thermal imaging.</p>
-            </div>
-            <div>
-              <h4 style="font-size: 0.9375rem; margin-bottom: 0.125rem; color: var(--color-black);">Component Forensics</h4>
-              <p style="color: var(--color-gray); font-size: 0.875rem;">Electroluminescence, IV curve tracing, and hotspot analysis.</p>
-            </div>
-            <div>
-              <h4 style="font-size: 0.9375rem; margin-bottom: 0.125rem; color: var(--color-black);">Financial Modeling</h4>
-              <p style="color: var(--color-gray); font-size: 0.875rem;">Cash flow projections with yield optimization and tax structuring.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid--3cols">
-        <div class="card">
-          <h3 class="card__title">Asset Stabilization</h3>
-          <div class="card__content">
-            <p>Rapid response for distressed assets:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Emergency O&M deployment</li>
-              <li>Insurance claims</li>
-              <li>Compliance remediation</li>
-              <li>Working capital injection</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="card">
-          <h3 class="card__title">Repowering Engineering</h3>
-          <div class="card__content">
-            <p>Comprehensive upgrade implementation:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Inverter replacement</li>
-              <li>Module restoration</li>
-              <li>Monitoring integration</li>
-              <li>Structural assessment</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="card">
-          <h3 class="card__title">Long-Term Operations</h3>
-          <div class="card__content">
-            <p>Asset management optimization:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Predictive maintenance</li>
-              <li>Performance guarantees</li>
-              <li>Stakeholder reporting</li>
-              <li>Continuous improvement</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Value Proposition -->
   <section class="section">
     <div class="container">
@@ -1130,17 +814,12 @@ a {
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
-      <div class="footer__brand">
-        <img src="./images/they.png" alt="Repowering Partners" />
-        <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value.</p>
-      </div>
-      
       <div>
         <h4>Company</h4>
         <ul class="footer__links">
           <li><a href="about.html">About</a></li>
-          <li><a href="#focus">Investment Focus</a></li>
-          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="focus.html">Focus</a></li>
+          <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
         </ul>
       </div>

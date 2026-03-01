@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Repowering Partners | About</title>
-<meta name="description" content="Learn about Repowering Partners' expertise in solar asset optimization, investment philosophy, and team experience." />
+<title>Repowering Partners | Capabilities</title>
+<meta name="description" content="Explore Repowering Partners' integrated capabilities in solar asset acquisition, repowering, and optimization." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Repowering Partners" />
 
@@ -308,35 +308,26 @@ a {
   line-height: 1.2;
 }
 
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.625rem 1.25rem;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-radius: var(--radius-sm);
-  transition: var(--transition);
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.btn--primary {
-  background: var(--color-white);
-  color: var(--color-black);
-}
-
-.btn--primary:hover {
-  background: var(--color-gray-lightest);
-  transform: translateY(-1px);
-}
-
 /* Sections - Compact */
 .section {
   padding: var(--spacing-2xl) 0;
+}
+
+.section__header {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section__eyebrow {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-xs);
+  display: block;
 }
 
 .section__intro {
@@ -357,27 +348,42 @@ a {
   align-items: center;
 }
 
+.grid--3cols {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
 @media (max-width: 900px) {
   .grid--2cols {
     grid-template-columns: 1fr;
   }
 }
 
-/* Featured Box */
-.featured-box {
-  background: var(--color-black);
-  color: var(--color-white);
+/* Cards - Compact */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-lighter);
   padding: var(--spacing-lg);
-  border-radius: var(--radius-md);
+  transition: var(--transition);
 }
 
-.featured-box h3 {
-  color: var(--color-white);
+.card:hover {
+  border-color: var(--color-gray-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
 }
 
-.featured-box p {
-  color: var(--color-gray-light);
-  font-size: 0.9375rem;
+.card__title {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-black);
+}
+
+.card__content {
+  color: var(--color-gray);
+  line-height: 1.6;
+  font-size: 0.875rem;
 }
 
 /* Image Handling */
@@ -398,6 +404,28 @@ a {
 .img-wrapper:hover img {
   filter: grayscale(0%);
   transform: scale(1.02);
+}
+
+/* List Styling */
+.list--check {
+  list-style: none;
+  padding: 0;
+}
+
+.list--check li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.375rem;
+  color: var(--color-gray);
+  font-size: 0.875rem;
+}
+
+.list--check li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-black);
+  font-weight: 500;
 }
 
 /* Footer - Simplified */
@@ -506,35 +534,87 @@ a {
   </div>
 </nav>
 
-<!-- Hero Section for About -->
+<!-- Hero Section for Capabilities -->
 <header class="hero" role="banner">
   <div class="container">
     <div class="hero__content">
-      <span class="hero__eyebrow">Who We Are</span>
-      <h1>Strategic Partners in Solar Asset Optimization</h1>
-      <a href="contact.html" class="btn btn--primary">Get in Touch</a>
+      <span class="hero__eyebrow">Technical Expertise</span>
+      <h1>Integrated Capabilities</h1>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- About Section -->
+  <!-- Capabilities -->
   <section class="section">
     <div class="container">
-      <div class="grid grid--2cols">
+      <div class="section__header">
+        <p class="section__intro">From due diligence through long-term operations, our vertically integrated approach delivers measurable performance improvements.</p>
+      </div>
+      
+      <div class="grid grid--2cols" style="margin-bottom: var(--spacing-lg);">
+        <div class="img-wrapper">
+          <img src="./images/Main-Purpose-Of-Solar-Panels-scaled-2560x1280.jpeg.webp" alt="Utility-scale solar maintenance operations" width="600" height="450" loading="lazy" />
+        </div>
         <div>
-          <p class="section__intro">Repowering Partners operates at the intersection of renewable energy infrastructure and value-oriented investment. We focus exclusively on acquiring and revitalizing existing solar generation assets.</p>
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--spacing-sm);">Comprehensive Due Diligence</h3>
+          <p style="font-size: 0.9375rem; color: var(--color-gray); margin-bottom: var(--spacing-md);">Our engineering team conducts exhaustive asset evaluations using proprietary diagnostic protocols.</p>
           
-          <p>Our team brings together decades of experience in utility-scale solar development, operations and maintenance, power plant engineering, and structured finance. This multidisciplinary approach enables us to identify value creation opportunities that traditional investors overlook.</p>
-          
-          <div class="featured-box" style="margin-top: var(--spacing-md);">
-            <h3 style="color: var(--color-white); font-size: 1.0625rem; margin-bottom: var(--spacing-xs);">Investment Philosophy</h3>
-            <p style="font-size: 0.875rem;">We believe the greatest opportunities lie not in greenfield development, but in optimizing existing assets. With 40+ gigawatts of early-generation solar approaching critical maintenance milestones, we provide the expertise to extend asset lives 15-25 years while improving energy yield 20-40%.</p>
+          <div style="display: grid; gap: var(--spacing-sm);">
+            <div>
+              <h4 style="font-size: 0.9375rem; margin-bottom: 0.125rem; color: var(--color-black);">Performance Analytics</h4>
+              <p style="color: var(--color-gray); font-size: 0.875rem;">12-24 month production analysis with PVsyst modeling and thermal imaging.</p>
+            </div>
+            <div>
+              <h4 style="font-size: 0.9375rem; margin-bottom: 0.125rem; color: var(--color-black);">Component Forensics</h4>
+              <p style="color: var(--color-gray); font-size: 0.875rem;">Electroluminescence, IV curve tracing, and hotspot analysis.</p>
+            </div>
+            <div>
+              <h4 style="font-size: 0.9375rem; margin-bottom: 0.125rem; color: var(--color-black);">Financial Modeling</h4>
+              <p style="color: var(--color-gray); font-size: 0.875rem;">Cash flow projections with yield optimization and tax structuring.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid--3cols">
+        <div class="card">
+          <h3 class="card__title">Asset Stabilization</h3>
+          <div class="card__content">
+            <p>Rapid response for distressed assets:</p>
+            <ul class="list--check" style="margin-top: var(--spacing-sm);">
+              <li>Emergency O&M deployment</li>
+              <li>Insurance claims</li>
+              <li>Compliance remediation</li>
+              <li>Working capital injection</li>
+            </ul>
           </div>
         </div>
         
-        <div class="img-wrapper">
-          <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India (2).jpg" alt="Workers maintaining solar photovoltaic panels" width="600" height="450" loading="lazy" />
+        <div class="card">
+          <h3 class="card__title">Repowering Engineering</h3>
+          <div class="card__content">
+            <p>Comprehensive upgrade implementation:</p>
+            <ul class="list--check" style="margin-top: var(--spacing-sm);">
+              <li>Inverter replacement</li>
+              <li>Module restoration</li>
+              <li>Monitoring integration</li>
+              <li>Structural assessment</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 class="card__title">Long-Term Operations</h3>
+          <div class="card__content">
+            <p>Asset management optimization:</p>
+            <ul class="list--check" style="margin-top: var(--spacing-sm);">
+              <li>Predictive maintenance</li>
+              <li>Performance guarantees</li>
+              <li>Stakeholder reporting</li>
+              <li>Continuous improvement</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
