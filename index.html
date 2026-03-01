@@ -22,6 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
+/* (All original CSS preserved) */
 :root {
   --color-black: #0a0a0a;
   --color-dark: #1a1a1a;
@@ -70,7 +71,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Typography - Reduced sizes */
+/* Typography */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
   font-weight: 600;
@@ -119,7 +120,7 @@ a {
   }
 }
 
-/* Navigation - Compact (height unchanged at 72px) */
+/* Navigation */
 .nav {
   position: fixed;
   top: 0;
@@ -241,7 +242,7 @@ a {
   }
 }
 
-/* Hero Section - Clean, Compact */
+/* Hero Section */
 .hero {
   background: var(--color-black);
   color: var(--color-white);
@@ -502,6 +503,14 @@ a {
   font-size: 0.875rem;
 }
 
+/* Featured Box */
+.featured-box {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+}
+
 /* Stats Bar */
 .stats-bar {
   background: var(--color-gray-lightest);
@@ -654,11 +663,6 @@ a {
   color: var(--color-black);
   font-weight: 500;
 }
-
-/* Mobile adjustments */
-.page-content {
-  padding-top: calc(72px + var(--spacing-xl));
-}
 </style>
 </head>
 <body>
@@ -682,7 +686,7 @@ a {
       <ul class="nav__links" id="nav-menu" role="menubar">
         <li role="none"><a href="about.html" role="menuitem">About</a></li>
         <li role="none"><a href="#focus" role="menuitem">Focus</a></li>
-        <li role="none"><a href="#capabilities" role="menuitem">Capabilities</a></li>
+        <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
         <li role="none"><a href="process.html" role="menuitem">Process</a></li>
         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
@@ -752,212 +756,53 @@ a {
 </section>
 
 <main>
-  <!-- Investment Focus -->
+  <!-- Investment Focus - ONLY SECTION -->
   <section id="focus" class="section section--alt">
     <div class="container">
       <div class="section__header">
-        <span class="section__eyebrow">Target Profile</span>
-        <h2>Strategic Investment Focus</h2>
-        <p class="section__intro">We specialize in complex solar scenarios where technical due diligence and operational restructuring unlock substantial value.</p>
+        <span class="section__eyebrow">Investment Focus</span>
+        <h2>Specialized Acquisition Strategy</h2>
       </div>
       
       <div class="grid grid--3cols">
         <article class="card">
-          <h3 class="card__title">Aging Infrastructure</h3>
+          <h3 class="card__title">Distressed & Underperforming Assets</h3>
           <div class="card__content">
-            <p>2010-2016 vintage projects requiring component replacement:</p>
+            <p>We target facilities requiring operational intervention:</p>
             <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Inverter performance degradation</li>
-              <li>Module LID issues</li>
-              <li>DC cabling replacement</li>
-              <li>Tracking system fatigue</li>
+              <li>Lender workouts and receivership</li>
+              <li>PPA restructuring and tax equity issues</li>
+              <li>Performance degradation below P99 forecasts</li>
+              <li>Immediate stabilization capabilities</li>
             </ul>
           </div>
         </article>
         
         <article class="card">
-          <h3 class="card__title">Distressed Assets</h3>
+          <h3 class="card__title">Technical Repowering</h3>
           <div class="card__content">
-            <p>Facilities facing financial or operational challenges:</p>
+            <p>Comprehensive component upgrades and modernization:</p>
             <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Lender workouts & receivership</li>
-              <li>PPA renegotiations</li>
-              <li>Tax equity restructuring</li>
-              <li>Immediate stabilization</li>
+              <li>Inverter and module replacement</li>
+              <li>Tracking system optimization</li>
+              <li>DC capacity expansion</li>
+              <li>SCADA and monitoring modernization</li>
             </ul>
           </div>
         </article>
         
         <article class="card">
-          <h3 class="card__title">Underperformance</h3>
+          <h3 class="card__title">Utility-Scale & C&I</h3>
           <div class="card__content">
-            <p>Projects below projected energy yield:</p>
+            <p>1MW+ assets in primary US solar markets:</p>
             <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Soiling optimization</li>
-              <li>Shading & vegetation</li>
-              <li>Predictive maintenance</li>
-              <li>SCADA modernization</li>
+              <li>Utility-scale PV and community solar</li>
+              <li>Commercial & industrial rooftop</li>
+              <li>Texas, Florida, California, Midwest</li>
+              <li>Primary interconnection queues</li>
             </ul>
           </div>
         </article>
-        
-        <article class="card">
-          <h3 class="card__title">Utility & C&I Scale</h3>
-          <div class="card__content">
-            <p>Assets 1MW and larger including:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Utility-scale PV facilities</li>
-              <li>Community solar</li>
-              <li>C&I rooftop systems</li>
-              <li>Floating solar</li>
-            </ul>
-          </div>
-        </article>
-        
-        <article class="card">
-          <h3 class="card__title">Repowering</h3>
-          <div class="card__content">
-            <p>Technology upgrade candidates:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>AC-side inverter replacement</li>
-              <li>DC-side expansion</li>
-              <li>Bifacial retrofits</li>
-              <li>Advanced tracking</li>
-            </ul>
-          </div>
-        </article>
-        
-        <article class="card">
-          <h3 class="card__title">Key Markets</h3>
-          <div class="card__content">
-            <p>High-growth U.S. solar corridors:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Texas & Florida</li>
-              <li>California markets</li>
-              <li>Midwest community solar</li>
-              <li>Sun Belt utilities</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Capabilities -->
-  <section id="capabilities" class="section">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__eyebrow">Technical Expertise</span>
-        <h2>Integrated Capabilities</h2>
-        <p class="section__intro">From due diligence through long-term operations, our vertically integrated approach delivers measurable performance improvements.</p>
-      </div>
-      
-      <div class="grid grid--2cols" style="margin-bottom: var(--spacing-lg);">
-        <div class="img-wrapper">
-          <img src="./images/Main-Purpose-Of-Solar-Panels-scaled-2560x1280.jpeg.webp" alt="Utility-scale solar maintenance operations" width="600" height="450" loading="lazy" />
-        </div>
-        <div>
-          <h3 style="font-size: 1.25rem; margin-bottom: var(--spacing-sm);">Comprehensive Due Diligence</h3>
-          <p style="font-size: 0.9375rem; color: var(--color-gray); margin-bottom: var(--spacing-md);">Our engineering team conducts exhaustive asset evaluations using proprietary diagnostic protocols.</p>
-          
-          <div style="display: grid; gap: var(--spacing-sm);">
-            <div>
-              <h4 style="font-size: 0.9375rem; margin-bottom: 0.125rem; color: var(--color-black);">Performance Analytics</h4>
-              <p style="color: var(--color-gray); font-size: 0.875rem;">12-24 month production analysis with PVsyst modeling and thermal imaging.</p>
-            </div>
-            <div>
-              <h4 style="font-size: 0.9375rem; margin-bottom: 0.125rem; color: var(--color-black);">Component Forensics</h4>
-              <p style="color: var(--color-gray); font-size: 0.875rem;">Electroluminescence, IV curve tracing, and hotspot analysis.</p>
-            </div>
-            <div>
-              <h4 style="font-size: 0.9375rem; margin-bottom: 0.125rem; color: var(--color-black);">Financial Modeling</h4>
-              <p style="color: var(--color-gray); font-size: 0.875rem;">Cash flow projections with yield optimization and tax structuring.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid--3cols">
-        <div class="card">
-          <h3 class="card__title">Asset Stabilization</h3>
-          <div class="card__content">
-            <p>Rapid response for distressed assets:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Emergency O&M deployment</li>
-              <li>Insurance claims</li>
-              <li>Compliance remediation</li>
-              <li>Working capital injection</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="card">
-          <h3 class="card__title">Repowering Engineering</h3>
-          <div class="card__content">
-            <p>Comprehensive upgrade implementation:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Inverter replacement</li>
-              <li>Module restoration</li>
-              <li>Monitoring integration</li>
-              <li>Structural assessment</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="card">
-          <h3 class="card__title">Long-Term Operations</h3>
-          <div class="card__content">
-            <p>Asset management optimization:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Predictive maintenance</li>
-              <li>Performance guarantees</li>
-              <li>Stakeholder reporting</li>
-              <li>Continuous improvement</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Value Proposition -->
-  <section class="section">
-    <div class="container">
-      <div class="grid grid--2cols">
-        <div>
-          <span class="section__eyebrow">Differentiators</span>
-          <h2>Why Partners Choose Us</h2>
-          <p class="section__intro">Technical depth and commercial acumen delivering superior outcomes.</p>
-          
-          <div style="margin-top: var(--spacing-lg);">
-            <div style="margin-bottom: var(--spacing-md);">
-              <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Operator-First Mindset</h3>
-              <p style="color: var(--color-gray); font-size: 0.9375rem;">Direct control over technical execution ensures investment theses grounded in operational reality.</p>
-            </div>
-            
-            <div style="margin-bottom: var(--spacing-md);">
-              <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Speed to Value</h3>
-              <p style="color: var(--color-gray); font-size: 0.9375rem;">Asset stabilization and improvements within 90-180 days—significantly faster than development.</p>
-            </div>
-            
-            <div style="margin-bottom: var(--spacing-md);">
-              <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Risk Mitigation</h3>
-              <p style="color: var(--color-gray); font-size: 0.9375rem;">Rigorous diligence and conservative assumptions minimize downside while capturing upside.</p>
-            </div>
-            
-            <div>
-              <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Offtaker Relationships</h3>
-              <p style="color: var(--color-gray); font-size: 0.9375rem;">Deep utility and corporate relationships enable favorable PPA restructurings.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="featured-box">
-          <span class="section__eyebrow" style="color: var(--color-gray-light);">Contact</span>
-          <h3 style="color: var(--color-white); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Ready to Discuss Your Asset?</h3>
-          <p style="color: var(--color-gray-light); font-size: 0.9375rem; margin-bottom: var(--spacing-md);">Strict confidentiality for all transactions. Preliminary assessments within 48 hours.</p>
-          <a href="contact.html" class="btn btn--primary" style="width: 100%; text-align: center; justify-content: center;">Submit Confidential Inquiry</a>
-        </div>
       </div>
     </div>
   </section>
@@ -977,7 +822,7 @@ a {
         <ul class="footer__links">
           <li><a href="about.html">About</a></li>
           <li><a href="index.html#focus">Investment Focus</a></li>
-          <li><a href="index.html#capabilities">Capabilities</a></li>
+          <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
         </ul>
       </div>

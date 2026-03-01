@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About | Repowering Partners</title>
-<meta name="description" content="Learn about Repowering Partners' expertise in acquiring and optimizing solar energy assets with 15+ years of experience." />
+<title>Capabilities | Repowering Partners</title>
+<meta name="description" content="Discover what makes Repowering Partners the leader in solar asset optimization and value creation." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Repowering Partners" />
 
@@ -283,7 +283,7 @@ a {
 .grid--2cols {
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-xl);
-  align-items: center;
+  align-items: start;
 }
 
 @media (max-width: 900px) {
@@ -292,37 +292,37 @@ a {
   }
 }
 
-/* Clean Image Styling - NEW */
-.img-wrapper-clean {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: var(--transition);
-}
-
-.img-wrapper-clean:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-}
-
-.img-wrapper-clean img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: var(--transition);
-  object-fit: cover;
-}
-
-.img-wrapper-clean:hover img {
-  transform: scale(1.02);
-}
-
 /* Featured Box */
 .featured-box {
   background: var(--color-black);
   color: var(--color-white);
   padding: var(--spacing-lg);
   border-radius: var(--radius-md);
+}
+
+/* Differentiators - EXPANDED */
+.differentiator-item {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-lighter);
+}
+
+.differentiator-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.differentiator-item h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-black);
+}
+
+.differentiator-item p {
+  color: var(--color-gray);
+  font-size: 0.9375rem;
+  line-height: 1.7;
 }
 
 /* Footer */
@@ -436,9 +436,9 @@ a {
       </button>
       
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="about.html" role="menuitem" aria-current="page">About</a></li>
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
         <li role="none"><a href="index.html#focus" role="menuitem">Focus</a></li>
-        <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
+        <li role="none"><a href="capabilities.html" role="menuitem" aria-current="page">Capabilities</a></li>
         <li role="none"><a href="process.html" role="menuitem">Process</a></li>
         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
@@ -446,26 +446,47 @@ a {
   </div>
 </nav>
 
-<!-- About Section -->
+<!-- Capabilities Section - DIFFERENTIATORS ONLY -->
 <main>
   <section class="section page-content">
     <div class="container">
       <div class="grid grid--2cols">
         <div>
-          <span class="section__eyebrow">Who We Are</span>
-          <h2>Strategic Partners in Solar Asset Optimization</h2>
-          <p class="section__intro">Repowering Partners operates at the intersection of renewable energy infrastructure and value-oriented investment. We focus exclusively on acquiring and revitalizing existing solar generation assets.</p>
+          <span class="section__eyebrow">Our Advantage</span>
+          <h2>Proprietary Capabilities</h2>
+          <p class="section__intro">What distinguishes Repowering Partners in solar asset optimization</p>
           
-          <p>Our team brings together decades of experience in utility-scale solar development, operations and maintenance, power plant engineering, and structured finance. This multidisciplinary approach enables us to identify value creation opportunities that traditional investors overlook.</p>
+          <div class="differentiator-item">
+            <h3>Operator-First Mindset</h3>
+            <p>Unlike traditional investors who rely on third-party O&M providers, we maintain direct operational control throughout the asset lifecycle. This hands-on approach ensures our investment theses are grounded in technical reality, not theoretical models. Our engineering team leads due diligence, designs optimization strategies, and oversees implementation—creating accountability and eliminating the communication gaps that plague traditional asset management.</p>
+          </div>
           
-          <div class="featured-box" style="margin-top: var(--spacing-md);">
-            <h3 style="color: var(--color-white); font-size: 1.0625rem; margin-bottom: var(--spacing-xs);">Investment Philosophy</h3>
-            <p style="font-size: 0.875rem;">We believe the greatest opportunities lie not in greenfield development, but in optimizing existing assets. With 40+ gigawatts of early-generation solar approaching critical maintenance milestones, we provide the expertise to extend asset lives 15-25 years while improving energy yield 20-40%.</p>
+          <div class="differentiator-item">
+            <h3>Institutional Speed to Value</h3>
+            <p>Our vertically integrated structure compresses typical 12-18 month asset stabilization timelines to 90-180 days. While traditional buyers navigate procurement, contracting, and coordination across multiple vendors, our in-house engineering and O&M capabilities enable immediate mobilization. This acceleration directly translates to 6-12 months of additional revenue capture and earlier return of capital.</p>
+          </div>
+          
+          <div class="differentiator-item">
+            <h3>Conservative Risk Framework</h3>
+            <p>We underwrite to P90 production scenarios and base-case degradation curves, ensuring our returns survive sensitivity analyses that stress-test for component failure, curtailment risk, and market volatility. Our rigorous 200+ point technical diligence checklist identifies latent defects before acquisition, while our conservative financial models account for downside scenarios traditional investors dismiss as improbable.</p>
+          </div>
+          
+          <div class="differentiator-item">
+            <h3>Deep Ofytaker Relationships</h3>
+            <p>Our principals have structured 500+ MW of utility and corporate PPA transactions, giving us unique insight into offtaker priorities and constraints. This enables us to renegotiate legacy PPAs with terms that reflect current market conditions while preserving credit quality. We've successfully restructured tariffs, adjusted capacity provisions, and modified meter arrangements—unlocking value where others see only contractual rigidities.</p>
+          </div>
+          
+          <div class="differentiator-item">
+            <h3>Proprietary Performance Data</h3>
+            <p>Having evaluated 250+ assets and operated 85+ MW through multiple vintages, we've built a proprietary database of component failure modes, degradation curves, and O&M cost benchmarks. This institutional memory allows us to identify patterns and predict issues before they materialize, creating a data moat that first-time buyers cannot replicate.</p>
           </div>
         </div>
         
-        <div class="img-wrapper-clean">
-          <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India (2).jpg" alt="Workers maintaining solar photovoltaic panels" width="600" height="450" loading="lazy" />
+        <div class="featured-box">
+          <span class="section__eyebrow" style="color: var(--color-gray-light);">Contact</span>
+          <h3 style="color: var(--color-white); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Ready to Discuss Your Asset?</h3>
+          <p style="color: var(--color-gray-light); font-size: 0.9375rem; margin-bottom: var(--spacing-md);">Strict confidentiality for all transactions. Preliminary assessments within 48 hours.</p>
+          <a href="contact.html" class="btn btn--primary" style="width: 100%; text-align: center; justify-content: center;">Submit Confidential Inquiry</a>
         </div>
       </div>
     </div>
@@ -484,9 +505,9 @@ a {
       <div>
         <h4>Company</h4>
         <ul class="footer__links">
-          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="index.html#focus">Investment Focus</a></li>
-          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="capabilities.html" aria-current="page">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
         </ul>
       </div>
