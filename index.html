@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Repowering Partners | Solar Asset Acquisition & Performance Recovery</title>
+<title>Repowering Partners | Solar Asset Acquisition</title>
 <meta name="description" content="Repowering Partners acquires and revitalizes aging, underperforming, and distressed solar assets through disciplined technical diligence and operational excellence." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Repowering Partners" />
@@ -137,30 +137,13 @@ a {
   align-items: center;
   justify-content: space-between;
   height: 72px;
-  position: relative;
-}
-
-.nav__logo {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 72px;
-  overflow: visible;
 }
 
 .nav__logo img {
   height: 60px;
   width: auto;
-  max-width: none;
   filter: grayscale(100%);
   transition: var(--transition);
-  display: block;
-  transform: translateY(6px);
-  margin: 0;
-}
-
-.nav__logo:hover img {
-  filter: grayscale(100%) brightness(0.8);
 }
 
 .nav__links {
@@ -175,86 +158,22 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-gray);
-  position: relative;
-}
-
-.nav__links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-black);
-  transition: var(--transition);
 }
 
 .nav__links a:hover {
   color: var(--color-black);
 }
 
-.nav__links a:hover::after {
-  width: 100%;
-}
-
-/* Mobile Menu */
-.nav__toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: var(--spacing-xs);
-}
-
-@media (max-width: 768px) {
-  .nav__toggle {
-    display: block;
-    z-index: 1001;
-  }
-  
-  .nav__links {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: var(--color-white);
-    flex-direction: column;
-    padding: var(--spacing-lg);
-    gap: var(--spacing-sm);
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    border-bottom: 1px solid var(--color-gray-lighter);
-  }
-  
-  .nav__links.is-active {
-    transform: translateY(0);
-  }
-  
-  .nav__links a {
-    font-size: 0.9375rem;
-  }
-  
-  .nav__logo img {
-    height: 40px;
-    transform: translateY(0);
-    margin: 0;
-  }
-}
-
 /* Hero Section */
 .hero {
   background: var(--color-black);
   color: var(--color-white);
-  min-height: auto;
-  padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
-  position: relative;
-  overflow: hidden;
+  padding: calc(72px + 4rem) 0 3rem;
 }
 
 .hero__content {
-  position: relative;
-  z-index: 1;
   max-width: 720px;
+  margin: 0 auto;
 }
 
 .hero__eyebrow {
@@ -263,21 +182,18 @@ a {
   letter-spacing: 0.15em;
   color: var(--color-gray-light);
   margin-bottom: var(--spacing-sm);
-  display: block;
 }
 
 .hero h1 {
   margin-bottom: var(--spacing-md);
   font-weight: 600;
   line-height: 1.2;
-  color: white;
 }
 
 .hero__subtitle {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   color: var(--color-gray-light);
   margin-bottom: var(--spacing-lg);
-  max-width: 55ch;
   line-height: 1.6;
 }
 
@@ -316,67 +232,14 @@ a {
   margin-top: 0.25rem;
 }
 
-.hero__layout {
-  display: grid;
-  grid-template-columns: 1fr 0.85fr;
-  gap: var(--spacing-xl);
-  align-items: center;
-}
-
-.hero__image {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  aspect-ratio: 4/3;
-}
-
-.hero__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: var(--transition);
-}
-
-.hero__image:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.02);
-}
-
-@media (max-width: 900px) {
-  .hero__layout {
-    grid-template-columns: 1fr;
-  }
-  
-  .hero__image {
-    display: none;
-  }
-  
-  .hero__stats {
-    gap: var(--spacing-lg);
-  }
-}
-
-@media (max-width: 600px) {
-  .hero__stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-  }
-  
-  .hero__stat-number {
-    font-size: 1.5rem;
-  }
-}
-
 /* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.625rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   border-radius: var(--radius-sm);
@@ -408,7 +271,7 @@ a {
 
 /* Sections */
 .section {
-  padding: var(--spacing-2xl) 0;
+  padding: 4rem 0;
 }
 
 .section--alt {
@@ -419,8 +282,7 @@ a {
   margin-bottom: var(--spacing-xl);
   text-align: center;
   max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .section__eyebrow {
@@ -429,13 +291,77 @@ a {
   letter-spacing: 0.15em;
   color: var(--color-gray-light);
   margin-bottom: var(--spacing-xs);
-  display: block;
 }
 
 .section__intro {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   color: var(--color-gray);
   line-height: 1.6;
+}
+
+/* Grid Systems */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.grid--2cols {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.grid--3cols {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.grid--4cols {
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 900px) {
+  .grid--2cols {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid--4cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid--4cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-lighter);
+  padding: var(--spacing-lg);
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: var(--color-gray-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.card__title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-black);
+}
+
+.card__content {
+  color: var(--color-gray);
+  line-height: 1.6;
+  font-size: 0.9375rem;
 }
 
 /* Stats Bar */
@@ -467,134 +393,24 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gray);
-  margin-top: 0.25rem;
-}
-
-/* Image Handling */
-.img-wrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-}
-
-.img-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: grayscale(100%);
-  transition: var(--transition);
-}
-
-.img-wrapper:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.02);
-}
-
-/* Grid Systems */
-.grid {
-  display: grid;
-  gap: var(--spacing-md);
-}
-
-.grid--2cols {
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-xl);
-  align-items: center;
-}
-
-.grid--3cols {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-md);
-}
-
-@media (max-width: 900px) {
-  .grid--2cols {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Cards */
-.card {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-lighter);
-  padding: var(--spacing-lg);
-  transition: var(--transition);
-}
-
-.card:hover {
-  border-color: var(--color-gray-light);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
-}
-
-.card__title {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  margin-bottom: var(--spacing-xs);
-  color: var(--color-black);
-}
-
-.card__content {
-  color: var(--color-gray);
-  line-height: 1.6;
-  font-size: 0.875rem;
-}
-
-/* Featured Box */
-.featured-box {
-  background: var(--color-black);
-  color: var(--color-white);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-md);
-}
-
-.featured-box h3,
-.featured-box .card__title {
-  color: var(--color-white);
-}
-
-.featured-box p,
-.featured-box .card__content {
-  color: var(--color-gray-light);
-  font-size: 0.9375rem;
-}
-
-/* List Styling */
-.list--check {
-  list-style: none;
-  padding: 0;
-}
-
-.list--check li {
-  position: relative;
-  padding-left: 1.25rem;
-  margin-bottom: 0.375rem;
-  color: var(--color-gray);
-  font-size: 0.875rem;
-}
-
-.list--check li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--color-black);
-  font-weight: 500;
 }
 
 /* Footer */
 .footer {
   background: var(--color-black);
   color: var(--color-gray-light);
-  padding: var(--spacing-xl) 0 var(--spacing-lg);
-  border-top: 1px solid var(--color-gray-dark);
-  font-size: 0.8125rem;
+}
+
+@media (max-width: 768px) {
+  .nav__links {
+    flex-direction: column;
+    gap: var(--spacing-sm);
 }
 
 .footer__grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
 }
 
 @media (max-width: 900px) {
@@ -609,142 +425,50 @@ a {
     text-align: center;
   }
 }
-
-.footer__brand img {
-  height: auto;
-  max-height: 60px;
-  width: auto;
-  display: block;
-  filter: grayscale(100%) brightness(0.8);
-  margin-bottom: var(--spacing-sm);
-  object-fit: contain;
-}
-
-.footer__brand p {
-  color: var(--color-gray-light);
-  max-width: 260px;
-  font-size: 0.8125rem;
-}
-
-.footer h4 {
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-white);
-  margin-bottom: var(--spacing-sm);
-}
-
-.footer__links {
-  list-style: none;
-}
-
-.footer__links li {
-  margin-bottom: 0.375rem;
-}
-
-.footer__links a {
-  color: var(--color-gray-light);
-}
-
-.footer__links a:hover {
-  color: var(--color-white);
-}
-
-.footer__bottom {
-  padding-top: var(--spacing-lg);
-  border-top: 1px solid var(--color-gray-dark);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-}
-
-@media (max-width: 500px) {
-  .footer__bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* Print */
-@media print {
-  .nav {
-    display: none;
-  }
-  
-  body {
-    padding-top: 0;
-    color: #000;
-    font-size: 11pt;
-  }
-  
-  .section {
-    padding: 24pt 0;
-  }
-}
 </style>
 </head>
 <body>
 
 <!-- Navigation -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
+<nav class="nav" role="navigation">
   <div class="container">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="Repowering Partners Home">
-        <img src="./images/they.png" alt="Repowering Partners" />
-      </a>
-      
-      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-      
-      <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
-        <li role="none"><a href="about.html" role="menuitem">About</a></li>
-        <li role="none"><a href="process.html" role="menuitem">Process</a></li>
-        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-      </ul>
-    </div>
+      <a href="index.html" class="nav__logo">
+      <img src="./images/they.png" alt="Repowering Partners" />
+    </a>
+    <ul class="nav__links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </div>
 </nav>
 
 <!-- Hero Section -->
 <header class="hero" role="banner">
   <div class="container">
-    <div class="hero__layout">
-      <div class="hero__content">
-        <span class="hero__eyebrow">Solar Asset Acquisition</span>
-        <h1>Revitalizing aging solar infrastructure</h1>
-        <p class="hero__subtitle">We acquire, restructure, and optimize underperforming solar assets across the United States—transforming technically challenged facilities into high-performing, long-term revenue generators.</p>
-        
-        <div class="hero__actions">
-          <a href="contact.html" class="btn btn--primary">Discuss Your Asset</a>
-          <a href="process.html" class="btn btn--secondary">Our Methodology</a>
-        </div>
-        
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <span class="hero__stat-number">250+</span>
-            <span class="hero__stat-label">Assets Evaluated</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-number">85+</span>
-            <span class="hero__stat-label">MW Repowered</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-number">15+</span>
-            <span class="hero__stat-label">Years Experience</span>
-          </div>
-        </div>
-      </div>
+    <div class="hero__content">
+      <span class="hero__eyebrow">Solar Asset Acquisition</span>
+      <h1>Revitalizing Aging Solar Infrastructure</h1>
+      <p class="hero__subtitle">We acquire, restructure, and optimize underperforming solar assets across the United States—transforming technically challenged facilities into high-performing, long-term revenue generators.</p>
       
-      <div class="hero__image">
-        <img src="./images/installing-solar-panels (1).webp" alt="Solar panel installation and maintenance" width="600" height="450" />
+      <div class="hero__actions">
+      <a href="contact.html" class="btn btn--primary">Discuss Your Asset</a>
+      <a href="process.html" class="btn btn--secondary">Our Methodology</a>
+    </div>
+    
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-number">250+</span>
+        <span class="hero__stat-label">Assets Evaluated</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-number">85+</span>
+        <span class="hero__stat-label">MW Repowered</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-number">15+</span>
+        <span class="hero__stat-label">Years Experience</span>
       </div>
     </div>
   </div>
@@ -774,44 +498,13 @@ a {
   </div>
 </section>
 
-<!-- Value Proposition Section -->
-<section class="section">
+<!-- About Section -->
+<section id="about" class="section">
   <div class="container">
     <div class="grid grid--2cols">
       <div>
-        <span class="section__eyebrow">Why Choose Us</span>
-        <h2>Technical Excellence Meets Investment Strategy</h2>
-        <p class="section__intro">Repowering Partners combines decades of technical expertise with disciplined investment approaches to deliver superior solar asset optimization.</p>
-        
-        <div style="margin-top: var(--spacing-lg);">
-          <div style="margin-bottom: var(--spacing-md);">
-            <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Operator-First Mindset</h3>
-            <p style="color: var(--color-gray); font-size: 0.9375rem;">Direct control over technical execution ensures investment theses grounded in operational reality.</p>
-          </div>
-          
-          <div style="margin-bottom: var(--spacing-md);">
-            <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Speed to Value</h3>
-            <p style="color: var(--color-gray); font-size: 0.9375rem;">Asset stabilization and improvements within 90-180 days—significantly faster than development.</p>
-          </div>
-          
-          <div style="margin-bottom: var(--spacing-md);">
-            <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Risk Mitigation</h3>
-            <p style="color: var(--color-gray); font-size: 0.9375rem;">Rigorous diligence and conservative assumptions minimize downside while capturing upside.</p>
-          </div>
-          
-          <div>
-            <h3 style="font-size: 1.0625rem; margin-bottom: 0.125rem;">Market Leadership</h3>
-            <p style="color: var(--color-gray); font-size: 0.9375rem;">Deep utility and corporate relationships enable favorable PPA restructurings and market opportunities.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="featured-box">
-        <span class="section__eyebrow" style="color: var(--color-gray-light);">Get Started</span>
-        <h3 style="color: var(--color-white); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Ready to Discuss Your Asset?</h3>
-        <p style="color: var(--color-gray-light); font-size: 0.9375rem; margin-bottom: var(--spacing-md);">Strict confidentiality for all transactions. Preliminary assessments within 48 hours.</p>
-        <a href="contact.html" class="btn btn--primary" style="width: 100%; text-align: center; justify-content: center;">Submit Confidential Inquiry</a>
-      </div>
+        <h2>Strategic Partners in Solar Asset Optimization</h2>
+      <p>Repowering Partners operates at the intersection of renewable energy infrastructure and value-oriented investment. We focus exclusively on acquiring and revitalizing existing solar generation assets.</p>
     </div>
   </div>
 </section>
@@ -819,81 +512,11 @@ a {
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <img src="./images/they.png" alt="Repowering Partners" />
-        <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value.</p>
-      </div>
-      
-      <div>
-        <h4>Company</h4>
-        <ul class="footer__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="process.html">Process</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      
-      <div>
-        <h4>Resources</h4>
-        <ul class="footer__links">
-          <li><a href="#">Market Insights</a></li>
-          <li><a href="#">Evaluation Criteria</a></li>
-          <li><a href="#">White Papers</a></li>
-          <li><a href="#">Industry Reports</a></li>
-        </ul>
-      </div>
-      
-      <div>
-        <h4>Contact</h4>
-        <ul class="footer__links">
-          <li><a href="mailto:info@repoweringpartners.com">Email</a></li>
-          <li><a href="contact.html">Portfolio Inquiries</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="footer__bottom">
-      <p>&copy; 2026 Repowering Partners</p>
-      <div style="display: flex; gap: var(--spacing-md);">
-        <a href="#" style="color: var(--color-gray-light);">Privacy</a>
-        <a href="#" style="color: var(--color-gray-light);">Terms</a>
-      </div>
-    </div>
+    <img src="./agimes/they.png" alt="Repowering Partners" />
+    <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value.</p>
+    <p>&copy; 2026 Repowering Partners</p>
   </div>
 </footer>
-
-<script>
-(function() {
-  const navToggle = document.querySelector('.nav__toggle');
-  const navMenu = document.querySelector('.nav__links');
-  
-  function toggleNav() {
-    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !isExpanded);
-    navMenu.classList.toggle('is-active');
-  }
-  
-  navToggle.addEventListener('click', toggleNav);
-  
-  document.querySelectorAll('.nav__links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navMenu.classList.remove('is-active');
-    });
-  });
-  
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navMenu.classList.remove('is-active');
-    }
-  });
-})();
-</script>
 
 </body>
 </html>
