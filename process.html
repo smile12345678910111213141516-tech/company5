@@ -32,6 +32,10 @@
   --color-gray-lightest: #f5f5f5;
   --color-white: #ffffff;
   --color-off-white: #fafafa;
+  --color-blue: #2563eb;
+  --color-blue-dark: #1e40af;
+  --color-green: #059669;
+  --color-purple: #7c3aed;
   
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -46,8 +50,12 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
+  --radius-xl: 16px;
   
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 * {
@@ -58,7 +66,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 72px;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -66,7 +74,7 @@ body {
   font-size: 0.9375rem;
   line-height: 1.65;
   color: var(--color-gray-dark);
-  background-color: var(--color-white);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -80,17 +88,17 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   margin-bottom: var(--spacing-md);
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -126,9 +134,9 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid var(--color-gray-lighter);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
   transition: var(--transition);
 }
 
@@ -136,7 +144,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 80px;
   position: relative;
 }
 
@@ -144,19 +152,17 @@ a {
   position: relative;
   display: flex;
   align-items: center;
-  height: 72px;
+  height: 80px;
   overflow: visible;
 }
 
 .nav__logo img {
-  height: 60px;
+  height: 64px;
   width: auto;
-  max-width: none;
   filter: grayscale(100%);
   transition: var(--transition);
   display: block;
-  transform: translateY(6px);
-  margin: 0;
+  transform: translateY(8px);
 }
 
 .nav__logo:hover img {
@@ -165,36 +171,30 @@ a {
 
 .nav__links {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl);
   list-style: none;
 }
 
 .nav__links a {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.8125rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: var(--color-gray);
   position: relative;
-}
-
-.nav__links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-black);
+  padding: var(--spacing-sm) 0;
+  border-radius: var(--radius-md);
   transition: var(--transition);
 }
 
 .nav__links a:hover {
-  color: var(--color-black);
+  color: var(--color-blue);
+  background: rgba(37, 99, 235, 0.05);
 }
 
-.nav__links a:hover::after {
-  width: 100%;
+.nav__links a.active {
+  color: var(--color-blue);
+  background: rgba(37, 99, 235, 0.1);
 }
 
 /* Mobile Menu */
@@ -214,7 +214,7 @@ a {
   
   .nav__links {
     position: fixed;
-    top: 72px;
+    top: 80px;
     left: 0;
     right: 0;
     background: var(--color-white);
@@ -223,7 +223,7 @@ a {
     gap: var(--spacing-sm);
     transform: translateY(-100%);
     transition: transform 0.3s ease;
-    border-bottom: 1px solid var(--color-gray-lighter);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   }
   
   .nav__links.is-active {
@@ -232,35 +232,78 @@ a {
   
   .nav__links a {
     font-size: 0.9375rem;
+    padding: var(--spacing-md) var(--spacing-sm);
   }
   
   .nav__logo img {
-    height: 40px;
+    height: 48px;
     transform: translateY(0);
-    margin: 0;
   }
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--color-black) 0%, #2563eb 100%);
+  background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark) 100%);
   color: var(--color-white);
-  padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
+  padding: calc(80px + var(--spacing-2xl)) 0 var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(5, 150, 105, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
+}
+
+.hero__eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-blue);
+  margin-bottom: var(--spacing-md);
+  display: block;
 }
 
 .hero h1 {
   margin-bottom: var(--spacing-lg);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero__subtitle {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
+  font-size: 1.25rem;
+  color: var(--color-gray-light);
+  max-width: 700px;
   margin: 0 auto var(--spacing-xl);
   line-height: 1.6;
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+  flex-wrap: wrap;
 }
 
 /* Sections */
@@ -269,140 +312,231 @@ a {
 }
 
 .section--alt {
-  background-color: var(--color-off-white);
+  background-color: var(--color-white);
 }
 
 .section__header {
   margin-bottom: var(--spacing-xl);
   text-align: center;
-  max-width: 720px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .section__eyebrow {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--color-gray-light);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
   display: block;
 }
 
 .section__intro {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   color: var(--color-gray);
   line-height: 1.6;
 }
 
 /* Process Steps */
-.process {
-  max-width: 900px;
+.process-container {
+  max-width: 1000px;
   margin: 0 auto;
+  padding: var(--spacing-xl) 0;
+}
+
+.process__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
 }
 
 .process__step {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
   position: relative;
-  padding-left: 80px;
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid var(--color-gray-lighter);
+  overflow: hidden;
+  transition: var(--transition);
+  border: 2px solid transparent;
 }
 
-.process__step:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
+.process__step:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-blue);
 }
 
 .process__step::before {
-  content: attr(data-step);
+  content: '';
   position: absolute;
-  left: 0;
   top: 0;
-  width: 60px;
-  height: 60px;
-  background: var(--color-black);
-  color: var(--color-white);
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-blue);
+  transition: var(--transition);
 }
 
-.process__step:nth-child(2)::before { background: #2563eb; }
-.process__step:nth-child(3)::before { background: #059669; }
-.process__step:nth-child(4)::before { background: #dc2626; }
-.process__step:nth-child(5)::before { background: #7c3aed; }
+.process__step:nth-child(1)::before { background: var(--color-blue); }
+.process__step:nth-child(2)::before { background: var(--color-green); }
+.process__step:nth-child(3)::before { background: var(--color-purple); }
+.process__step:nth-child(4)::before { background: var(--color-blue-dark); }
+.process__step:nth-child(5)::before { background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-purple) 100%); }
+
+.process__number {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.process__step:nth-child(1) .process__number { color: var(--color-blue); }
+.process__step:nth-child(2) .process__number { color: var(--color-green); }
+.process__step:nth-child(3) .process__number { color: var(--color-purple); }
+.process__step:nth-child(4) .process__number { color: var(--color-blue-dark); }
+.process__step:nth-child(5) .process__number { 
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .process__step h3 {
-  font-size: 1.375rem;
-  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
   color: var(--color-black);
 }
 
 .process__step p {
   color: var(--color-gray);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 0;
 }
 
-/* Timeline Visual */
-.timeline-visual {
+/* Process Timeline */
+.process-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: var(--spacing-2xl) auto;
+}
+
+.timeline__line {
   position: absolute;
-  left: 30px;
-  top: 60px;
+  left: 50%;
+  top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, var(--color-black) 0%, #2563eb 25%, #059669 50%, #dc2626 75%, #7c3aed 100%);
+  background: linear-gradient(180deg, var(--color-blue) 0%, var(--color-green) 25%, var(--color-purple) 50%, var(--color-blue-dark) 75%, var(--color-blue) 100%);
+  transform: translateX(-50%);
 }
 
-/* Process Details */
-.process-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-2xl);
-}
-
-.detail-card {
+.timeline__dot {
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
   background: var(--color-white);
-  border: 1px solid var(--color-gray-lighter);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-md);
-  transition: var(--transition);
+  border: 3px solid var(--color-blue);
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
-.detail-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
-  border-color: var(--color-gray-light);
+.timeline__dot:nth-child(2) { border-color: var(--color-green); top: 25%; }
+.timeline__dot:nth-child(3) { border-color: var(--color-purple); top: 50%; }
+.timeline__dot:nth-child(4) { border-color: var(--color-blue-dark); top: 75%; }
+.timeline__dot:nth-child(5) { border-color: var(--color-blue); top: 100%; }
+
+.timeline__content {
+  position: relative;
+  margin-bottom: var(--spacing-2xl);
+  padding-left: 80px;
 }
 
-.detail-card h3 {
+.timeline__content:nth-child(even) {
+  text-align: right;
+  padding-left: 0;
+  padding-right: 80px;
+}
+
+.timeline__number {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--color-blue);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
   font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.timeline__content:nth-child(even) .timeline__number {
+  left: auto;
+  right: 20px;
+}
+
+.timeline__content:nth-child(2) .timeline__number { background: var(--color-green); }
+.timeline__content:nth-child(3) .timeline__number { background: var(--color-purple); }
+.timeline__content:nth-child(4) .timeline__number { background: var(--color-blue-dark); }
+.timeline__content:nth-child(5) .timeline__number { background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-purple) 100%); }
+
+.timeline__text {
+  background: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 500px;
+}
+
+.timeline__text h3 {
+  font-size: 1.25rem;
   margin-bottom: var(--spacing-sm);
   color: var(--color-black);
 }
 
-.detail-card p {
+.timeline__text p {
   color: var(--color-gray);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   line-height: 1.6;
 }
 
 /* Results Section */
 .results {
-  background: var(--color-black);
+  background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark) 100%);
   color: var(--color-white);
   padding: var(--spacing-2xl) 0;
+  position: relative;
+}
+
+.results::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="rgba(255,255,255,0.02)" x="0" y="0" width="100" height="100"/></svg>');
+  background-size: 30px 30px;
 }
 
 .results__content {
-  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
@@ -410,33 +544,52 @@ a {
 .results h2 {
   color: var(--color-white);
   margin-bottom: var(--spacing-lg);
+  font-size: 2rem;
 }
 
-.results-grid {
+.results__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
+  margin: var(--spacing-xl) 0;
 }
 
-.result-item {
-  text-align: center;
+.result__card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
 }
 
-.result-number {
+.result__card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.result__number {
   font-family: var(--font-serif);
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2563eb;
+  color: var(--color-blue);
   display: block;
   margin-bottom: var(--spacing-sm);
 }
 
-.result-label {
+.result__label {
   font-size: 0.875rem;
   color: var(--color-gray-light);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.result__description {
+  font-size: 0.9375rem;
+  color: var(--color-gray-light);
+  margin-top: var(--spacing-sm);
+  line-height: 1.6;
 }
 
 /* Buttons */
@@ -444,36 +597,39 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.625rem 1.25rem;
+  padding: 0.875rem 2rem;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
   transition: var(--transition);
   cursor: pointer;
   white-space: nowrap;
+  border: none;
 }
 
 .btn--primary {
-  background: var(--color-white);
-  color: var(--color-black);
+  background: var(--color-blue);
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .btn--primary:hover {
-  background: var(--color-gray-lightest);
-  transform: translateY(-1px);
+  background: var(--color-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
 }
 
 .btn--secondary {
   background: transparent;
   color: var(--color-white);
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 2px solid rgba(255,255,255,0.3);
 }
 
 .btn--secondary:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: var(--color-white);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.6);
 }
 
 /* Footer */
@@ -562,26 +718,9 @@ a {
   }
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .process__step {
-    padding-left: 60px;
-  }
-  
-  .process__step::before {
-    width: 40px;
-    height: 40px;
-    font-size: 0.875rem;
-  }
-  
-  .timeline-visual {
-    left: 20px;
-  }
-}
-
 /* Print */
 @media print {
-  .nav {
+  .nav, .hero::before, .results::before {
     display: none;
   }
   
@@ -618,7 +757,7 @@ a {
       <ul class="nav__links" id="nav-menu" role="menubar">
         <li role="none"><a href="index.html" role="menuitem">Home</a></li>
         <li role="none"><a href="about.html" role="menuitem">About</a></li>
-        <li role="none"><a href="process.html" role="menuitem">Process</a></li>
+        <li role="none"><a href="process.html" role="menuitem" class="active">Process</a></li>
         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
     </div>
@@ -627,45 +766,54 @@ a {
 
 <!-- Hero Section -->
 <header class="hero" role="banner">
-  <div class="container">
+  <div class="hero__content">
+    <span class="hero__eyebrow">Methodology</span>
     <h1>Transaction-to-Operations Process</h1>
     <p class="hero__subtitle">Five disciplined phases ensuring rigorous evaluation and measurable performance improvement. Our systematic approach transforms underperforming assets into optimized, revenue-generating facilities.</p>
+    
+    <div class="hero__actions">
+      <a href="contact.html" class="btn btn--primary">Start Your Project</a>
+      <a href="#timeline" class="btn btn--secondary">View Timeline</a>
+    </div>
   </div>
 </header>
 
-<!-- Process Section -->
-<section class="section">
+<!-- Process Steps Section -->
+<section class="section" id="process">
   <div class="container">
     <div class="section__header">
-      <span class="section__eyebrow">Methodology</span>
+      <span class="section__eyebrow">Process Overview</span>
       <h2>Disciplined Execution</h2>
       <p class="section__intro">Each phase builds on the previous, ensuring comprehensive evaluation and value maximization throughout the asset lifecycle.</p>
     </div>
     
-    <div class="process">
-      <div class="timeline-visual"></div>
-      
-      <div class="process__step" data-step="01">
+    <div class="process__steps">
+      <div class="process__step">
+        <div class="process__number">01</div>
         <h3>Initial Screening</h3>
         <p>Rapid asset qualification based on vintage, technology, location, and distress indicators. We assess remaining useful life, performance ratios, and market context to prioritize opportunities with the highest potential for value creation.</p>
       </div>
       
-      <div class="process__step" data-step="02">
+      <div class="process__step">
+        <div class="process__number">02</div>
         <h3>Due Diligence</h3>
         <p>Integrated technical and financial review including on-site inspections, production data analysis, O&M record review, and evaluation of PPAs, leases, and interconnection agreements. Our engineering team identifies specific improvement opportunities and quantifies potential returns.</p>
       </div>
       
-      <div class="process__step" data-step="03">
+      <div class="process__step">
+        <div class="process__number">03</div>
         <h3>Transaction Execution</h3>
         <p>Tax-efficient acquisition structuring with legal, tax, and financing coordination. We minimize friction while protecting investor interests and ensuring operational continuity. Our team handles complex restructurings, including tax equity flips and lender workouts.</p>
       </div>
       
-      <div class="process__step" data-step="04">
+      <div class="process__step">
+        <div class="process__number">04</div>
         <h3>Repowering & Optimization</h3>
         <p>Prioritized improvement plan implementation: component replacements, protocol enhancements, and system optimizations with transparent stakeholder communication. We execute upgrades systematically to maximize production while minimizing downtime.</p>
       </div>
       
-      <div class="process__step" data-step="05">
+      <div class="process__step">
+        <div class="process__number">05</div>
         <h3>Asset Management</h3>
         <p>Steady-state operations with continuous monitoring, preventive maintenance, and strategic planning for future capital improvements and value creation. We implement data-driven maintenance protocols and performance optimization strategies.</p>
       </div>
@@ -673,8 +821,68 @@ a {
   </div>
 </section>
 
+<!-- Timeline Section -->
+<section class="section section--alt" id="timeline">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">Visual Process</span>
+      <h2>Execution Timeline</h2>
+      <p class="section__intro">Our process flows systematically from initial evaluation through long-term asset management.</p>
+    </div>
+    
+    <div class="process-timeline">
+      <div class="timeline__line"></div>
+      <div class="timeline__dot"></div>
+      <div class="timeline__dot"></div>
+      <div class="timeline__dot"></div>
+      <div class="timeline__dot"></div>
+      <div class="timeline__dot"></div>
+      
+      <div class="timeline__content">
+        <div class="timeline__number">01</div>
+        <div class="timeline__text">
+          <h3>Initial Screening</h3>
+          <p>Rapid asset qualification and opportunity assessment with market analysis.</p>
+        </div>
+      </div>
+      
+      <div class="timeline__content">
+        <div class="timeline__number">02</div>
+        <div class="timeline__text">
+          <h3>Due Diligence</h3>
+          <p>Comprehensive technical and financial evaluation with on-site analysis.</p>
+        </div>
+      </div>
+      
+      <div class="timeline__content">
+        <div class="timeline__number">03</div>
+        <div class="timeline__text">
+          <h3>Transaction Execution</h3>
+          <p>Tax-efficient structuring and seamless acquisition coordination.</p>
+        </div>
+      </div>
+      
+      <div class="timeline__content">
+        <div class="timeline__number">04</div>
+        <div class="timeline__text">
+          <h3>Repowering & Optimization</h3>
+          <p>Systematic implementation of improvement plans with stakeholder communication.</p>
+        </div>
+      </div>
+      
+      <div class="timeline__content">
+        <div class="timeline__number">05</div>
+        <div class="timeline__text">
+          <h3>Asset Management</h3>
+          <p>Long-term operations with continuous performance monitoring and optimization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Process Details Section -->
-<section class="section section--alt">
+<section class="section">
   <div class="container">
     <div class="section__header">
       <span class="section__eyebrow">Process Excellence</span>
@@ -682,23 +890,27 @@ a {
       <p class="section__intro">Our methodology combines technical expertise with commercial acumen to deliver superior outcomes.</p>
     </div>
     
-    <div class="process-details">
-      <div class="detail-card">
+    <div class="process__steps">
+      <div class="process__step">
+        <div class="process__number">📊</div>
         <h3>Technical Assessment Protocol</h3>
         <p>Comprehensive evaluation including IV curve testing, thermal imaging, electroluminescence analysis, and performance modeling. Our proprietary diagnostic tools identify hidden degradation patterns and failure modes.</p>
       </div>
       
-      <div class="detail-card">
+      <div class="process__step">
+        <div class="process__number">💰</div>
         <h3>Financial Structuring</h3>
         <p>Tax-efficient acquisition structures maximizing IRR while maintaining compliance. We optimize depreciation schedules, utilize existing tax benefits, and structure investments for long-term value creation.</p>
       </div>
       
-      <div class="detail-card">
+      <div class="process__step">
+        <div class="process__number">🔧</div>
         <h3>Operational Integration</h3>
         <p>Seamless transition of operations with minimal disruption. We establish clear KPIs, implement monitoring systems, and develop maintenance protocols tailored to each asset's specific needs.</p>
       </div>
       
-      <div class="detail-card">
+      <div class="process__step">
+        <div class="process__number">📈</div>
         <h3>Performance Optimization</h3>
         <p>Continuous improvement through data analytics and predictive maintenance. We leverage machine learning algorithms to forecast performance degradation and proactively address issues before they impact production.</p>
       </div>
@@ -709,30 +921,37 @@ a {
 <!-- Results Section -->
 <section class="results">
   <div class="results__content">
-    <h2>Timeline & Results</h2>
-    <p style="color: var(--color-gray-light); font-size: 1rem; margin-bottom: var(--spacing-xl);">Typical acquisition to stabilization: 90-180 days. Full repowering and optimization: 12-24 months.</p>
+    <h2>Proven Results & Timeline</h2>
+    <p style="color: var(--color-gray-light); font-size: 1.125rem; margin-bottom: var(--spacing-xl); max-width: 600px; margin-left: auto; margin-right: auto;">Our disciplined approach consistently delivers measurable improvements in asset performance and value creation.</p>
     
-    <div class="results-grid">
-      <div class="result-item">
-        <span class="result-number">90-180</span>
-        <span class="result-label">Days to Stabilization</span>
+    <div class="results__grid">
+      <div class="result__card">
+        <span class="result__number">90-180</span>
+        <span class="result__label">Days to Stabilization</span>
+        <p class="result__description">Rapid asset stabilization and initial performance improvements</p>
       </div>
-      <div class="result-item">
-        <span class="result-number">12-24</span>
-        <span class="result-label">Months Full Repowering</span>
+      
+      <div class="result__card">
+        <span class="result__number">12-24</span>
+        <span class="result__label">Months Full Repowering</span>
+        <p class="result__description">Complete technology upgrade and optimization implementation</p>
       </div>
-      <div class="result-item">
-        <span class="result-number">20-40%</span>
-        <span class="result-label">Energy Yield Increase</span>
+      
+      <div class="result__card">
+        <span class="result__number">20-40%</span>
+        <span class="result__label">Energy Yield Increase</span>
+        <p class="result__description">Measurable improvement in energy production and performance</p>
       </div>
-      <div class="result-item">
-        <span class="result-number">15-25</span>
-        <span class="result-label">Years Life Extension</span>
+      
+      <div class="result__card">
+        <span class="result__number">15-25</span>
+        <span class="result__label">Years Life Extension</span>
+        <p class="result__description">Extended operational life through technical optimization</p>
       </div>
     </div>
     
-    <div style="margin-top: var(--spacing-xl);">
-      <a href="contact.html" class="btn btn--primary">Start Your Project</a>
+    <div style="text-align: center; margin-top: var(--spacing-2xl);">
+      <a href="contact.html" class="btn btn--primary">Begin Your Asset Evaluation</a>
     </div>
   </div>
 </section>
@@ -743,7 +962,7 @@ a {
     <div class="footer__grid">
       <div class="footer__brand">
         <img src="./images/they.png" alt="Repowering Partners" />
-        <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value.</p>
+        <p>Acquiring, revitalizing, and optimizing solar energy assets for sustained performance and long-term value through technical excellence and strategic investment.</p>
       </div>
       
       <div>
@@ -759,20 +978,20 @@ a {
       <div>
         <h4>Resources</h4>
         <ul class="footer__links">
-          <li><a href="#">Market Insights</a></li>
-          <li><a href="#">Evaluation Criteria</a></li>
-          <li><a href="#">White Papers</a></li>
-          <li><a href="#">Industry Reports</a></li>
+          <li><a href="#">Technical Papers</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Market Analysis</a></li>
+          <li><a href="#">Due Diligence</a></li>
         </ul>
       </div>
       
       <div>
         <h4>Contact</h4>
         <ul class="footer__links">
-          <li><a href="mailto:info@repoweringpartners.com">Email</a></li>
-          <li><a href="contact.html">Portfolio Inquiries</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a></li>
+          <li><a href="contact.html">Asset Submission</a></li>
+          <li><a href="#">Technical Team</a></li>
+          <li><a href="#">Investment Team</a></li>
         </ul>
       </div>
     </div>

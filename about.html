@@ -390,9 +390,38 @@ a {
 }
 
 /* Expertise Grid */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
 .expertise-item {
-  text-align: center;
+  background: var(--color-white);
   padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-lighter);
+  transition: var(--transition);
+}
+
+.expertise-item:hover {
+  border-color: var(--color-gray-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.expertise-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--color-black);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  color: var(--color-white);
 }
 
 .expertise-item h3 {
@@ -403,74 +432,53 @@ a {
 
 .expertise-item p {
   color: var(--color-gray);
-  font-size: 0.9375rem;
-  max-width: 280px;
-  margin: 0 auto;
-}
-
-/* Timeline */
-.timeline {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--spacing-lg) 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--color-gray-lighter);
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: var(--spacing-xl);
-}
-
-.timeline-item:last-child {
+  font-size: 0.875rem;
+  line-height: 1.6;
   margin-bottom: 0;
 }
 
-.timeline-content {
-  background: var(--color-white);
+/* Stats Highlight */
+.stats-highlight {
+  background: var(--color-off-white);
+  padding: var(--spacing-xl) 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
   padding: var(--spacing-lg);
+  background: var(--color-white);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-gray-lighter);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  width: 45%;
+  transition: var(--transition);
 }
 
-.timeline-item:nth-child(odd) .timeline-content {
-  margin-left: auto;
+.stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
 }
 
-.timeline-item:nth-child(even) .timeline-content {
-  margin-right: auto;
-}
-
-.timeline-year {
+.stat-number {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--color-black);
+  display: block;
   margin-bottom: var(--spacing-sm);
 }
 
-.timeline-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-black);
-  margin-bottom: var(--spacing-sm);
-}
-
-.timeline-description {
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--color-gray);
-  line-height: 1.6;
 }
 
 /* Buttons */
@@ -478,7 +486,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.625rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   font-weight: 600;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -649,8 +657,8 @@ a {
         <p>Our team brings together decades of experience in utility-scale solar development, operations and maintenance, power plant engineering, and structured finance. This multidisciplinary approach enables us to identify value creation opportunities that traditional investors overlook.</p>
         
         <div class="featured-box" style="margin-top: var(--spacing-md);">
-          <h3 style="color: var(--color-white); font-size: 1.0625rem; margin-bottom: var(--spacing-xs);">Investment Philosophy</h3>
-          <p style="font-size: 0.875rem;">We believe the greatest opportunities lie not in greenfield development, but in optimizing existing assets. With 40+ gigawatts of early-generation solar approaching critical maintenance milestones, we provide the expertise to extend asset lives 15-25 years while improving energy yield 20-40%.</p>
+          <h3>Investment Philosophy</h3>
+          <p>We believe the greatest opportunities lie not in greenfield development, but in optimizing existing assets. With 40+ gigawatts of early-generation solar approaching critical maintenance milestones, we provide the expertise to extend asset lives 15-25 years while improving energy yield 20-40%.</p>
         </div>
       </div>
       
@@ -674,12 +682,11 @@ a {
       <div class="card">
         <h3 class="card__title">Comprehensive Due Diligence</h3>
         <div class="card__content">
-          <p>Our engineering team conducts exhaustive asset evaluations using proprietary diagnostic protocols:</p>
-          <ul style="margin-top: var(--spacing-sm); padding-left: 1.25rem;">
-            <li>12-24 month production analysis with PVsyst modeling</li>
-            <li>Thermal imaging and electroluminescence testing</li>
+          <p>Our engineering team conducts exhaustive asset evaluations using proprietary diagnostic protocols.</p>
+          <ul style="margin-top: var(--spacing-sm); padding-left: 1.25rem; list-style: none;">
+            <li style="margin-bottom: 0.5rem;">12-24 month production analysis with PVsyst modeling</li>
+            <li style="margin-bottom: 0.5rem;">Thermal imaging and electroluminescence testing</li>
             <li>IV curve tracing and hotspot analysis</li>
-            <li>Cash flow projections with yield optimization</li>
           </ul>
         </div>
       </div>
@@ -688,11 +695,10 @@ a {
         <h3 class="card__title">Asset Stabilization</h3>
         <div class="card__content">
           <p>Rapid response for distressed assets:</p>
-          <ul style="margin-top: var(--spacing-sm); padding-left: 1.25rem;">
-            <li>Emergency O&M deployment</li>
-            <li>Insurance claims management</li>
-            <li>Compliance remediation</li>
-            <li>Working capital injection</li>
+          <ul style="margin-top: var(--spacing-sm); padding-left: 1.25rem; list-style: none;">
+            <li style="margin-bottom: 0.5rem;">Emergency O&M deployment</li>
+            <li style="margin-bottom: 0.5rem;">Insurance claims management</li>
+            <li>Compliance remediation and working capital</li>
           </ul>
         </div>
       </div>
@@ -701,11 +707,10 @@ a {
         <h3 class="card__title">Long-Term Operations</h3>
         <div class="card__content">
           <p>Asset management optimization:</p>
-          <ul style="margin-top: var(--spacing-sm); padding-left: 1.25rem;">
-            <li>Predictive maintenance programs</li>
-            <li>Performance guarantees</li>
-            <li>Stakeholder reporting</li>
-            <li>Continuous improvement initiatives</li>
+          <ul style="margin-top: var(--spacing-sm); padding-left: 1.25rem; list-style: none;">
+            <li style="margin-bottom: 0.5rem;">Predictive maintenance programs</li>
+            <li style="margin-bottom: 0.5rem;">Performance guarantees</li>
+            <li>Stakeholder reporting and continuous improvement</li>
           </ul>
         </div>
       </div>
@@ -713,46 +718,80 @@ a {
   </div>
 </section>
 
-<!-- Expertise Timeline -->
+<!-- Expertise Section -->
 <section class="section">
   <div class="container">
     <div class="section__header">
-      <span class="section__eyebrow">Our Journey</span>
-      <h2>Decades of Solar Expertise</h2>
-      <p class="section__intro">Our team's combined experience spans the evolution of solar technology and markets.</p>
+      <span class="section__eyebrow">Core Competencies</span>
+      <h2>Technical Excellence Across the Asset Lifecycle</h2>
+      <p class="section__intro">Our comprehensive expertise covers every aspect of solar asset optimization and management.</p>
     </div>
     
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2008+</div>
-          <h3 class="timeline-title">Solar Development Pioneer</h3>
-          <p class="timeline-description">Early involvement in utility-scale solar projects across multiple states, establishing deep technical foundations.</p>
-        </div>
+    <div class="expertise-grid">
+      <div class="expertise-item">
+        <div class="expertise-icon">🔧</div>
+        <h3>Technical Assessment</h3>
+        <p>In-depth evaluation of asset condition, performance degradation, and optimization potential using advanced diagnostic tools and methodologies.</p>
       </div>
       
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2012+</div>
-          <h3 class="timeline-title">Operations Excellence</h3>
-          <p class="timeline-description">Development of sophisticated O&M protocols and performance optimization strategies for aging solar assets.</p>
-        </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">📊</div>
+        <h3>Financial Modeling</h3>
+        <p>Sophisticated financial analysis including cash flow projections, yield optimization, and tax-efficient acquisition structuring.</p>
       </div>
       
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2018+</div>
-          <h3 class="timeline-title">Asset Acquisition Focus</h3>
-          <p class="timeline-description">Strategic pivot to acquiring and revitalizing underperforming solar assets with proven technical expertise.</p>
-        </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">⚡</div>
+        <h3>Repowering Engineering</h3>
+        <p>Expert implementation of technology upgrades including inverter replacement, module restoration, and system optimization.</p>
       </div>
       
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">Today</div>
-          <h3 class="timeline-title">Market Leadership</h3>
-          <p class="timeline-description">Recognized leader in solar asset optimization with track record of successful repowering projects.</p>
-        </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">🛡️</div>
+        <h3>Risk Mitigation</h3>
+        <p>Comprehensive risk assessment and mitigation strategies protecting investor interests while maximizing upside potential.</p>
+      </div>
+      
+      <div class="expertise-item">
+        <div class="expertise-icon">📈</div>
+        <h3>Performance Optimization</h3>
+        <p>Data-driven continuous improvement programs enhancing asset productivity and extending operational life.</p>
+      </div>
+      
+      <div class="expertise-item">
+        <div class="expertise-icon">🤝</div>
+        <h3>Market Leadership</h3>
+        <p>Deep utility and corporate relationships enabling favorable restructurings and market opportunities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-highlight">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">Our Impact</span>
+      <h2>Proven Track Record</h2>
+      <p class="section__intro">Measurable results demonstrating our expertise and market leadership.</p>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">250+</span>
+        <span class="stat-label">Assets Evaluated</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">85+</span>
+        <span class="stat-label">MW Repowered</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">94%</span>
+        <span class="stat-label">Performance Recovery</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Years Experience</span>
       </div>
     </div>
   </div>
@@ -761,12 +800,9 @@ a {
 <!-- Call to Action -->
 <section class="section section--alt">
   <div class="container">
-    <div class="section__header">
-      <h2>Ready to Partner With Us?</h2>
-      <p class="section__intro">Join leading asset owners and investors who trust our technical expertise and investment discipline.</p>
-    </div>
-    
-    <div style="text-align: center; margin-top: var(--spacing-xl);">
+    <div style="text-align: center;">
+      <h2 style="margin-bottom: var(--spacing-md);">Ready to Partner With Us?</h2>
+      <p style="margin-bottom: var(--spacing-xl); max-width: 600px; margin-left: auto; margin-right: auto;">Join leading asset owners and investors who trust our technical expertise and investment discipline to optimize solar asset performance and value.</p>
       <a href="contact.html" class="btn btn--primary">Start Confidential Discussion</a>
     </div>
   </div>
