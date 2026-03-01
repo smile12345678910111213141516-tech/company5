@@ -22,7 +22,7 @@
 
 <style>
 :root {
-  --color-black: #0F1115;
+  --color-black: #0F1115; /* Slightly softer black for screens */
   --color-dark: #1a1a1a;
   --color-gray-dark: #333333;
   --color-gray: #555555;
@@ -147,16 +147,14 @@ a {
 .nav__brand {
   z-index: 1002;
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
-/* Logo Styling - Resizable */
-.nav__logo {
-  display: block;
-  max-height: 48px; /* Standard height for desktop */
-  width: auto;      /* Maintain aspect ratio */
-  transition: var(--transition);
+.nav__logo-text {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-black);
+  letter-spacing: -0.01em;
 }
 
 /* Desktop Menu */
@@ -210,14 +208,9 @@ a {
 }
 
 /* Responsive Menu Logic */
-@media (max-width: 900px) {
+@media (max-width: 900px) { /* Increased breakpoint to prevent overlap on tablets */
   .nav__toggle {
     display: block;
-  }
-  
-  /* Resize logo for smaller screens */
-  .nav__logo {
-    max-height: 36px;
   }
 
   .nav__links {
@@ -233,6 +226,7 @@ a {
     gap: var(--spacing-md);
     padding: var(--spacing-xl);
     
+    /* Animation styling */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -247,14 +241,14 @@ a {
   }
 
   .nav__links a {
-    font-size: 1.5rem;
-    font-family: var(--font-serif);
+    font-size: 1.5rem; /* Larger fonts for mobile touch targets */
+    font-family: var(--font-serif); /* Serif looks classy on mobile menu lists */
     text-transform: none;
     color: var(--color-black);
   }
   
   .nav__links a::after {
-    display: none; 
+    display: none; /* No underlines on mobile */
   }
 }
 
@@ -439,10 +433,7 @@ a {
   <div class="container">
     <div class="nav__inner">
       <div class="nav__brand">
-        <!-- Replaced text with logo image -->
-        <a href="index.html">
-          <img src="./images/to.png" alt="Repowering Partners" class="nav__logo" />
-        </a>
+        <a href="index.html" class="nav__logo-text">Repowering Partners</a>
       </div>
       
       <!-- Mobile Toggle Button -->
