@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact | Repowering Partners</title>
-<meta name="description" content="Submit your solar asset for a confidential evaluation. Preliminary assessments within 48 hours." />
+<title>Repowering Partners | Contact</title>
+<meta name="description" content="Contact Repowering Partners for confidential solar asset evaluations and inquiries." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Repowering Partners" />
 
@@ -105,6 +105,11 @@ a {
   transition: var(--transition);
 }
 
+/* Hero h1 override for white text on black background */
+.hero h1 {
+  color: var(--color-white);
+}
+
 /* Layout */
 .container {
   width: 100%;
@@ -136,31 +141,41 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  position: relative;
+  height: 72px; /* UNCHANGED */
+  position: relative; /* Added for logo positioning context */
 }
 
+/* LARGER LOGO - extends beyond navbar bounds without increasing navbar height */
 .nav__logo {
   position: relative;
   display: flex;
   align-items: center;
-  height: 72px;
-  overflow: visible;
+  height: 72px; /* Match navbar for alignment */
+  overflow: visible; /* allow the larger logo to visually extend without affecting layout */
 }
 
+/* Updated: larger navbar logo, but kept navbar height the same.
+   Use width: auto and transform/translate to avoid pushing the nav down.
+*/
 .nav__logo img {
-  height: 60px;
+  height: 60px; /* INCREASED to visually enlarge logo */
   width: auto;
-  max-width: none;
+  max-width: none; /* Allow natural width */
   filter: grayscale(100%);
   transition: var(--transition);
   display: block;
-  transform: translateY(6px);
-  margin: 0;
+  transform: translateY(6px); /* visually lower the image so it sits nicely while nav remains 72px */
+  margin: 0; /* remove negative margins that could affect flow */
 }
 
 .nav__logo:hover img {
   filter: grayscale(100%) brightness(0.8);
+}
+
+/* Alternative: Even larger logo that breaks out of navbar slightly */
+.nav__logo--large img {
+  height: 72px; /* Even larger option if you apply the modifier class */
+  transform: translateY(8px);
 }
 
 .nav__links {
@@ -234,6 +249,7 @@ a {
     font-size: 0.9375rem;
   }
   
+  /* Smaller logo on mobile to fit better */
   .nav__logo img {
     height: 40px;
     transform: translateY(0);
@@ -241,30 +257,32 @@ a {
   }
 }
 
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.625rem 1.25rem;
-  font-weight: 600;
-  font-size: 0.75rem;
+/* Hero Section for Subpages - Simplified */
+.hero {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
+}
+
+.hero__content {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero__eyebrow {
+  font-size: 0.6875rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-radius: var(--radius-sm);
-  transition: var(--transition);
-  cursor: pointer;
-  white-space: nowrap;
+  letter-spacing: 0.15em;
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-sm);
+  display: block;
 }
 
-.btn--primary {
-  background: var(--color-white);
-  color: var(--color-black);
-}
-
-.btn--primary:hover {
-  background: var(--color-gray-lightest);
-  transform: translateY(-1px);
+.hero h1 {
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* CTA Section */
@@ -367,6 +385,32 @@ a {
   }
 }
 
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn--primary:hover {
+  background: var(--color-gray-lightest);
+  transform: translateY(-1px);
+}
+
 /* Footer */
 .footer {
   background: var(--color-black);
@@ -396,9 +440,10 @@ a {
   }
 }
 
+/* Updated footer brand logo styling to preserve aspect-ratio and avoid stretching */
 .footer__brand img {
   height: auto;
-  max-height: 60px;
+  max-height: 60px; /* keep it compact but allow a clean size */
   width: auto;
   display: block;
   filter: grayscale(100%) brightness(0.8);
@@ -453,13 +498,21 @@ a {
   }
 }
 
-/* Page specific */
-.page-content {
-  padding-top: calc(72px + var(--spacing-xl));
-}
-
-.section__eyebrow {
-  color: var(--color-gray-light);
+/* Print */
+@media print {
+  .nav, .cta::before {
+    display: none;
+  }
+  
+  body {
+    padding-top: 0;
+    color: #000;
+    font-size: 11pt;
+  }
+  
+  .section {
+    padding: 24pt 0;
+  }
 }
 </style>
 </head>
@@ -486,70 +539,80 @@ a {
         <li role="none"><a href="index.html#focus" role="menuitem">Focus</a></li>
         <li role="none"><a href="index.html#capabilities" role="menuitem">Capabilities</a></li>
         <li role="none"><a href="process.html" role="menuitem">Process</a></li>
-        <li role="none"><a href="contact.html" role="menuitem" aria-current="page">Contact</a></li>
+        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Contact Section -->
-<section class="cta page-content">
+<!-- Hero Section for Contact -->
+<header class="hero" role="banner">
   <div class="container">
-    <div class="cta__content">
-      <span class="section__eyebrow">Get Started</span>
-      <h2>Confidential Asset Evaluation</h2>
-      <p style="color: var(--color-gray-light); font-size: 0.9375rem; margin-bottom: var(--spacing-lg);">Complimentary preliminary assessments for projects 1MW-200MW across all major U.S. solar markets.</p>
-      
-      <form class="form" action="https://formspree.io/f/xoqgkzlr" method="POST" aria-label="Asset inquiry form">
-        <input type="hidden" name="_subject" value="New Solar Asset Inquiry - Repowering Partners" />
-        <input type="hidden" name="_cc" value="Jim.bakhaus@repoweringpartners.com" />
-        
-        <div class="form__grid">
-          <div class="form__group">
-            <label class="form__label" for="name">Full Name</label>
-            <input type="text" id="name" name="name" class="form__input" required placeholder="John Smith" />
-          </div>
-          
-          <div class="form__group">
-            <label class="form__label" for="email">Email</label>
-            <input type="email" id="email" name="email" class="form__input" required placeholder="john@company.com" />
-          </div>
-        </div>
-        
-        <div class="form__group">
-          <label class="form__label" for="company">Organization</label>
-          <input type="text" id="company" name="company" class="form__input" placeholder="Asset Owner / Operator / Lender" />
-        </div>
-        
-        <div class="form__grid">
-          <div class="form__group">
-            <label class="form__label" for="asset-size">Asset Size (MW)</label>
-            <input type="text" id="asset-size" name="asset-size" class="form__input" placeholder="e.g., 50 MW" />
-          </div>
-          
-          <div class="form__group">
-            <label class="form__label" for="location">Location (State)</label>
-            <input type="text" id="location" name="location" class="form__input" placeholder="e.g., Texas" />
-          </div>
-        </div>
-        
-        <div class="form__group">
-          <label class="form__label" for="vintage">Commission Year</label>
-          <input type="text" id="vintage" name="vintage" class="form__input" placeholder="e.g., 2014" />
-        </div>
-        
-        <div class="form__group">
-          <label class="form__label" for="message">Asset Overview</label>
-          <textarea id="message" name="message" class="form__textarea" required placeholder="Describe asset condition, performance issues, ownership structure, and timeline..."></textarea>
-        </div>
-        
-        <button type="submit" class="btn" style="background: var(--color-white); color: var(--color-black); width: 100%; font-size: 0.8125rem;">Submit Inquiry</button>
-      </form>
-      
-      <p style="color: var(--color-gray-light); font-size: 0.75rem; margin-top: var(--spacing-md); opacity: 0.7;">All information kept strictly confidential per our privacy policy.</p>
+    <div class="hero__content">
+      <span class="hero__eyebrow">Get Started</span>
+      <h1>Confidential Asset Evaluation</h1>
     </div>
   </div>
-</section>
+</header>
+
+<main>
+  <!-- Contact Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta__content">
+        <p style="color: var(--color-gray-light); font-size: 0.9375rem; margin-bottom: var(--spacing-lg);">Complimentary preliminary assessments for projects 1MW-200MW across all major U.S. solar markets.</p>
+        
+        <form class="form" action="https://formspree.io/f/xoqgkzlr" method="POST" aria-label="Asset inquiry form">
+          <input type="hidden" name="_subject" value="New Solar Asset Inquiry - Repowering Partners" />
+          <input type="hidden" name="_cc" value="Jim.bakhaus@repoweringpartners.com" />
+          
+          <div class="form__grid">
+            <div class="form__group">
+              <label class="form__label" for="name">Full Name</label>
+              <input type="text" id="name" name="name" class="form__input" required placeholder="John Smith" />
+            </div>
+            
+            <div class="form__group">
+              <label class="form__label" for="email">Email</label>
+              <input type="email" id="email" name="email" class="form__input" required placeholder="john@company.com" />
+            </div>
+          </div>
+          
+          <div class="form__group">
+            <label class="form__label" for="company">Organization</label>
+            <input type="text" id="company" name="company" class="form__input" placeholder="Asset Owner / Operator / Lender" />
+          </div>
+          
+          <div class="form__grid">
+            <div class="form__group">
+              <label class="form__label" for="asset-size">Asset Size (MW)</label>
+              <input type="text" id="asset-size" name="asset-size" class="form__input" placeholder="e.g., 50 MW" />
+            </div>
+            
+            <div class="form__group">
+              <label class="form__label" for="location">Location (State)</label>
+              <input type="text" id="location" name="location" class="form__input" placeholder="e.g., Texas" />
+            </div>
+          </div>
+          
+          <div class="form__group">
+            <label class="form__label" for="vintage">Commission Year</label>
+            <input type="text" id="vintage" name="vintage" class="form__input" placeholder="e.g., 2014" />
+          </div>
+          
+          <div class="form__group">
+            <label class="form__label" for="message">Asset Overview</label>
+            <textarea id="message" name="message" class="form__textarea" required placeholder="Describe asset condition, performance issues, ownership structure, and timeline..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn" style="background: var(--color-white); color: var(--color-black); width: 100%; font-size: 0.8125rem;">Submit Inquiry</button>
+        </form>
+        
+        <p style="color: var(--color-gray-light); font-size: 0.75rem; margin-top: var(--spacing-md); opacity: 0.7;">All information kept strictly confidential per our privacy policy.</p>
+      </div>
+    </div>
+  </section>
+</main>
 
 <!-- Footer -->
 <footer class="footer">
@@ -584,7 +647,7 @@ a {
         <h4>Contact</h4>
         <ul class="footer__links">
           <li><a href="mailto:info@repoweringpartners.com">Email</a></li>
-          <li><a href="contact.html" aria-current="page">Portfolio Inquiries</a></li>
+          <li><a href="contact.html">Portfolio Inquiries</a></li>
           <li><a href="#">Press</a></li>
           <li><a href="#">Careers</a></li>
         </ul>
