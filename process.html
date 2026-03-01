@@ -243,71 +243,24 @@ a {
 
 /* Hero Section */
 .hero {
-  background: var(--color-black);
+  background: linear-gradient(135deg, var(--color-black) 0%, #2563eb 100%);
   color: var(--color-white);
-  min-height: auto;
   padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero__content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
   text-align: center;
 }
 
-.hero__eyebrow {
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-gray-light);
-  margin-bottom: var(--spacing-sm);
-  display: block;
-}
-
 .hero h1 {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
   font-weight: 600;
   line-height: 1.2;
 }
 
 .hero__subtitle {
-  font-size: 1.0625rem;
-  color: var(--color-gray-light);
-  margin-bottom: var(--spacing-lg);
-  max-width: 60ch;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl);
   line-height: 1.6;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.625rem 1.25rem;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-radius: var(--radius-sm);
-  transition: var(--transition);
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.btn--primary {
-  background: var(--color-white);
-  color: var(--color-black);
-}
-
-.btn--primary:hover {
-  background: var(--color-gray-lightest);
-  transform: translateY(-1px);
 }
 
 /* Sections */
@@ -344,70 +297,183 @@ a {
 
 /* Process Steps */
 .process {
-  counter-reset: step;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .process__step {
   position: relative;
-  padding-left: calc(var(--spacing-xl) + var(--spacing-sm));
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-md);
+  padding-left: 80px;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-gray-lighter);
 }
 
 .process__step:last-child {
+  border-bottom: none;
   margin-bottom: 0;
 }
 
 .process__step::before {
-  counter-increment: step;
-  content: '0' counter(step);
+  content: attr(data-step);
   position: absolute;
   left: 0;
   top: 0;
-  width: 36px;
-  height: 36px;
+  width: 60px;
+  height: 60px;
   background: var(--color-black);
   color: var(--color-white);
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
 }
 
-.process__step h4 {
-  font-size: 1.0625rem;
-  margin-bottom: var(--spacing-xs);
+.process__step:nth-child(2)::before { background: #2563eb; }
+.process__step:nth-child(3)::before { background: #059669; }
+.process__step:nth-child(4)::before { background: #dc2626; }
+.process__step:nth-child(5)::before { background: #7c3aed; }
+
+.process__step h3 {
+  font-size: 1.375rem;
+  margin-bottom: var(--spacing-sm);
   color: var(--color-black);
 }
 
 .process__step p {
   color: var(--color-gray);
   font-size: 0.9375rem;
+  line-height: 1.7;
   margin-bottom: 0;
 }
 
-/* Featured Box */
-.featured-box {
-  background: var(--color-black);
-  color: var(--color-white);
+/* Timeline Visual */
+.timeline-visual {
+  position: absolute;
+  left: 30px;
+  top: 60px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-black) 0%, #2563eb 25%, #059669 50%, #dc2626 75%, #7c3aed 100%);
+}
+
+/* Process Details */
+.process-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+
+.detail-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-lighter);
   padding: var(--spacing-lg);
   border-radius: var(--radius-md);
-  margin-top: var(--spacing-xl);
+  transition: var(--transition);
+}
+
+.detail-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+  border-color: var(--color-gray-light);
+}
+
+.detail-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-black);
+}
+
+.detail-card p {
+  color: var(--color-gray);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Results Section */
+.results {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: var(--spacing-2xl) 0;
+}
+
+.results__content {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.featured-box h3 {
+.results h2 {
   color: var(--color-white);
+  margin-bottom: var(--spacing-lg);
 }
 
-.featured-box p {
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.result-item {
+  text-align: center;
+}
+
+.result-number {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.result-label {
+  font-size: 0.875rem;
   color: var(--color-gray-light);
-  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn--primary:hover {
+  background: var(--color-gray-lightest);
+  transform: translateY(-1px);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.btn--secondary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--color-white);
 }
 
 /* Footer */
@@ -496,6 +562,23 @@ a {
   }
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .process__step {
+    padding-left: 60px;
+  }
+  
+  .process__step::before {
+    width: 40px;
+    height: 40px;
+    font-size: 0.875rem;
+  }
+  
+  .timeline-visual {
+    left: 20px;
+  }
+}
+
 /* Print */
 @media print {
   .nav {
@@ -533,9 +616,8 @@ a {
       </button>
       
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="index.html#about" role="menuitem">About</a></li>
-        <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
-        <li role="none"><a href="index.html#capabilities" role="menuitem">Capabilities</a></li>
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
         <li role="none"><a href="process.html" role="menuitem">Process</a></li>
         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
@@ -546,94 +628,114 @@ a {
 <!-- Hero Section -->
 <header class="hero" role="banner">
   <div class="container">
-    <div class="hero__content">
-      <span class="hero__eyebrow">Methodology</span>
-      <h1>Transaction-to-Operations Process</h1>
-      <p class="hero__subtitle">Five disciplined phases ensuring rigorous evaluation and measurable performance improvement. Our systematic approach transforms underperforming assets into optimized, revenue-generating facilities.</p>
-    </div>
+    <h1>Transaction-to-Operations Process</h1>
+    <p class="hero__subtitle">Five disciplined phases ensuring rigorous evaluation and measurable performance improvement. Our systematic approach transforms underperforming assets into optimized, revenue-generating facilities.</p>
   </div>
 </header>
 
-<main>
-  <!-- Process Section -->
-  <section id="process" class="section section--alt">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__eyebrow">Our Approach</span>
-        <h2>Disciplined Execution</h2>
-        <p class="section__intro">Each phase builds on the previous, ensuring comprehensive evaluation and value maximization throughout the asset lifecycle.</p>
+<!-- Process Section -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">Methodology</span>
+      <h2>Disciplined Execution</h2>
+      <p class="section__intro">Each phase builds on the previous, ensuring comprehensive evaluation and value maximization throughout the asset lifecycle.</p>
+    </div>
+    
+    <div class="process">
+      <div class="timeline-visual"></div>
+      
+      <div class="process__step" data-step="01">
+        <h3>Initial Screening</h3>
+        <p>Rapid asset qualification based on vintage, technology, location, and distress indicators. We assess remaining useful life, performance ratios, and market context to prioritize opportunities with the highest potential for value creation.</p>
       </div>
       
-      <div class="process">
-        <div class="process__step">
-          <h4>Initial Screening</h4>
-          <p>Rapid asset qualification based on vintage, technology, location, and distress indicators. We assess remaining useful life, performance ratios, and market context to prioritize opportunities with the highest potential for value creation.</p>
-        </div>
-        
-        <div class="process__step">
-          <h4>Due Diligence</h4>
-          <p>Integrated technical and financial review including on-site inspections, production data analysis, O&M record review, and evaluation of PPAs, leases, and interconnection agreements. Our engineering team identifies specific improvement opportunities and quantifies potential returns.</p>
-        </div>
-        
-        <div class="process__step">
-          <h4>Transaction Execution</h4>
-          <p>Tax-efficient acquisition structuring with legal, tax, and financing coordination. We minimize friction while protecting investor interests and ensuring operational continuity. Our team handles complex restructurings, including tax equity flips and lender workouts.</p>
-        </div>
-        
-        <div class="process__step">
-          <h4>Repowering & Optimization</h4>
-          <p>Prioritized improvement plan implementation: component replacements, protocol enhancements, and system optimizations with transparent stakeholder communication. We execute upgrades systematically to maximize production while minimizing downtime.</p>
-        </div>
-        
-        <div class="process__step">
-          <h4>Asset Management</h4>
-          <p>Steady-state operations with continuous monitoring, preventive maintenance, and strategic planning for future capital improvements and value creation. We implement data-driven maintenance protocols and performance optimization strategies.</p>
-        </div>
+      <div class="process__step" data-step="02">
+        <h3>Due Diligence</h3>
+        <p>Integrated technical and financial review including on-site inspections, production data analysis, O&M record review, and evaluation of PPAs, leases, and interconnection agreements. Our engineering team identifies specific improvement opportunities and quantifies potential returns.</p>
       </div>
       
-      <div class="featured-box">
-        <h3 style="color: var(--color-white); font-size: 1.25rem; margin-bottom: var(--spacing-sm);">Timeline & Results</h3>
-        <p style="margin-bottom: var(--spacing-md);">Typical acquisition to stabilization: 90-180 days. Full repowering and optimization: 12-24 months. Average performance improvement: 20-40% increase in energy yield with 15-25 year asset life extension.</p>
-        <a href="contact.html" class="btn btn--primary" style="width: 100%; max-width: 300px; margin: 0 auto;">Start Your Evaluation</a>
+      <div class="process__step" data-step="03">
+        <h3>Transaction Execution</h3>
+        <p>Tax-efficient acquisition structuring with legal, tax, and financing coordination. We minimize friction while protecting investor interests and ensuring operational continuity. Our team handles complex restructurings, including tax equity flips and lender workouts.</p>
+      </div>
+      
+      <div class="process__step" data-step="04">
+        <h3>Repowering & Optimization</h3>
+        <p>Prioritized improvement plan implementation: component replacements, protocol enhancements, and system optimizations with transparent stakeholder communication. We execute upgrades systematically to maximize production while minimizing downtime.</p>
+      </div>
+      
+      <div class="process__step" data-step="05">
+        <h3>Asset Management</h3>
+        <p>Steady-state operations with continuous monitoring, preventive maintenance, and strategic planning for future capital improvements and value creation. We implement data-driven maintenance protocols and performance optimization strategies.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Process Details Section -->
-  <section class="section">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__eyebrow">Deep Dive</span>
-        <h2>Process Excellence</h2>
-        <p class="section__intro">Our methodology combines technical expertise with commercial acumen to deliver superior outcomes.</p>
+<!-- Process Details Section -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">Process Excellence</span>
+      <h2>Technical and Commercial Expertise</h2>
+      <p class="section__intro">Our methodology combines technical expertise with commercial acumen to deliver superior outcomes.</p>
+    </div>
+    
+    <div class="process-details">
+      <div class="detail-card">
+        <h3>Technical Assessment Protocol</h3>
+        <p>Comprehensive evaluation including IV curve testing, thermal imaging, electroluminescence analysis, and performance modeling. Our proprietary diagnostic tools identify hidden degradation patterns and failure modes.</p>
       </div>
       
-      <div style="max-width: 800px; margin: 0 auto;">
-        <div style="display: grid; gap: var(--spacing-lg);">
-          <div>
-            <h3 style="font-size: 1.125rem; margin-bottom: var(--spacing-sm);">Technical Assessment Protocol</h3>
-            <p style="color: var(--color-gray); font-size: 0.9375rem;">Comprehensive evaluation including IV curve testing, thermal imaging, electroluminescence analysis, and performance modeling. Our proprietary diagnostic tools identify hidden degradation patterns and failure modes.</p>
-          </div>
-          
-          <div>
-            <h3 style="font-size: 1.125rem; margin-bottom: var(--spacing-sm);">Financial Structuring</h3>
-            <p style="color: var(--color-gray); font-size: 0.9375rem;">Tax-efficient acquisition structures maximizing IRR while maintaining compliance. We optimize depreciation schedules, utilize existing tax benefits, and structure investments for long-term value creation.</p>
-          </div>
-          
-          <div>
-            <h3 style="font-size: 1.125rem; margin-bottom: var(--spacing-sm);">Operational Integration</h3>
-            <p style="color: var(--color-gray); font-size: 0.9375rem;">Seamless transition of operations with minimal disruption. We establish clear KPIs, implement monitoring systems, and develop maintenance protocols tailored to each asset's specific needs.</p>
-          </div>
-          
-          <div>
-            <h3 style="font-size: 1.125rem; margin-bottom: var(--spacing-sm);">Performance Optimization</h3>
-            <p style="color: var(--color-gray); font-size: 0.9375rem;">Continuous improvement through data analytics and predictive maintenance. We leverage machine learning algorithms to forecast performance degradation and proactively address issues before they impact production.</p>
-          </div>
-        </div>
+      <div class="detail-card">
+        <h3>Financial Structuring</h3>
+        <p>Tax-efficient acquisition structures maximizing IRR while maintaining compliance. We optimize depreciation schedules, utilize existing tax benefits, and structure investments for long-term value creation.</p>
+      </div>
+      
+      <div class="detail-card">
+        <h3>Operational Integration</h3>
+        <p>Seamless transition of operations with minimal disruption. We establish clear KPIs, implement monitoring systems, and develop maintenance protocols tailored to each asset's specific needs.</p>
+      </div>
+      
+      <div class="detail-card">
+        <h3>Performance Optimization</h3>
+        <p>Continuous improvement through data analytics and predictive maintenance. We leverage machine learning algorithms to forecast performance degradation and proactively address issues before they impact production.</p>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
+
+<!-- Results Section -->
+<section class="results">
+  <div class="results__content">
+    <h2>Timeline & Results</h2>
+    <p style="color: var(--color-gray-light); font-size: 1rem; margin-bottom: var(--spacing-xl);">Typical acquisition to stabilization: 90-180 days. Full repowering and optimization: 12-24 months.</p>
+    
+    <div class="results-grid">
+      <div class="result-item">
+        <span class="result-number">90-180</span>
+        <span class="result-label">Days to Stabilization</span>
+      </div>
+      <div class="result-item">
+        <span class="result-number">12-24</span>
+        <span class="result-label">Months Full Repowering</span>
+      </div>
+      <div class="result-item">
+        <span class="result-number">20-40%</span>
+        <span class="result-label">Energy Yield Increase</span>
+      </div>
+      <div class="result-item">
+        <span class="result-number">15-25</span>
+        <span class="result-label">Years Life Extension</span>
+      </div>
+    </div>
+    
+    <div style="margin-top: var(--spacing-xl);">
+      <a href="contact.html" class="btn btn--primary">Start Your Project</a>
+    </div>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer class="footer">
@@ -647,10 +749,10 @@ a {
       <div>
         <h4>Company</h4>
         <ul class="footer__links">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="focus.html">Investment Focus</a></li>
-          <li><a href="index.html#capabilities">Capabilities</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="process.html">Process</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       
