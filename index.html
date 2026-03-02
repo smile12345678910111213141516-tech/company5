@@ -151,12 +151,13 @@ a {
   align-items: center;
 }
 
-/* Logo Styling */
-.nav__logo {
-  display: block;
-  max-height: 48px;
-  width: auto;
-  transition: var(--transition);
+/* Logo Styling - Text Version */
+.nav__logo-text {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-black);
+  letter-spacing: -0.01em;
 }
 
 /* Desktop Menu */
@@ -214,10 +215,6 @@ a {
     display: block;
   }
   
-  .nav__logo {
-    max-height: 36px;
-  }
-
   .nav__links {
     position: fixed;
     top: 0;
@@ -435,10 +432,8 @@ a {
   <div class="container">
     <div class="nav__inner">
       <div class="nav__brand">
-        <!-- Logo points to index.html -->
-        <a href="index.html">
-          <img src="./images/to.png" alt="Repowering Partners" class="nav__logo" />
-        </a>
+        <!-- Replaced image with text logo to match other pages -->
+        <a href="index.html" class="nav__logo-text">Repowering Partners</a>
       </div>
       
       <!-- Mobile Toggle Button -->
@@ -456,7 +451,6 @@ a {
       
       <!-- Menu Links -->
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <!-- 'About' link now points to index.html -->
         <li role="none"><a href="index.html" role="menuitem">About</a></li>
         <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
         <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
@@ -509,7 +503,6 @@ a {
       <div>
         <h4>Company</h4>
         <ul>
-          <!-- 'About' link now points to index.html -->
           <li><a href="index.html">About</a></li>
           <li><a href="focus.html">Focus</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
