@@ -66,6 +66,7 @@ body {
   color: var(--color-gray-dark);
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body.no-scroll {
@@ -135,6 +136,8 @@ a {
   height: var(--nav-height);
   display: flex;
   align-items: center;
+  opacity: 0; /* Hidden for animation */
+  transform: translateY(-20px);
 }
 
 .nav__inner {
@@ -188,11 +191,13 @@ a {
   transition: var(--transition);
 }
 
-.nav__links a:hover {
+.nav__links a:hover,
+.nav__links a.active {
   color: var(--color-black);
 }
 
-.nav__links a:hover::after {
+.nav__links a:hover::after,
+.nav__links a.active::after {
   width: 100%;
 }
 
@@ -256,6 +261,7 @@ a {
   background-color: var(--color-black);
   color: var(--color-white);
   padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-2xl);
+  overflow: hidden;
 }
 
 .hero__content {
@@ -272,12 +278,14 @@ a {
   letter-spacing: 0.15em;
   margin-bottom: var(--spacing-sm);
   font-weight: 500;
+  opacity: 0; /* Hidden for animation */
 }
 
 .hero h1 {
   color: var(--color-white);
   margin-bottom: var(--spacing-md);
   max-width: 20ch;
+  opacity: 0; /* Hidden for animation */
 }
 
 /* Sections */
@@ -323,12 +331,13 @@ a {
   border: 1px solid var(--color-gray-lighter);
   padding: var(--spacing-lg);
   transition: var(--transition);
+  height: 100%;
 }
 
 .card:hover {
   border-color: var(--color-gray-light);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
 }
 
 .card__title {
@@ -382,6 +391,13 @@ a {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Mobile Footer Centering */
+@media (max-width: 600px) {
+  .footer__grid {
+    text-align: center;
+  }
+}
+
 .footer h4 {
   color: var(--color-white);
   font-family: var(--font-sans);
@@ -425,6 +441,12 @@ a {
     text-align: center;
   }
 }
+
+/* Animation Utilities */
+.anim-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+}
 </style>
 </head>
 <body>
@@ -450,8 +472,8 @@ a {
       </button>
       
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="about.html" role="menuitem">About</a></li>
-        <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
+        <li role="none"><a href="index.html" role="menuitem">About</a></li>
+        <li role="none"><a href="focus.html" class="active" role="menuitem">Focus</a></li>
         <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
         <li role="none"><a href="process.html" role="menuitem">Process</a></li>
         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
@@ -475,11 +497,11 @@ a {
   <section class="section section--alt">
     <div class="container">
       <div class="section__header">
-        <p class="section__intro">We specialize in complex solar scenarios where technical due diligence and operational restructuring unlock substantial value.</p>
+        <p class="section__intro anim-scroll">We specialize in complex solar scenarios where technical due diligence and operational restructuring unlock substantial value.</p>
       </div>
       
       <div class="grid grid--3cols">
-        <article class="card">
+        <article class="card anim-scroll">
           <h3 class="card__title">Aging Infrastructure</h3>
           <div class="card__content">
             <p>2010-2016 vintage projects requiring component replacement:</p>
@@ -492,7 +514,7 @@ a {
           </div>
         </article>
         
-        <article class="card">
+        <article class="card anim-scroll">
           <h3 class="card__title">Distressed Assets</h3>
           <div class="card__content">
             <p>Facilities facing financial or operational challenges:</p>
@@ -505,7 +527,7 @@ a {
           </div>
         </article>
         
-        <article class="card">
+        <article class="card anim-scroll">
           <h3 class="card__title">Underperformance</h3>
           <div class="card__content">
             <p>Projects below projected energy yield:</p>
@@ -518,7 +540,7 @@ a {
           </div>
         </article>
         
-        <article class="card">
+        <article class="card anim-scroll">
           <h3 class="card__title">Utility & C&I Scale</h3>
           <div class="card__content">
             <p>Assets 1MW and larger including:</p>
@@ -531,7 +553,7 @@ a {
           </div>
         </article>
         
-        <article class="card">
+        <article class="card anim-scroll">
           <h3 class="card__title">Repowering</h3>
           <div class="card__content">
             <p>Technology upgrade candidates:</p>
@@ -544,7 +566,7 @@ a {
           </div>
         </article>
         
-        <article class="card">
+        <article class="card anim-scroll">
           <h3 class="card__title">Key Markets</h3>
           <div class="card__content">
             <p>High-growth U.S. solar corridors:</p>
@@ -567,8 +589,8 @@ a {
     <div class="footer__grid">
       <div>
         <h4>Company</h4>
-        <ul class="footer__links">
-          <li><a href="about.html">About</a></li>
+        <ul class="footer__links anim-scroll">
+          <li><a href="index.html">About</a></li>
           <li><a href="focus.html">Focus</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
@@ -577,7 +599,7 @@ a {
       
       <div>
         <h4>Resources</h4>
-        <ul class="footer__links">
+        <ul class="footer__links anim-scroll">
           <li><a href="#">Market Insights</a></li>
           <li><a href="#">Evaluation Criteria</a></li>
           <li><a href="#">White Papers</a></li>
@@ -587,7 +609,7 @@ a {
       
       <div>
         <h4>Contact</h4>
-        <ul class="footer__links">
+        <ul class="footer__links anim-scroll">
           <li><a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a></li>
           <li><a href="contact.html">Portfolio Inquiries</a></li>
           <li><a href="#">Press</a></li>
@@ -606,8 +628,12 @@ a {
   </div>
 </footer>
 
+<!-- Anime.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Mobile Navigation Logic
   const navToggle = document.querySelector('.nav__toggle');
   const navMenu = document.querySelector('.nav__links');
   const hamburger = document.querySelector('#hamburger');
@@ -616,15 +642,20 @@ a {
   
   function toggleNav() {
     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-    
     navToggle.setAttribute('aria-expanded', !isExpanded);
     navMenu.classList.toggle('is-active');
     
-    // Toggle scroll lock on body
     if (!isExpanded) {
       body.classList.add('no-scroll');
       hamburger.style.display = 'none';
       closeIcon.style.display = 'block';
+      anime({
+        targets: '.nav__links a',
+        translateY: [20, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(100),
+        easing: 'easeOutExpo'
+      });
     } else {
       body.classList.remove('no-scroll');
       hamburger.style.display = 'block';
@@ -634,7 +665,6 @@ a {
   
   navToggle.addEventListener('click', toggleNav);
   
-  // Close menu when clicking a link
   document.querySelectorAll('.nav__links a').forEach(link => {
     link.addEventListener('click', () => {
       navToggle.setAttribute('aria-expanded', 'false');
@@ -644,25 +674,64 @@ a {
       closeIcon.style.display = 'none';
     });
   });
-  
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
-      toggleNav();
-    }
+
+  // 2. Initial Page Load Animation
+  // Ensure elements start hidden to avoid flash
+  anime.set('.nav, .hero__eyebrow, .hero h1', { opacity: 0 });
+
+  const tl = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: 1000
   });
 
-  // Handle Resize implies closing menu
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900 && navMenu.classList.contains('is-active')) {
-       navToggle.setAttribute('aria-expanded', 'false');
-       navMenu.classList.remove('is-active');
-       body.classList.remove('no-scroll');
-       hamburger.style.display = 'block';
-       closeIcon.style.display = 'none';
-    }
+  tl
+  .add({
+    targets: '.nav',
+    translateY: [-20, 0],
+    opacity: [0, 1],
+    duration: 800
+  })
+  .add({
+    targets: '.hero__eyebrow',
+    translateY: [30, 0],
+    opacity: [0, 1],
+    duration: 800
+  }, '-=400')
+  .add({
+    targets: '.hero h1',
+    translateY: [40, 0],
+    opacity: [0, 1],
+    duration: 1000
+  }, '-=600');
+
+  // 3. Scroll Triggered Animations
+  const scrollElements = document.querySelectorAll('.anim-scroll');
+
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          translateY: [50, 0],
+          opacity: [0, 1],
+          duration: 600,
+          easing: 'easeOutCubic'
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  scrollElements.forEach(el => {
+    el.style.opacity = 0; // Ensure hidden before JS runs
+    observer.observe(el);
   });
-})();
+});
 </script>
 
 </body>
