@@ -96,6 +96,13 @@ h3 {
   font-weight: 600;
 }
 
+h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  margin-bottom: 0.25rem;
+}
+
 p {
   margin-bottom: var(--spacing-md);
   max-width: 65ch;
@@ -146,7 +153,6 @@ a {
 
 .nav__brand {
   z-index: 1002;
-  position: relative;
 }
 
 .nav__logo-text {
@@ -303,7 +309,7 @@ a {
 }
 
 .section__intro {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: var(--color-dark);
   font-weight: 400;
   margin-bottom: var(--spacing-lg);
@@ -317,56 +323,34 @@ a {
   gap: var(--spacing-md);
 }
 
-.grid--2cols {
+.grid-2 {
+  display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-xl);
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
 }
 
-@media (min-width: 900px) {
-  .grid--2cols {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-}
-
-.grid--3cols {
+.grid-3 {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-md);
 }
 
-/* Cards */
-.card {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-lighter);
-  padding: var(--spacing-lg);
-  transition: var(--transition);
+@media (min-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.card:hover {
-  border-color: var(--color-gray-light);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
-}
-
-.card__title {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  margin-bottom: var(--spacing-xs);
-  color: var(--color-black);
-}
-
-.card__content {
-  color: var(--color-gray);
-  line-height: 1.6;
-  font-size: 0.875rem;
-}
-
-/* Image Handling */
+/* Specific Content Styling */
 .img-wrapper {
   position: relative;
-  overflow: hidden;
   border-radius: var(--radius-md);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  height: 100%;
+  min-height: 400px;
 }
 
 .img-wrapper img {
@@ -374,41 +358,78 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.service-list {
+  margin-top: var(--spacing-lg);
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.service-item {
+  border-left: 2px solid var(--color-gray-lighter);
+  padding-left: var(--spacing-sm);
+  transition: border-color 0.3s;
+}
+
+.service-item:hover {
+  border-left-color: var(--color-black);
+}
+
+.service-item p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+/* Cards */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-lighter);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
   transition: var(--transition);
 }
 
-.img-wrapper:hover img {
-  transform: scale(1.02);
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border-color: var(--color-gray);
 }
 
-/* List Styling */
-.list--check {
+.card__title {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Check Lists */
+.check-list {
   list-style: none;
-  padding: 0;
+  margin-top: var(--spacing-sm);
 }
 
-.list--check li {
+.check-list li {
   position: relative;
-  padding-left: 1.25rem;
-  margin-bottom: 0.375rem;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
   color: var(--color-gray);
   font-size: 0.875rem;
 }
 
-.list--check li::before {
-  content: '—';
+.check-list li::before {
+  content: '✓';
   position: absolute;
   left: 0;
   color: var(--color-black);
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 0.75rem;
+  top: 3px;
 }
 
 /* Footer */
 .footer {
   background: var(--color-black);
-  color: var(--color-gray-light);
+  color: var(--color-gray);
   padding: var(--spacing-2xl) 0 var(--spacing-lg);
-  border-top: 1px solid var(--color-gray-dark);
   font-size: 0.875rem;
 }
 
@@ -428,20 +449,19 @@ a {
   margin-bottom: var(--spacing-md);
 }
 
-.footer__links {
+.footer ul {
   list-style: none;
 }
 
-.footer__links li {
+.footer li {
   margin-bottom: 0.75rem;
 }
 
-.footer__links a {
-  color: var(--color-gray-light);
+.footer a {
   transition: color 0.2s;
 }
 
-.footer__links a:hover {
+.footer a:hover {
   color: var(--color-white);
 }
 
@@ -454,13 +474,6 @@ a {
   flex-wrap: wrap;
   gap: var(--spacing-sm);
   font-size: 0.75rem;
-}
-
-@media (max-width: 500px) {
-  .footer__bottom {
-    flex-direction: column;
-    text-align: center;
-  }
 }
 </style>
 </head>
@@ -487,9 +500,9 @@ a {
       </button>
       
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="index.html" role="menuitem">About</a></li>
         <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
-        <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
+        <li role="none"><a href="capabilities.html" class="active" role="menuitem">Capabilities</a></li>
         <li role="none"><a href="process.html" role="menuitem">Process</a></li>
         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
@@ -508,77 +521,73 @@ a {
 </header>
 
 <main>
-  <!-- Capabilities Section -->
   <section class="section">
     <div class="container">
+      <!-- Intro -->
       <div class="section__header">
-        <span class="section__eyebrow">Our Approach</span>
-        <p class="section__intro">From due diligence through long-term operations, our vertically integrated approach delivers measurable performance improvements.</p>
+        <p class="section__intro">From due diligence through long-term operations, our vertically integrated approach delivers measurable performance improvements and revitalizes solar assets.</p>
       </div>
       
-      <div class="grid grid--2cols" style="margin-bottom: var(--spacing-xl);">
+      <!-- Feature Highlight (Grid 2) -->
+      <div class="grid-2">
         <div class="img-wrapper">
-          <img src="./images/Main-Purpose-Of-Solar-Panels-scaled-2560x1280.jpeg.webp" alt="Utility-scale solar maintenance operations" width="600" height="750" loading="lazy" />
+          <img src="./images/Main-Purpose-Of-Solar-Panels-scaled-2560x1280.jpeg.webp" alt="Utility-scale solar maintenance operations" loading="lazy" />
         </div>
-        <div>
+        
+        <div class="content-block">
           <h3>Comprehensive Due Diligence</h3>
-          <p style="font-size: 0.925rem; margin-bottom: var(--spacing-md);">Our engineering team conducts exhaustive asset evaluations using proprietary diagnostic protocols.</p>
+          <p>Our engineering team conducts exhaustive asset evaluations using proprietary diagnostic protocols to uncover hidden value.</p>
           
-          <div style="display: grid; gap: var(--spacing-md);">
-            <div>
-              <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Performance Analytics</h4>
-              <p style="color: var(--color-gray); font-size: 0.875rem;">12-24 month production analysis with PVsyst modeling and thermal imaging.</p>
+          <div class="service-list">
+            <div class="service-item">
+              <h4>Performance Analytics</h4>
+              <p>12-24 month production analysis with PVsyst modeling and thermal imaging.</p>
             </div>
-            <div>
-              <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Component Forensics</h4>
-              <p style="color: var(--color-gray); font-size: 0.875rem;">Electroluminescence, IV curve tracing, and hotspot analysis.</p>
+            <div class="service-item">
+              <h4>Component Forensics</h4>
+              <p>Electroluminescence, IV curve tracing, and hotspot analysis.</p>
             </div>
-            <div>
-              <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Financial Modeling</h4>
-              <p style="color: var(--color-gray); font-size: 0.875rem;">Cash flow projections with yield optimization and tax structuring.</p>
+            <div class="service-item">
+              <h4>Financial Modeling</h4>
+              <p>Cash flow projections with yield optimization and tax structuring.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="grid grid--3cols">
+      <!-- Capabilities Cards (Grid 3) -->
+      <div class="grid-3">
         <div class="card">
           <h3 class="card__title">Asset Stabilization</h3>
-          <div class="card__content">
-            <p>Rapid response for distressed assets:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Emergency O&M deployment</li>
-              <li>Insurance claims</li>
-              <li>Compliance remediation</li>
-              <li>Working capital injection</li>
-            </ul>
-          </div>
+          <p style="margin-bottom: var(--spacing-sm);">Rapid response for distressed assets to secure value immediately.</p>
+          <ul class="check-list">
+            <li>Emergency O&M deployment</li>
+            <li>Insurance claims management</li>
+            <li>Compliance remediation</li>
+            <li>Working capital injection</li>
+          </ul>
         </div>
         
         <div class="card">
           <h3 class="card__title">Repowering Engineering</h3>
-          <div class="card__content">
-            <p>Comprehensive upgrade implementation:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Inverter replacement</li>
-              <li>Module restoration</li>
-              <li>Monitoring integration</li>
-              <li>Structural assessment</li>
-            </ul>
-          </div>
+          <p style="margin-bottom: var(--spacing-sm);">Comprehensive technical upgrades to extend asset lifespan.</p>
+          <ul class="check-list">
+            <li>Inverter replacement</li>
+            <li>Module restoration</li>
+            <li>Monitoring integration</li>
+            <li>Structural assessment</li>
+          </ul>
         </div>
         
         <div class="card">
           <h3 class="card__title">Long-Term Operations</h3>
-          <div class="card__content">
-            <p>Asset management optimization:</p>
-            <ul class="list--check" style="margin-top: var(--spacing-sm);">
-              <li>Predictive maintenance</li>
-              <li>Performance guarantees</li>
-              <li>Stakeholder reporting</li>
-              <li>Continuous improvement</li>
-            </ul>
-          </div>
+          <p style="margin-bottom: var(--spacing-sm);">Ongoing asset management and performance optimization.</p>
+          <ul class="check-list">
+            <li>Predictive maintenance</li>
+            <li>Performance guarantees</li>
+            <li>Stakeholder reporting</li>
+            <li>Continuous improvement</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -591,8 +600,8 @@ a {
     <div class="footer__grid">
       <div>
         <h4>Company</h4>
-        <ul class="footer__links">
-          <li><a href="about.html">About</a></li>
+        <ul>
+          <li><a href="index.html">About</a></li>
           <li><a href="focus.html">Focus</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
@@ -601,7 +610,7 @@ a {
       
       <div>
         <h4>Resources</h4>
-        <ul class="footer__links">
+        <ul>
           <li><a href="#">Market Insights</a></li>
           <li><a href="#">Evaluation Criteria</a></li>
           <li><a href="#">White Papers</a></li>
@@ -611,7 +620,7 @@ a {
       
       <div>
         <h4>Contact</h4>
-        <ul class="footer__links">
+        <ul>
           <li><a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a></li>
           <li><a href="contact.html">Portfolio Inquiries</a></li>
           <li><a href="#">Press</a></li>
@@ -644,7 +653,6 @@ a {
     navToggle.setAttribute('aria-expanded', !isExpanded);
     navMenu.classList.toggle('is-active');
     
-    // Toggle scroll lock on body
     if (!isExpanded) {
       body.classList.add('no-scroll');
       hamburger.style.display = 'none';
@@ -658,7 +666,6 @@ a {
   
   navToggle.addEventListener('click', toggleNav);
   
-  // Close menu when clicking a link
   document.querySelectorAll('.nav__links a').forEach(link => {
     link.addEventListener('click', () => {
       navToggle.setAttribute('aria-expanded', 'false');
@@ -669,14 +676,7 @@ a {
     });
   });
   
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
-      toggleNav();
-    }
-  });
-
-  // Handle Resize implies closing menu
+  // Close menu if window is resized to desktop width
   window.addEventListener('resize', () => {
     if (window.innerWidth > 900 && navMenu.classList.contains('is-active')) {
        navToggle.setAttribute('aria-expanded', 'false');

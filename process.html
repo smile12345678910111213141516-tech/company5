@@ -96,6 +96,12 @@ h3 {
   font-weight: 600;
 }
 
+h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
 p {
   margin-bottom: var(--spacing-md);
   max-width: 65ch;
@@ -188,11 +194,13 @@ a {
   transition: var(--transition);
 }
 
-.nav__links a:hover {
+.nav__links a:hover,
+.nav__links a.active {
   color: var(--color-black);
 }
 
-.nav__links a:hover::after {
+.nav__links a:hover::after,
+.nav__links a.active::after {
   width: 100%;
 }
 
@@ -256,11 +264,11 @@ a {
   background-color: var(--color-black);
   color: var(--color-white);
   padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-2xl);
+  text-align: center;
 }
 
 .hero__content {
-  text-align: center;
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -277,16 +285,18 @@ a {
 .hero h1 {
   color: var(--color-white);
   margin-bottom: var(--spacing-md);
-  max-width: 20ch;
 }
 
 .hero p {
-  color: var(--color-gray-light);
-  font-size: 1rem;
+  color: var(--color-gray-lighter);
+  font-size: 1.125rem;
   margin-top: var(--spacing-sm);
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Sections */
+/* Section Styling */
 .section {
   padding: var(--spacing-2xl) 0;
 }
@@ -295,69 +305,68 @@ a {
   background-color: var(--color-gray-lightest);
 }
 
-/* Process Steps */
+/* Process Timeline (Improved) */
 .process {
   counter-reset: step;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
+  position: relative;
+}
+
+/* Vertical Connecting Line */
+.process::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 19px; /* Aligned with center of circle (38px width / 2) */
+  width: 1px;
+  background: var(--color-gray-lighter);
 }
 
 .process__step {
   position: relative;
-  padding-left: calc(var(--spacing-xl) + var(--spacing-sm));
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-md);
-  border-left: 1px solid var(--color-gray-lighter);
+  padding-left: calc(38px + var(--spacing-lg)); /* Circle width + spacing */
+  margin-bottom: var(--spacing-xl);
 }
 
 .process__step:last-child {
   margin-bottom: 0;
-  padding-bottom: 0;
-  border-left: none;
 }
 
+/* Number Circle */
 .process__step::before {
   counter-increment: step;
   content: '0' counter(step);
   position: absolute;
   left: 0;
   top: 0;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background: var(--color-black);
   color: var(--color-white);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.875rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  z-index: 2;
+  z-index: 1; /* Above the line */
+  box-shadow: 0 0 0 8px var(--color-gray-lightest); /* Creates gap around circle */
 }
 
-.process__step h4 {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  margin-bottom: var(--spacing-xs);
-  color: var(--color-black);
-  font-weight: 600;
-}
-
-.process__step p {
-  color: var(--color-gray);
-  font-size: 0.9375rem;
-  margin-bottom: 0;
-  line-height: 1.6;
+/* Hover Effect */
+.process__step:hover::before {
+  transform: scale(1.1);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* Footer */
 .footer {
   background: var(--color-black);
-  color: var(--color-gray-light);
+  color: var(--color-gray);
   padding: var(--spacing-2xl) 0 var(--spacing-lg);
-  border-top: 1px solid var(--color-gray-dark);
   font-size: 0.875rem;
 }
 
@@ -436,10 +445,10 @@ a {
       </button>
       
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="index.html" role="menuitem">About</a></li>
         <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
         <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
-        <li role="none"><a href="process.html" role="menuitem">Process</a></li>
+        <li role="none"><a href="process.html" class="active" role="menuitem">Process</a></li>
         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
     </div>
@@ -498,7 +507,7 @@ a {
       <div>
         <h4>Company</h4>
         <ul class="footer__links">
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">About</a></li>
           <li><a href="focus.html">Focus</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
