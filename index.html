@@ -26,7 +26,7 @@
   --color-dark: #1a1a1a;
   --color-gray-dark: #333333;
   --color-gray: #555555;
-  --color-gray-light: #999999;
+  --color-gray-light: #777777;
   --color-gray-lighter: #e5e5e5;
   --color-gray-lightest: #f4f4f4;
   --color-white: #ffffff;
@@ -66,6 +66,7 @@ body {
   color: var(--color-gray-dark);
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
 body.no-scroll {
@@ -135,6 +136,8 @@ a {
   height: var(--nav-height);
   display: flex;
   align-items: center;
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(-20px);
 }
 
 .nav__inner {
@@ -206,7 +209,6 @@ a {
   margin-right: -8px;
 }
 
-/* Responsive Menu Logic */
 @media (max-width: 900px) {
   .nav__toggle {
     display: block;
@@ -254,6 +256,8 @@ a {
   background-color: var(--color-black);
   padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-2xl);
   color: var(--color-white);
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
@@ -354,6 +358,9 @@ a {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  /* Initial state for scroll animation */
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .img-wrapper img {
@@ -361,7 +368,6 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
-  animation: fadeIn 1s ease-out;
 }
 
 /* Footer */
@@ -414,12 +420,16 @@ a {
   font-size: 0.75rem;
 }
 
-/* Utility Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Animation Utility Classes */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
 }
 
+.anim-stagger-text {
+  display: inline-block;
+  opacity: 0;
+}
 </style>
 </head>
 <body>
@@ -429,7 +439,6 @@ a {
   <div class="container">
     <div class="nav__inner">
       <div class="nav__brand">
-        <!-- Reverted to text logo -->
         <a href="index.html" class="nav__logo-text">Repowering Partners</a>
       </div>
       
@@ -459,9 +468,11 @@ a {
 <!-- Hero Section -->
 <header class="hero" role="banner">
   <div class="container">
-    <span class="hero__eyebrow">Who We Are</span>
-    <h1>Strategic Partners in Solar Asset Optimization</h1>
-    <a href="contact.html" class="btn btn--primary">Get in Touch</a>
+    <span class="hero__eyebrow anim-fade-up">Who We Are</span>
+    <h1 class="hero__title anim-fade-up">Strategic Partners in Solar Asset Optimization</h1>
+    <div class="anim-fade-up">
+      <a href="contact.html" class="btn btn--primary">Get in Touch</a>
+    </div>
   </div>
 </header>
 
@@ -471,18 +482,18 @@ a {
     <div class="container">
       <div class="grid-2">
         <div class="content-col">
-          <p class="section__intro">Repowering Partners operates at the intersection of renewable energy infrastructure and value-oriented investment. We focus exclusively on acquiring and revitalizing existing solar generation assets.</p>
+          <p class="section__intro anim-scroll">Repowering Partners operates at the intersection of renewable energy infrastructure and value-oriented investment. We focus exclusively on acquiring and revitalizing existing solar generation assets.</p>
           
-          <p>Our team brings together decades of experience in utility-scale solar development, operations and maintenance, power plant engineering, and structured finance. This multidisciplinary approach enables us to identify value creation opportunities that traditional investors overlook.</p>
+          <p class="anim-scroll">Our team brings together decades of experience in utility-scale solar development, operations and maintenance, power plant engineering, and structured finance. This multidisciplinary approach enables us to identify value creation opportunities that traditional investors overlook.</p>
           
-          <div class="feature-card">
+          <div class="feature-card anim-scroll">
             <h3>Investment Philosophy</h3>
             <p>We believe the greatest opportunities lie not in greenfield development, but in optimizing existing assets. With 40+ gigawatts of early-generation solar approaching critical maintenance milestones, we provide the expertise to extend asset lives 15-25 years while improving energy yield 20-40%.</p>
           </div>
         </div>
         
         <div class="image-col">
-          <div class="img-wrapper">
+          <div class="img-wrapper anim-scroll-img">
             <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India (2).jpg" alt="Workers maintaining solar photovoltaic panels" width="600" height="750" loading="lazy" />
           </div>
         </div>
@@ -497,7 +508,7 @@ a {
     <div class="footer__grid">
       <div>
         <h4>Company</h4>
-        <ul>
+        <ul class="anim-scroll">
           <li><a href="index.html">About</a></li>
           <li><a href="focus.html">Focus</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
@@ -507,7 +518,7 @@ a {
       
       <div>
         <h4>Resources</h4>
-        <ul>
+        <ul class="anim-scroll" style="transition-delay: 100ms">
           <li><a href="#">Market Insights</a></li>
           <li><a href="#">Evaluation Criteria</a></li>
           <li><a href="#">White Papers</a></li>
@@ -517,7 +528,7 @@ a {
       
       <div>
         <h4>Contact</h4>
-        <ul>
+        <ul class="anim-scroll" style="transition-delay: 200ms">
           <li><a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a></li>
           <li><a href="contact.html">Portfolio Inquiries</a></li>
           <li><a href="#">Press</a></li>
@@ -536,8 +547,12 @@ a {
   </div>
 </footer>
 
+<!-- Anime.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Mobile Navigation Logic
   const navToggle = document.querySelector('.nav__toggle');
   const navMenu = document.querySelector('.nav__links');
   const hamburger = document.querySelector('#hamburger');
@@ -546,15 +561,21 @@ a {
   
   function toggleNav() {
     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-    
     navToggle.setAttribute('aria-expanded', !isExpanded);
     navMenu.classList.toggle('is-active');
     
-    // Toggle scroll lock on body
     if (!isExpanded) {
       body.classList.add('no-scroll');
       hamburger.style.display = 'none';
       closeIcon.style.display = 'block';
+      // Animate Menu Items In
+      anime({
+        targets: '.nav__links a',
+        translateY: [20, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(100),
+        easing: 'easeOutExpo'
+      });
     } else {
       body.classList.remove('no-scroll');
       hamburger.style.display = 'block';
@@ -564,7 +585,6 @@ a {
   
   navToggle.addEventListener('click', toggleNav);
   
-  // Close menu when clicking a link
   document.querySelectorAll('.nav__links a').forEach(link => {
     link.addEventListener('click', () => {
       navToggle.setAttribute('aria-expanded', 'false');
@@ -574,25 +594,89 @@ a {
       closeIcon.style.display = 'none';
     });
   });
-  
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
-      toggleNav();
-    }
+
+  // 2. Initial Page Load Animation (Navbar & Hero)
+  const tl = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: 1000
   });
 
-  // Handle Resize implies closing menu
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900 && navMenu.classList.contains('is-active')) {
-       navToggle.setAttribute('aria-expanded', 'false');
-       navMenu.classList.remove('is-active');
-       body.classList.remove('no-scroll');
-       hamburger.style.display = 'block';
-       closeIcon.style.display = 'none';
-    }
+  tl
+  .add({
+    targets: '.nav',
+    translateY: [-20, 0],
+    opacity: [0, 1],
+    duration: 800
+  })
+  .add({
+    targets: '.hero__eyebrow',
+    translateY: [30, 0],
+    opacity: [0, 1],
+    duration: 800
+  }, '-=400')
+  .add({
+    targets: '.hero h1',
+    translateY: [40, 0],
+    opacity: [0, 1],
+    duration: 1000
+  }, '-=600')
+  .add({
+    targets: '.hero .btn',
+    translateY: [20, 0],
+    opacity: [0, 1],
+    duration: 800
+  }, '-=600');
+
+  // 3. Scroll Triggered Animations using Intersection Observer
+  const scrollElements = document.querySelectorAll('.anim-scroll');
+  const imgElements = document.querySelectorAll('.anim-scroll-img');
+
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Standard Text/Card Fade Up
+        if(entry.target.classList.contains('anim-scroll')) {
+          anime({
+            targets: entry.target,
+            translateY: [50, 0],
+            opacity: [0, 1],
+            duration: 1000,
+            easing: 'easeOutQuart'
+          });
+        }
+        
+        // Image Reveal (Scale + Fade)
+        if(entry.target.classList.contains('anim-scroll-img')) {
+          anime({
+            targets: entry.target,
+            scale: [1.1, 1],
+            opacity: [0, 1],
+            translateY: [30, 0],
+            duration: 1200,
+            easing: 'easeOutExpo'
+          });
+        }
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  scrollElements.forEach(el => {
+    el.style.opacity = 0; // Ensure hidden before JS runs
+    observer.observe(el);
   });
-})();
+  
+  imgElements.forEach(el => {
+    el.style.opacity = 0;
+    observer.observe(el);
+  });
+});
 </script>
 
 </body>
