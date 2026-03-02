@@ -22,7 +22,7 @@
 
 <style>
 :root {
-  --color-black: #0F1115; /* Slightly softer black for screens */
+  --color-black: #0F1115;
   --color-dark: #1a1a1a;
   --color-gray-dark: #333333;
   --color-gray: #555555;
@@ -147,14 +147,16 @@ a {
 .nav__brand {
   z-index: 1002;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.nav__logo-text {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--color-black);
-  letter-spacing: -0.01em;
+/* Logo Styling */
+.nav__logo {
+  display: block;
+  max-height: 48px;
+  width: auto;
+  transition: var(--transition);
 }
 
 /* Desktop Menu */
@@ -176,7 +178,6 @@ a {
   position: relative;
 }
 
-/* Elegant Underline Hover Effect */
 .nav__links a::after {
   content: '';
   position: absolute;
@@ -208,9 +209,13 @@ a {
 }
 
 /* Responsive Menu Logic */
-@media (max-width: 900px) { /* Increased breakpoint to prevent overlap on tablets */
+@media (max-width: 900px) {
   .nav__toggle {
     display: block;
+  }
+  
+  .nav__logo {
+    max-height: 36px;
   }
 
   .nav__links {
@@ -225,8 +230,6 @@ a {
     align-items: center;
     gap: var(--spacing-md);
     padding: var(--spacing-xl);
-    
-    /* Animation styling */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -241,14 +244,14 @@ a {
   }
 
   .nav__links a {
-    font-size: 1.5rem; /* Larger fonts for mobile touch targets */
-    font-family: var(--font-serif); /* Serif looks classy on mobile menu lists */
+    font-size: 1.5rem;
+    font-family: var(--font-serif);
     text-transform: none;
     color: var(--color-black);
   }
   
   .nav__links a::after {
-    display: none; /* No underlines on mobile */
+    display: none; 
   }
 }
 
@@ -364,7 +367,6 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
-  /* subtle zoom effect on load */
   animation: fadeIn 1s ease-out;
 }
 
@@ -433,7 +435,10 @@ a {
   <div class="container">
     <div class="nav__inner">
       <div class="nav__brand">
-        <a href="index.html" class="nav__logo-text">Repowering Partners</a>
+        <!-- Logo points to index.html -->
+        <a href="index.html">
+          <img src="./images/to.png" alt="Repowering Partners" class="nav__logo" />
+        </a>
       </div>
       
       <!-- Mobile Toggle Button -->
@@ -451,7 +456,8 @@ a {
       
       <!-- Menu Links -->
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <!-- 'About' link now points to index.html -->
+        <li role="none"><a href="index.html" role="menuitem">About</a></li>
         <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
         <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
         <li role="none"><a href="process.html" role="menuitem">Process</a></li>
@@ -488,7 +494,6 @@ a {
         
         <div class="image-col">
           <div class="img-wrapper">
-             <!-- Note: Ensure image path is correct -->
             <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India (2).jpg" alt="Workers maintaining solar photovoltaic panels" width="600" height="750" loading="lazy" />
           </div>
         </div>
@@ -504,7 +509,8 @@ a {
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="about.html">About</a></li>
+          <!-- 'About' link now points to index.html -->
+          <li><a href="index.html">About</a></li>
           <li><a href="focus.html">Focus</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
