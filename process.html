@@ -3,529 +3,190 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Repowering Partners | Process</title>
-<meta name="description" content="Discover Repowering Partners' five-phase methodology for solar asset acquisition, repowering, and optimization." />
+<title>Repowering Partners | Acquisition Process</title>
+<meta name="description" content="Discover how Repowering Partners buys and reconstructs solar assets directly for our portfolio." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Repowering Partners" />
 
-<!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="./images/they.png" />
 <link rel="mask-icon" href="./images/they.png" color="#0F1115" />
 <meta name="theme-color" content="#ffffff" />
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
 :root {
-  --color-black: #0F1115;
-  --color-dark: #1a1a1a;
-  --color-gray-dark: #333333;
-  --color-gray: #555555;
-  --color-gray-light: #777777;
-  --color-gray-lighter: #e0e0e0;
-  --color-gray-lightest: #f4f4f4;
-  --color-white: #ffffff;
-  
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2.5rem;
-  --spacing-xl: 4rem;
-  --spacing-2xl: 6rem;
-  
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  
-  --nav-height: 80px;
-  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --color-black: #0F1115; --color-dark: #1a1a1a; --color-gray-dark: #333333;
+  --color-gray: #555555; --color-gray-light: #777777; --color-gray-lighter: #e0e0e0;
+  --color-gray-lightest: #f4f4f4; --color-white: #ffffff;
+  --font-sans: 'Inter', system-ui, sans-serif; --font-serif: 'Playfair Display', Georgia, serif;
+  --spacing-xs: 0.5rem; --spacing-sm: 1rem; --spacing-md: 1.5rem; --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem; --spacing-2xl: 6rem; --radius-sm: 2px; --radius-md: 4px;
+  --nav-height: 80px; --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+body { font-family: var(--font-sans); font-size: 1rem; line-height: 1.7; color: var(--color-gray-dark); background-color: var(--color-white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body.no-scroll { overflow: hidden; }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--nav-height);
-}
+h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-black); margin-bottom: var(--spacing-sm); line-height: 1.2; }
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.02em; }
+p { margin-bottom: var(--spacing-md); max-width: 65ch; color: var(--color-gray); }
+a { color: inherit; text-decoration: none; transition: var(--transition); }
+.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--spacing-md); }
+@media (min-width: 768px) { .container { padding: 0 var(--spacing-lg); } }
 
-body {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-gray-dark);
-  background-color: var(--color-white);
-  -webkit-font-smoothing: antialiased;
-}
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.98); border-bottom: 1px solid rgba(0,0,0,0.05); backdrop-filter: blur(10px); height: var(--nav-height); display: flex; align-items: center; opacity: 0; transform: translateY(-20px); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.nav__brand { z-index: 1002; position: relative; }
+.nav__logo-text { font-family: var(--font-serif); font-weight: 700; font-size: 1.25rem; color: var(--color-black); letter-spacing: -0.01em; }
 
-body.no-scroll {
-  overflow: hidden;
-}
-
-/* Typography */
-h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  color: var(--color-black);
-  margin-bottom: var(--spacing-sm);
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  margin-bottom: var(--spacing-md);
-}
-
-h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-}
-
-p {
-  margin-bottom: var(--spacing-md);
-  max-width: 65ch;
-  color: var(--color-gray);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-/* Layout */
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-@media (min-width: 768px) {
-  .container {
-    padding: 0 var(--spacing-lg);
-  }
-}
-
-/* Navigation - Optimized */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  backdrop-filter: blur(10px);
-  height: var(--nav-height);
-  display: flex;
-  align-items: center;
-}
-
-.nav__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.nav__brand {
-  z-index: 1002;
-  position: relative;
-}
-
-.nav__logo-text {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--color-black);
-  letter-spacing: -0.01em;
-}
-
-/* Desktop Menu */
-.nav__links {
-  display: flex;
-  gap: var(--spacing-lg);
-  list-style: none;
-  align-items: center;
-}
-
-.nav__links a {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-gray-dark);
-  padding-bottom: 4px;
-  position: relative;
-}
-
-/* Elegant Underline Hover Effect */
-.nav__links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 1px;
-  background-color: var(--color-black);
-  transition: var(--transition);
-}
-
-.nav__links a:hover {
-  color: var(--color-black);
-}
-
-.nav__links a:hover::after {
-  width: 100%;
-}
-
-/* Mobile Toggle */
-.nav__toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1002;
-  padding: 8px;
-  margin-right: -8px;
-}
-
-/* Responsive Menu Logic */
+.nav__links { display: flex; gap: var(--spacing-lg); list-style: none; align-items: center; }
+.nav__links a { font-family: var(--font-sans); font-weight: 500; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-gray-dark); padding-bottom: 4px; position: relative; }
+.nav__links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 1px; background-color: var(--color-black); transition: var(--transition); }
+.nav__links a:hover, .nav__links a.active { color: var(--color-black); }
+.nav__links a:hover::after, .nav__links a.active::after { width: 100%; }
+.nav__toggle { display: none; background: none; border: none; cursor: pointer; z-index: 1002; padding: 8px; margin-right: -8px; }
 @media (max-width: 900px) {
-  .nav__toggle {
-    display: block;
-  }
-
-  .nav__links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--color-white);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-xl);
-    
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.4s ease;
-    z-index: 1001;
-  }
-
-  .nav__links.is-active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  .nav__links a {
-    font-size: 1.5rem;
-    font-family: var(--font-serif);
-    text-transform: none;
-    color: var(--color-black);
-  }
-  
-  .nav__links a::after {
-    display: none;
-  }
+  .nav__toggle { display: block; }
+  .nav__links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--color-white); flex-direction: column; justify-content: center; align-items: center; gap: var(--spacing-md); padding: var(--spacing-xl); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.4s ease; z-index: 1001; }
+  .nav__links.is-active { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav__links a { font-size: 1.5rem; font-family: var(--font-serif); text-transform: none; color: var(--color-black); }
+  .nav__links a::after { display: none; }
 }
 
-/* Hero Section */
-.hero {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-2xl);
-}
+.anim-scroll { opacity: 0; transform: translateY(30px); }
+.hero__eyebrow, .hero h1, .hero p { opacity: 0; }
 
-.hero__content {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto;
-}
+.hero { background-color: var(--color-black); color: var(--color-white); padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-2xl); }
+.hero__content { text-align: center; max-width: 720px; margin: 0 auto; }
+.hero__eyebrow { display: block; color: var(--color-gray-light); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--spacing-sm); font-weight: 500; }
+.hero h1 { color: var(--color-white); margin-bottom: var(--spacing-md); max-width: 20ch; margin-inline: auto; }
+.hero p { color: var(--color-gray-light); font-size: 1rem; margin-top: var(--spacing-sm); margin-inline: auto; }
 
-.hero__eyebrow {
-  display: block;
-  color: var(--color-gray-light);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: var(--spacing-sm);
-  font-weight: 500;
-}
+.section { padding: var(--spacing-2xl) 0; }
+.section--alt { background-color: var(--color-gray-lightest); }
 
-.hero h1 {
-  color: var(--color-white);
-  margin-bottom: var(--spacing-md);
-  max-width: 20ch;
-}
+.process { counter-reset: step; max-width: 800px; margin: 0 auto; }
+.process__step { position: relative; padding-left: calc(var(--spacing-xl) + var(--spacing-sm)); margin-bottom: var(--spacing-lg); padding-bottom: var(--spacing-md); border-left: 1px solid var(--color-gray-lighter); }
+.process__step:last-child { margin-bottom: 0; padding-bottom: 0; border-left: none; }
+.process__step::before { counter-increment: step; content: '0' counter(step); position: absolute; left: 0; top: 0; transform: translateX(-50%); width: 40px; height: 40px; background: var(--color-black); color: var(--color-white); font-family: var(--font-serif); font-weight: 600; font-size: 0.875rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; z-index: 2; }
+.process__step h4 { font-family: var(--font-serif); font-size: 1.125rem; margin-bottom: var(--spacing-xs); color: var(--color-black); font-weight: 600; }
+.process__step p { color: var(--color-gray); font-size: 0.9375rem; margin-bottom: 0; line-height: 1.6; }
 
-.hero p {
-  color: var(--color-gray-light);
-  font-size: 1rem;
-  margin-top: var(--spacing-sm);
-}
-
-/* Sections */
-.section {
-  padding: var(--spacing-2xl) 0;
-}
-
-.section--alt {
-  background-color: var(--color-gray-lightest);
-}
-
-/* Process Steps */
-.process {
-  counter-reset: step;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.process__step {
-  position: relative;
-  padding-left: calc(var(--spacing-xl) + var(--spacing-sm));
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-md);
-  border-left: 1px solid var(--color-gray-lighter);
-}
-
-.process__step:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-left: none;
-}
-
-.process__step::before {
-  counter-increment: step;
-  content: '0' counter(step);
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background: var(--color-black);
-  color: var(--color-white);
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.process__step h4 {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  margin-bottom: var(--spacing-xs);
-  color: var(--color-black);
-  font-weight: 600;
-}
-
-.process__step p {
-  color: var(--color-gray);
-  font-size: 0.9375rem;
-  margin-bottom: 0;
-  line-height: 1.6;
-}
-
-/* Footer */
-.footer {
-  background: var(--color-black);
-  color: var(--color-gray-light);
-  padding: var(--spacing-2xl) 0 var(--spacing-lg);
-  border-top: 1px solid var(--color-gray-dark);
-  font-size: 0.875rem;
-}
-
-.footer__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-2xl);
-}
-
-.footer h4 {
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--spacing-md);
-}
-
-.footer__links {
-  list-style: none;
-}
-
-.footer__links li {
-  margin-bottom: 0.75rem;
-}
-
-.footer__links a {
-  color: var(--color-gray-light);
-  transition: color 0.2s;
-}
-
-.footer__links a:hover {
-  color: var(--color-white);
-}
-
-.footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: var(--spacing-lg);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  font-size: 0.75rem;
-}
-
-@media (max-width: 500px) {
-  .footer__bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+.footer { background: var(--color-black); color: var(--color-gray-light); padding: var(--spacing-2xl) 0 var(--spacing-lg); border-top: 1px solid var(--color-gray-dark); font-size: 0.875rem; }
+.footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-2xl); }
+.footer h4 { color: var(--color-white); font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--spacing-md); }
+.footer__links { list-style: none; }
+.footer__links li { margin-bottom: 0.75rem; }
+.footer__links a { color: var(--color-gray-light); transition: color 0.2s; }
+.footer__links a:hover { color: var(--color-white); }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm); font-size: 0.75rem; }
+@media (max-width: 500px) { .footer__bottom { flex-direction: column; text-align: center; } }
 </style>
 </head>
 <body>
 
-<!-- Navigation -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="nav__inner">
       <div class="nav__brand">
         <a href="index.html" class="nav__logo-text">Repowering Partners</a>
       </div>
-      
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <svg id="hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-        <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <svg id="hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
-      
       <ul class="nav__links" id="nav-menu" role="menubar">
         <li role="none"><a href="index.html" role="menuitem">About</a></li>
-        <li role="none"><a href="focus.html" class="active" role="menuitem">Focus</a></li>
+        <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
         <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
-        <li role="none"><a href="process.html" role="menuitem">Process</a></li>
+        <li role="none"><a href="process.html" class="active" role="menuitem">Process</a></li>
         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
 <header class="hero" role="banner">
   <div class="container">
     <div class="hero__content">
       <span class="hero__eyebrow">Methodology</span>
-      <h1>Transaction-to-Operations Process</h1>
-      <p>Five disciplined phases ensuring rigorous evaluation and measurable performance improvement.</p>
+      <h1>Our Acquisition & Repowering Process</h1>
+      <p>How we buy, rebuild, and operate existing assets. A streamlined path from initial valuation to our long-term ownership.</p>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- Process Section -->
   <section id="process" class="section section--alt">
     <div class="container">
       <div class="process">
-        <div class="process__step">
-          <h4>Initial Screening</h4>
-          <p>Rapid asset qualification based on vintage, technology, location, and distress indicators. We assess remaining useful life, performance ratios, and market context to prioritize opportunities.</p>
+        <div class="process__step anim-scroll">
+          <h4>Acquisition Screening & Valuation</h4>
+          <p>We perform rapid diagnostic qualification on distressed or aging solar assets based on market context, vintage, and location. Because we buy explicitly to repower for ourselves, we move quickly to identify if an asset fits our portfolio.</p>
         </div>
         
-        <div class="process__step">
-          <h4>Due Diligence</h4>
-          <p>Integrated technical and financial review including on-site inspections, production data analysis, O&M record review, and evaluation of PPAs, leases, and interconnection agreements.</p>
+        <div class="process__step anim-scroll">
+          <h4>Deep Due Diligence</h4>
+          <p>Our integrated team steps in for a rigorous technical and financial review. Since we take principal ownership, our inspections, physical testing, and contract evaluations are solely to map out our future rebuilding costs and timeline.</p>
         </div>
         
-        <div class="process__step">
-          <h4>Transaction Execution</h4>
-          <p>Tax-efficient acquisition structuring with legal, tax, and financing coordination. We minimize friction while protecting investor interests and ensuring operational continuity.</p>
+        <div class="process__step anim-scroll">
+          <h4>Direct Purchase & Execution</h4>
+          <p>We negotiate direct, tax-efficient acquisitions with current owners or lenders. Our goal is a swift close that provides the current operators their necessary exit while we stabilize the asset for our control.</p>
         </div>
         
-        <div class="process__step">
-          <h4>Repowering & Optimization</h4>
-          <p>Prioritized improvement plan implementation: component replacements, protocol enhancements, and system optimizations with transparent stakeholder communication.</p>
+        <div class="process__step anim-scroll">
+          <h4>Comprehensive Repowering</h4>
+          <p>Once under our ownership, we deploy significant capital to rebuild the facility. This includes implementing major component replacements, advanced tracker alignments, and inverter retrofits to establish new, state-of-the-art baselines.</p>
         </div>
         
-        <div class="process__step">
-          <h4>Asset Management</h4>
-          <p>Steady-state operations with continuous monitoring, preventive maintenance, and strategic planning for future capital improvements and value creation.</p>
+        <div class="process__step anim-scroll">
+          <h4>Long-Term Principal Operations</h4>
+          <p>The rebuilt asset enters our internal management system, where our team guarantees continuous operations, preventative maintenance, and long-term yield optimization for our institutional portfolio.</p>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div>
         <h4>Company</h4>
-        <ul class="footer__links">
+        <ul class="footer__links anim-scroll">
           <li><a href="about.html">About</a></li>
           <li><a href="focus.html">Focus</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
         </ul>
       </div>
-      
       <div>
         <h4>Resources</h4>
-        <ul class="footer__links">
+        <ul class="footer__links anim-scroll">
+          <li><a href="#">Acquisition Criteria</a></li>
           <li><a href="#">Market Insights</a></li>
-          <li><a href="#">Evaluation Criteria</a></li>
           <li><a href="#">White Papers</a></li>
           <li><a href="#">Industry Reports</a></li>
         </ul>
       </div>
-      
       <div>
         <h4>Contact</h4>
-        <ul class="footer__links">
+        <ul class="footer__links anim-scroll">
           <li><a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a></li>
-          <li><a href="contact.html">Portfolio Inquiries</a></li>
+          <li><a href="contact.html">Sell Your Project</a></li>
           <li><a href="#">Press</a></li>
           <li><a href="#">Careers</a></li>
         </ul>
       </div>
     </div>
-    
     <div class="footer__bottom">
       <p>&copy; 2026 Repowering Partners. All rights reserved.</p>
       <div style="display: flex; gap: var(--spacing-md);">
@@ -536,8 +197,9 @@ a {
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav__toggle');
   const navMenu = document.querySelector('.nav__links');
   const hamburger = document.querySelector('#hamburger');
@@ -546,15 +208,14 @@ a {
   
   function toggleNav() {
     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-    
     navToggle.setAttribute('aria-expanded', !isExpanded);
     navMenu.classList.toggle('is-active');
     
-    // Toggle scroll lock on body
     if (!isExpanded) {
       body.classList.add('no-scroll');
       hamburger.style.display = 'none';
       closeIcon.style.display = 'block';
+      anime({ targets: '.nav__links a', translateY: [20, 0], opacity: [0, 1], delay: anime.stagger(100), easing: 'easeOutExpo' });
     } else {
       body.classList.remove('no-scroll');
       hamburger.style.display = 'block';
@@ -563,37 +224,26 @@ a {
   }
   
   navToggle.addEventListener('click', toggleNav);
-  
-  // Close menu when clicking a link
-  document.querySelectorAll('.nav__links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navMenu.classList.remove('is-active');
-      body.classList.remove('no-scroll');
-      hamburger.style.display = 'block';
-      closeIcon.style.display = 'none';
+  document.querySelectorAll('.nav__links a').forEach(link => { link.addEventListener('click', () => { navToggle.setAttribute('aria-expanded', 'false'); navMenu.classList.remove('is-active'); body.classList.remove('no-scroll'); hamburger.style.display = 'block'; closeIcon.style.display = 'none'; }); });
+
+  anime.set('.nav, .hero__eyebrow, .hero h1, .hero p', { opacity: 0 });
+  const tl = anime.timeline({ easing: 'easeOutExpo', duration: 1000 });
+  tl.add({ targets: '.nav', translateY: [-20, 0], opacity: [0, 1], duration: 800 })
+    .add({ targets: '.hero__eyebrow', translateY: [30, 0], opacity: [0, 1], duration: 800 }, '-=400')
+    .add({ targets: '.hero h1', translateY: [40, 0], opacity: [0, 1], duration: 1000 }, '-=600')
+    .add({ targets: '.hero p', translateY: [20, 0], opacity: [0, 1], duration: 600 }, '-=400');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        anime({ targets: entry.target, translateY: [50, 0], opacity: [0, 1], duration: 600, easing: 'easeOutCubic' });
+        observer.unobserve(entry.target);
+      }
     });
-  });
-  
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
-      toggleNav();
-    }
-  });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-  // Handle Resize implies closing menu
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900 && navMenu.classList.contains('is-active')) {
-       navToggle.setAttribute('aria-expanded', 'false');
-       navMenu.classList.remove('is-active');
-       body.classList.remove('no-scroll');
-       hamburger.style.display = 'block';
-       closeIcon.style.display = 'none';
-    }
-  });
-})();
+  document.querySelectorAll('.anim-scroll').forEach(el => { el.style.opacity = 0; observer.observe(el); });
+});
 </script>
-
 </body>
 </html>
