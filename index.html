@@ -26,7 +26,7 @@
   --color-dark: #1a1a1a;
   --color-gray-dark: #333333;
   --color-gray: #555555;
-  --color-gray-light: #777777;
+  --color-gray-light: #999999;
   --color-gray-lighter: #e5e5e5;
   --color-gray-lightest: #f4f4f4;
   --color-white: #ffffff;
@@ -66,7 +66,7 @@ body {
   color: var(--color-gray-dark);
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden; /* Prevent horizontal scroll from animations */
+  overflow-x: hidden;
 }
 
 body.no-scroll {
@@ -276,13 +276,13 @@ a {
   font-weight: 500;
 }
 
-/* Buttons */
+/* Buttons - HIGH CONTRAST FIX */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -292,14 +292,14 @@ a {
 }
 
 .btn--primary {
-  background: var(--color-white);
-  color: var(--color-black);
-  border: 1px solid var(--color-white);
+  background-color: #ffffff; /* Explicit white background */
+  color: #0F1115; /* Explicit black text */
+  border: 1px solid #ffffff;
 }
 
 .btn--primary:hover {
-  background: transparent;
-  color: var(--color-white);
+  background-color: transparent;
+  color: #ffffff; /* White text on black bg for hover */
 }
 
 /* Main Sections */
@@ -358,9 +358,8 @@ a {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  /* Initial state for scroll animation */
+  /* Initial state handled by JS now */
   opacity: 0;
-  transform: translateY(30px);
 }
 
 .img-wrapper img {
@@ -420,14 +419,12 @@ a {
   font-size: 0.75rem;
 }
 
-/* Animation Utility Classes */
-.anim-fade-up {
+/* Initial States for Animation */
+.hero__eyebrow, .hero__title, .hero-btn-wrapper {
   opacity: 0;
-  transform: translateY(30px);
 }
 
-.anim-stagger-text {
-  display: inline-block;
+.anim-scroll {
   opacity: 0;
 }
 </style>
@@ -468,10 +465,11 @@ a {
 <!-- Hero Section -->
 <header class="hero" role="banner">
   <div class="container">
-    <span class="hero__eyebrow anim-fade-up">Who We Are</span>
-    <h1 class="hero__title anim-fade-up">Strategic Partners in Solar Asset Optimization</h1>
-    <div class="anim-fade-up">
-      <a href="contact.html" class="btn btn--primary">Get in Touch</a>
+    <span class="hero__eyebrow">Who We Are</span>
+    <h1 class="hero__title">Strategic Partners in Solar Asset Optimization</h1>
+    <!-- Removed class wrapper that was causing double opacity issue -->
+    <div class="hero-btn-wrapper">
+        <a href="contact.html" class="btn btn--primary">Get in Touch</a>
     </div>
   </div>
 </header>
@@ -518,7 +516,7 @@ a {
       
       <div>
         <h4>Resources</h4>
-        <ul class="anim-scroll" style="transition-delay: 100ms">
+        <ul class="anim-scroll">
           <li><a href="#">Market Insights</a></li>
           <li><a href="#">Evaluation Criteria</a></li>
           <li><a href="#">White Papers</a></li>
@@ -528,7 +526,7 @@ a {
       
       <div>
         <h4>Contact</h4>
-        <ul class="anim-scroll" style="transition-delay: 200ms">
+        <ul class="anim-scroll">
           <li><a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a></li>
           <li><a href="contact.html">Portfolio Inquiries</a></li>
           <li><a href="#">Press</a></li>
@@ -596,6 +594,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 2. Initial Page Load Animation (Navbar & Hero)
+  // Ensure elements start hidden to avoid flash
+  anime.set('.nav, .hero__eyebrow, .hero__title, .hero-btn-wrapper', { opacity: 0 });
+
   const tl = anime.timeline({
     easing: 'easeOutExpo',
     duration: 1000
@@ -615,19 +616,20 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 800
   }, '-=400')
   .add({
-    targets: '.hero h1',
+    targets: '.hero__title',
     translateY: [40, 0],
     opacity: [0, 1],
     duration: 1000
   }, '-=600')
   .add({
-    targets: '.hero .btn',
+    targets: '.hero-btn-wrapper',
     translateY: [20, 0],
     opacity: [0, 1],
     duration: 800
   }, '-=600');
 
-  // 3. Scroll Triggered Animations using Intersection Observer
+  // 3. Scroll Triggered Animations
+  // Increased speed (600ms) for snappy feel
   const scrollElements = document.querySelectorAll('.anim-scroll');
   const imgElements = document.querySelectorAll('.anim-scroll-img');
 
@@ -639,14 +641,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Standard Text/Card Fade Up
+        // Standard Text/Card Fade Up - FASTER
         if(entry.target.classList.contains('anim-scroll')) {
           anime({
             targets: entry.target,
             translateY: [50, 0],
             opacity: [0, 1],
-            duration: 1000,
-            easing: 'easeOutQuart'
+            duration: 600, // Reduced from 1000 to 600
+            easing: 'easeOutCubic'
           });
         }
         
@@ -657,7 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scale: [1.1, 1],
             opacity: [0, 1],
             translateY: [30, 0],
-            duration: 1200,
+            duration: 1000,
             easing: 'easeOutExpo'
           });
         }
