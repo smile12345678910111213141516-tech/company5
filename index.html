@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Repowering Partners | About</title>
 <meta name="description" content="Learn about Repowering Partners' expertise in solar asset optimization, investment philosophy, and team experience." />
-<link rel="icon" type="image/png" href="./images/they.png" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Repowering Partners" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="./images/they.png" />
+<link rel="mask-icon" href="./images/they.png" color="#0a0a0a" />
+<meta name="theme-color" content="#ffffff" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,14 +21,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
-/* --- SHARED CSS START --- */
 :root {
   --color-black: #0F1115;
   --color-dark: #1a1a1a;
   --color-gray-dark: #333333;
   --color-gray: #555555;
-  --color-gray-light: #777777;
-  --color-gray-lighter: #e0e0e0;
+  --color-gray-light: #999999;
+  --color-gray-lighter: #e5e5e5;
   --color-gray-lightest: #f4f4f4;
   --color-white: #ffffff;
   
@@ -41,8 +48,17 @@
   --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
 body {
   font-family: var(--font-sans);
   font-size: 1rem;
@@ -51,111 +67,397 @@ body {
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
 }
-body.no-scroll { overflow: hidden; }
+
+body.no-scroll {
+  overflow: hidden;
+}
 
 /* Typography */
-h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-black); margin-bottom: var(--spacing-sm); line-height: 1.2; }
-h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: var(--spacing-md); }
-h3 { font-size: 1.35rem; font-weight: 600; }
-p { margin-bottom: var(--spacing-md); max-width: 65ch; color: var(--color-gray); }
-a { color: inherit; text-decoration: none; transition: var(--transition); }
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--color-black);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
 
-/* Layout */
-.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--spacing-md); }
-@media (min-width: 768px) { .container { padding: 0 var(--spacing-lg); } }
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
 
-/* Navigation */
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: var(--spacing-md);
+}
+
+h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  max-width: 65ch;
+  color: var(--color-gray);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* Structure */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+/* Navigation - Optimized */
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid rgba(0,0,0,0.05);
   backdrop-filter: blur(10px);
   height: var(--nav-height);
-  display: flex; align-items: center;
+  display: flex;
+  align-items: center;
 }
-.nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-.nav__brand { z-index: 1002; }
-.nav__logo-text { font-family: var(--font-serif); font-weight: 700; font-size: 1.25rem; color: var(--color-black); letter-spacing: -0.01em; }
 
-.nav__links { display: flex; gap: var(--spacing-lg); list-style: none; align-items: center; }
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav__brand {
+  z-index: 1002;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo Styling */
+.nav__logo {
+  display: block;
+  max-height: 48px;
+  width: auto;
+  transition: var(--transition);
+}
+
+/* Desktop Menu */
+.nav__links {
+  display: flex;
+  gap: var(--spacing-lg);
+  list-style: none;
+  align-items: center;
+}
+
 .nav__links a {
-  font-family: var(--font-sans); font-weight: 500; font-size: 0.875rem;
-  text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-gray-dark);
-  padding-bottom: 4px; position: relative;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-gray-dark);
+  padding-bottom: 4px;
+  position: relative;
 }
+
 .nav__links a::after {
-  content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 1px;
-  background-color: var(--color-black); transition: var(--transition);
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--color-black);
+  transition: var(--transition);
 }
-.nav__links a:hover, .nav__links a.active { color: var(--color-black); }
-.nav__links a:hover::after, .nav__links a.active::after { width: 100%; }
 
-.nav__toggle { display: none; background: none; border: none; cursor: pointer; z-index: 1002; padding: 8px; margin-right: -8px; }
+.nav__links a:hover {
+  color: var(--color-black);
+}
 
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Toggle */
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+  padding: 8px;
+  margin-right: -8px;
+}
+
+/* Responsive Menu Logic */
 @media (max-width: 900px) {
-  .nav__toggle { display: block; }
-  .nav__links {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-    background: var(--color-white); flex-direction: column; justify-content: center;
-    align-items: center; gap: var(--spacing-md); padding: var(--spacing-xl);
-    opacity: 0; visibility: hidden; transform: translateY(-10px);
-    transition: all 0.4s ease; z-index: 1001;
+  .nav__toggle {
+    display: block;
   }
-  .nav__links.is-active { opacity: 1; visibility: visible; transform: translateY(0); }
-  .nav__links a { font-size: 1.5rem; font-family: var(--font-serif); text-transform: none; color: var(--color-black); }
-  .nav__links a::after { display: none; }
+  
+  .nav__logo {
+    max-height: 36px;
+  }
+
+  .nav__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+    z-index: 1001;
+  }
+
+  .nav__links.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav__links a {
+    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    text-transform: none;
+    color: var(--color-black);
+  }
+  
+  .nav__links a::after {
+    display: none; 
+  }
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--color-black);
+  padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-2xl);
+  color: var(--color-white);
+}
+
+.hero h1 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+  max-width: 20ch;
+}
+
+.hero__eyebrow {
+  display: block;
+  color: var(--color-gray-light);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-white);
+}
+
+.btn--primary:hover {
+  background: transparent;
+  color: var(--color-white);
+}
+
+/* Main Sections */
+.section {
+  padding: var(--spacing-2xl) 0;
+}
+
+.section__intro {
+  font-size: 1.125rem;
+  color: var(--color-dark);
+  font-weight: 400;
+  margin-bottom: var(--spacing-lg);
+  border-left: 1px solid var(--color-gray-lighter);
+  padding-left: var(--spacing-md);
+}
+
+/* Grid System */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Feature Box */
+.feature-card {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  border-radius: var(--radius-md);
+}
+
+.feature-card h3 {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.feature-card p {
+  color: var(--color-gray-light);
+  font-size: 0.925rem;
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+/* Images */
+.img-wrapper {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: fadeIn 1s ease-out;
 }
 
 /* Footer */
-.footer { background: var(--color-black); color: var(--color-gray); padding: var(--spacing-2xl) 0 var(--spacing-lg); font-size: 0.875rem; }
-.footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-2xl); }
-.footer h4 { color: var(--color-white); font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--spacing-md); }
-.footer ul { list-style: none; }
-.footer li { margin-bottom: 0.75rem; }
-.footer a:hover { color: var(--color-white); }
-.footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-sm); font-size: 0.75rem; }
+.footer {
+  background: var(--color-black);
+  color: var(--color-gray);
+  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+  font-size: 0.875rem;
+}
 
-/* --- PAGE SPECIFIC --- */
-.hero { background-color: var(--color-black); padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-2xl); color: var(--color-white); position: relative; overflow: hidden; }
-.hero h1 { color: var(--color-white); margin-bottom: var(--spacing-md); max-width: 20ch; }
-.hero__eyebrow { display: block; color: var(--color-gray-light); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--spacing-sm); font-weight: 500; }
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
 
-.btn { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; border-radius: var(--radius-sm); transition: var(--transition); cursor: pointer; }
-.btn--primary { background-color: #ffffff; color: #0F1115; border: 1px solid #ffffff; }
-.btn--primary:hover { background-color: transparent; color: #ffffff; }
+.footer h4 {
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-md);
+}
 
-.section { padding: var(--spacing-2xl) 0; }
-.section__intro { font-size: 1.125rem; color: var(--color-dark); font-weight: 400; margin-bottom: var(--spacing-lg); border-left: 1px solid var(--color-gray-lighter); padding-left: var(--spacing-md); }
+.footer ul {
+  list-style: none;
+}
 
-.grid-2 { display: grid; grid-template-columns: 1fr; gap: var(--spacing-xl); }
-@media (min-width: 900px) { .grid-2 { grid-template-columns: 1fr 1fr; align-items: start; } }
+.footer li {
+  margin-bottom: 0.75rem;
+}
 
-.feature-card { background: var(--color-black); color: var(--color-white); padding: var(--spacing-lg); margin-top: var(--spacing-lg); border-radius: var(--radius-md); }
-.feature-card h3 { color: var(--color-white); font-size: 1.125rem; margin-bottom: var(--spacing-xs); }
-.feature-card p { color: var(--color-gray-light); font-size: 0.925rem; margin-bottom: 0; opacity: 0.9; }
+.footer a {
+  transition: color 0.2s;
+}
 
-.img-wrapper { position: relative; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-.img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.footer a:hover {
+  color: var(--color-white);
+}
 
-/* Animations specific to Home */
-.nav, .hero__eyebrow, .hero__title, .hero-btn-wrapper { opacity: 0; }
-.anim-scroll { opacity: 0; }
-.img-wrapper.anim-scroll-img { opacity: 0; }
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  font-size: 0.75rem;
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 </style>
 </head>
 <body>
 
+<!-- Navigation -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="nav__inner">
-      <div class="nav__brand"><a href="index.html" class="nav__logo-text">Repowering Partners</a></div>
+      <div class="nav__brand">
+        <!-- Logo points to index.html -->
+        <a href="index.html">
+          <img src="./images/to.png" alt="Repowering Partners" class="nav__logo" />
+        </a>
+      </div>
+      
+      <!-- Mobile Toggle Button -->
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <svg id="hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg id="hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
+      
+      <!-- Menu Links -->
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="index.html" class="active" aria-current="page" role="menuitem">About</a></li>
+        <!-- 'About' link now points to index.html -->
+        <li role="none"><a href="index.html" role="menuitem">About</a></li>
         <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
         <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
         <li role="none"><a href="process.html" role="menuitem">Process</a></li>
@@ -165,29 +467,34 @@ a { color: inherit; text-decoration: none; transition: var(--transition); }
   </div>
 </nav>
 
+<!-- Hero Section -->
 <header class="hero" role="banner">
   <div class="container">
     <span class="hero__eyebrow">Who We Are</span>
-    <h1 class="hero__title">Strategic Partners in Solar Asset Optimization</h1>
-    <div class="hero-btn-wrapper"><a href="contact.html" class="btn btn--primary">Get in Touch</a></div>
+    <h1>Strategic Partners in Solar Asset Optimization</h1>
+    <a href="contact.html" class="btn btn--primary">Get in Touch</a>
   </div>
 </header>
 
 <main>
+  <!-- About Section -->
   <section class="section">
     <div class="container">
       <div class="grid-2">
         <div class="content-col">
-          <p class="section__intro anim-scroll">Repowering Partners operates at the intersection of renewable energy infrastructure and value-oriented investment. We focus exclusively on acquiring and revitalizing existing solar generation assets.</p>
-          <p class="anim-scroll">Our team brings together decades of experience in utility-scale solar development, operations and maintenance, power plant engineering, and structured finance. This multidisciplinary approach enables us to identify value creation opportunities that traditional investors overlook.</p>
-          <div class="feature-card anim-scroll">
+          <p class="section__intro">Repowering Partners operates at the intersection of renewable energy infrastructure and value-oriented investment. We focus exclusively on acquiring and revitalizing existing solar generation assets.</p>
+          
+          <p>Our team brings together decades of experience in utility-scale solar development, operations and maintenance, power plant engineering, and structured finance. This multidisciplinary approach enables us to identify value creation opportunities that traditional investors overlook.</p>
+          
+          <div class="feature-card">
             <h3>Investment Philosophy</h3>
             <p>We believe the greatest opportunities lie not in greenfield development, but in optimizing existing assets. With 40+ gigawatts of early-generation solar approaching critical maintenance milestones, we provide the expertise to extend asset lives 15-25 years while improving energy yield 20-40%.</p>
           </div>
         </div>
+        
         <div class="image-col">
-          <div class="img-wrapper anim-scroll-img">
-            <img src="./images/Main-Purpose-Of-Solar-Panels-scaled-2560x1280.jpeg.webp" alt="Solar workers" loading="lazy" />
+          <div class="img-wrapper">
+            <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India (2).jpg" alt="Workers maintaining solar photovoltaic panels" width="600" height="750" loading="lazy" />
           </div>
         </div>
       </div>
@@ -195,87 +502,110 @@ a { color: inherit; text-decoration: none; transition: var(--transition); }
   </section>
 </main>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div>
         <h4>Company</h4>
         <ul>
+          <!-- 'About' link now points to index.html -->
           <li><a href="index.html">About</a></li>
           <li><a href="focus.html">Focus</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
         </ul>
       </div>
+      
       <div>
         <h4>Resources</h4>
         <ul>
           <li><a href="#">Market Insights</a></li>
           <li><a href="#">Evaluation Criteria</a></li>
+          <li><a href="#">White Papers</a></li>
+          <li><a href="#">Industry Reports</a></li>
         </ul>
       </div>
+      
       <div>
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a></li>
           <li><a href="contact.html">Portfolio Inquiries</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
         </ul>
       </div>
     </div>
+    
     <div class="footer__bottom">
       <p>&copy; 2026 Repowering Partners. All rights reserved.</p>
-      <div style="display: flex; gap: var(--spacing-md);"><a href="#">Privacy Policy</a></div>
+      <div style="display: flex; gap: var(--spacing-md);">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+(function() {
   const navToggle = document.querySelector('.nav__toggle');
   const navMenu = document.querySelector('.nav__links');
   const hamburger = document.querySelector('#hamburger');
   const closeIcon = document.querySelector('#close-icon');
+  const body = document.body;
   
-  // Mobile Nav Logic
   function toggleNav() {
     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    
     navToggle.setAttribute('aria-expanded', !isExpanded);
     navMenu.classList.toggle('is-active');
-    document.body.classList.toggle('no-scroll', !isExpanded);
-    hamburger.style.display = isExpanded ? 'block' : 'none';
-    closeIcon.style.display = isExpanded ? 'none' : 'block';
     
+    // Toggle scroll lock on body
     if (!isExpanded) {
-      anime({ targets: '.nav__links a', translateY: [20, 0], opacity: [0, 1], delay: anime.stagger(100), easing: 'easeOutExpo' });
+      body.classList.add('no-scroll');
+      hamburger.style.display = 'none';
+      closeIcon.style.display = 'block';
+    } else {
+      body.classList.remove('no-scroll');
+      hamburger.style.display = 'block';
+      closeIcon.style.display = 'none';
     }
   }
+  
   navToggle.addEventListener('click', toggleNav);
   
-  // Intro Animation
-  const tl = anime.timeline({ easing: 'easeOutExpo', duration: 1000 });
-  tl.add({ targets: '.nav', translateY: [-20, 0], opacity: [0, 1], duration: 800 })
-    .add({ targets: '.hero__eyebrow', translateY: [30, 0], opacity: [0, 1], duration: 800 }, '-=400')
-    .add({ targets: '.hero__title', translateY: [40, 0], opacity: [0, 1], duration: 1000 }, '-=600')
-    .add({ targets: '.hero-btn-wrapper', translateY: [20, 0], opacity: [0, 1], duration: 800 }, '-=600');
-
-  // Scroll Animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        if(entry.target.classList.contains('anim-scroll')) {
-          anime({ targets: entry.target, translateY: [50, 0], opacity: [0, 1], duration: 600, easing: 'easeOutCubic' });
-        }
-        if(entry.target.classList.contains('anim-scroll-img')) {
-          anime({ targets: entry.target, scale: [1.1, 1], opacity: [0, 1], translateY: [30, 0], duration: 1000, easing: 'easeOutExpo' });
-        }
-        observer.unobserve(entry.target);
-      }
+  // Close menu when clicking a link
+  document.querySelectorAll('.nav__links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-active');
+      body.classList.remove('no-scroll');
+      hamburger.style.display = 'block';
+      closeIcon.style.display = 'none';
     });
-  }, { threshold: 0.1 });
+  });
+  
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
+      toggleNav();
+    }
+  });
 
-  document.querySelectorAll('.anim-scroll, .anim-scroll-img').forEach(el => observer.observe(el));
-});
+  // Handle Resize implies closing menu
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && navMenu.classList.contains('is-active')) {
+       navToggle.setAttribute('aria-expanded', 'false');
+       navMenu.classList.remove('is-active');
+       body.classList.remove('no-scroll');
+       hamburger.style.display = 'block';
+       closeIcon.style.display = 'none';
+    }
+  });
+})();
 </script>
+
 </body>
 </html>
