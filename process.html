@@ -4,605 +4,155 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Repowering Partners | Process</title>
-<meta name="description" content="Discover Repowering Partners' five-phase methodology for solar asset acquisition, repowering, and optimization." />
-<meta name="robots" content="index, follow" />
-<meta name="author" content="Repowering Partners" />
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="./images/they.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="./images/they.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="./images/they.png" />
-<link rel="mask-icon" href="./images/they.png" color="#0F1115" />
-<meta name="theme-color" content="#ffffff" />
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta name="description" content="Discover Repowering Partners' five-phase methodology for solar asset acquisition and repowering." />
+<link rel="icon" type="image/png" href="./images/they.png" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
+/* --- SHARED CSS --- */
 :root {
-  --color-black: #0F1115;
-  --color-dark: #1a1a1a;
-  --color-gray-dark: #333333;
-  --color-gray: #555555;
-  --color-gray-light: #777777;
-  --color-gray-lighter: #e0e0e0;
-  --color-gray-lightest: #f4f4f4;
-  --color-white: #ffffff;
-  
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2.5rem;
-  --spacing-xl: 4rem;
-  --spacing-2xl: 6rem;
-  
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  
-  --nav-height: 80px;
-  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --color-black: #0F1115; --color-dark: #1a1a1a; --color-gray-dark: #333333; --color-gray: #555555;
+  --color-gray-light: #777777; --color-gray-lighter: #e0e0e0; --color-gray-lightest: #f4f4f4; --color-white: #ffffff;
+  --font-sans: 'Inter', sans-serif; --font-serif: 'Playfair Display', serif;
+  --spacing-sm: 1rem; --spacing-md: 1.5rem; --spacing-lg: 2.5rem; --spacing-xl: 4rem; --spacing-2xl: 6rem;
+  --radius-md: 4px; --nav-height: 80px; --transition: all 0.3s ease;
 }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); color: var(--color-gray-dark); line-height: 1.7; }
+body.no-scroll { overflow: hidden; }
+h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-black); margin-bottom: 0.5rem; line-height: 1.2; }
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; }
+a { color: inherit; text-decoration: none; transition: var(--transition); }
+.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--spacing-md); }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--nav-height);
-}
-
-body {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-gray-dark);
-  background-color: var(--color-white);
-  -webkit-font-smoothing: antialiased;
-}
-
-body.no-scroll {
-  overflow: hidden;
-}
-
-/* Typography */
-h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  color: var(--color-black);
-  margin-bottom: var(--spacing-sm);
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  margin-bottom: var(--spacing-md);
-}
-
-h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-}
-
-h4 {
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-p {
-  margin-bottom: var(--spacing-md);
-  max-width: 65ch;
-  color: var(--color-gray);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-/* Layout */
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-@media (min-width: 768px) {
-  .container {
-    padding: 0 var(--spacing-lg);
-  }
-}
-
-/* Navigation - Optimized */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  backdrop-filter: blur(10px);
-  height: var(--nav-height);
-  display: flex;
-  align-items: center;
-}
-
-.nav__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.nav__brand {
-  z-index: 1002;
-  position: relative;
-}
-
-.nav__logo-text {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--color-black);
-  letter-spacing: -0.01em;
-}
-
-/* Desktop Menu */
-.nav__links {
-  display: flex;
-  gap: var(--spacing-lg);
-  list-style: none;
-  align-items: center;
-}
-
-.nav__links a {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-gray-dark);
-  padding-bottom: 4px;
-  position: relative;
-}
-
-/* Elegant Underline Hover Effect */
-.nav__links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 1px;
-  background-color: var(--color-black);
-  transition: var(--transition);
-}
-
-.nav__links a:hover,
-.nav__links a.active {
-  color: var(--color-black);
-}
-
-.nav__links a:hover::after,
-.nav__links a.active::after {
-  width: 100%;
-}
-
-/* Mobile Toggle */
-.nav__toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1002;
-  padding: 8px;
-  margin-right: -8px;
-}
-
-/* Responsive Menu Logic */
+/* Nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.98); border-bottom: 1px solid rgba(0,0,0,0.05); height: var(--nav-height); display: flex; align-items: center; }
+.nav__inner { display: flex; justify-content: space-between; width: 100%; align-items: center; }
+.nav__logo-text { font-family: var(--font-serif); font-weight: 700; font-size: 1.25rem; color: var(--color-black); }
+.nav__links { display: flex; gap: 2.5rem; list-style: none; }
+.nav__links a { font-family: var(--font-sans); font-weight: 500; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; padding-bottom: 4px; position: relative; }
+.nav__links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 1px; background: var(--color-black); transition: var(--transition); }
+.nav__links a:hover, .nav__links a.active { color: var(--color-black); }
+.nav__links a:hover::after, .nav__links a.active::after { width: 100%; }
+.nav__toggle { display: none; background: none; border: none; cursor: pointer; }
 @media (max-width: 900px) {
-  .nav__toggle {
-    display: block;
-  }
-
-  .nav__links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--color-white);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-xl);
-    
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.4s ease;
-    z-index: 1001;
-  }
-
-  .nav__links.is-active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  .nav__links a {
-    font-size: 1.5rem;
-    font-family: var(--font-serif);
-    text-transform: none;
-    color: var(--color-black);
-  }
-  
-  .nav__links a::after {
-    display: none;
-  }
+  .nav__toggle { display: block; }
+  .nav__links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #fff; flex-direction: column; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: 0.4s; }
+  .nav__links.is-active { opacity: 1; visibility: visible; transform: translateY(0); }
 }
 
-/* Hero Section */
-.hero {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-2xl);
-  text-align: center;
-}
+/* Page Specific */
+.hero { background: var(--color-black); color: #fff; padding: calc(var(--nav-height) + 4rem) 0 6rem; text-align: center; }
+.hero h1 { color: #fff; margin-bottom: 1.5rem; }
+.hero__eyebrow { color: var(--color-gray-light); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: 1rem; }
+.hero p { color: var(--color-gray-lighter); font-size: 1.125rem; max-width: 60ch; margin: 0 auto; }
 
-.hero__content {
-  max-width: 800px;
-  margin: 0 auto;
-}
+.section { padding: 6rem 0; }
+.section--alt { background-color: var(--color-gray-lightest); }
 
-.hero__eyebrow {
-  display: block;
-  color: var(--color-gray-light);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: var(--spacing-sm);
-  font-weight: 500;
-}
-
-.hero h1 {
-  color: var(--color-white);
-  margin-bottom: var(--spacing-md);
-}
-
-.hero p {
-  color: var(--color-gray-lighter);
-  font-size: 1.125rem;
-  margin-top: var(--spacing-sm);
-  max-width: 60ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Section Styling */
-.section {
-  padding: var(--spacing-2xl) 0;
-}
-
-.section--alt {
-  background-color: var(--color-gray-lightest);
-}
-
-/* Process Timeline (Improved) */
-.process {
-  counter-reset: step;
-  max-width: 700px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Vertical Connecting Line */
-.process::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 19px; /* Aligned with center of circle (38px width / 2) */
-  width: 1px;
-  background: var(--color-gray-lighter);
-}
-
-.process__step {
-  position: relative;
-  padding-left: calc(38px + var(--spacing-lg)); /* Circle width + spacing */
-  margin-bottom: var(--spacing-xl);
-}
-
-.process__step:last-child {
-  margin-bottom: 0;
-}
-
-/* Number Circle */
-.process__step::before {
-  counter-increment: step;
-  content: '0' counter(step);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 38px;
-  height: 38px;
-  background: var(--color-black);
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  z-index: 1; /* Above the line */
-  box-shadow: 0 0 0 8px var(--color-gray-lightest); /* Creates gap around circle */
-}
-
-/* Hover Effect */
-.process__step:hover::before {
-  transform: scale(1.1);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+/* Timeline */
+.process { counter-reset: step; max-width: 700px; margin: 0 auto; position: relative; }
+.process::before { content: ''; position: absolute; top: 0; bottom: 0; left: 19px; width: 1px; background: var(--color-gray-lighter); }
+.process__step { position: relative; padding-left: calc(38px + 2.5rem); margin-bottom: 4rem; }
+.process__step:last-child { margin-bottom: 0; }
+.process__step::before { counter-increment: step; content: '0' counter(step); position: absolute; left: 0; top: 0; width: 38px; height: 38px; background: var(--color-black); color: #fff; font-weight: 600; display: flex; align-items: center; justify-content: center; border-radius: 50%; z-index: 1; box-shadow: 0 0 0 8px var(--color-gray-lightest); }
+.process__step:hover::before { transform: scale(1.1); transition: 0.3s; }
+.process__step h4 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+.process__step p { color: var(--color-gray); font-size: 1rem; }
 
 /* Footer */
-.footer {
-  background: var(--color-black);
-  color: var(--color-gray);
-  padding: var(--spacing-2xl) 0 var(--spacing-lg);
-  font-size: 0.875rem;
-}
-
-.footer__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-2xl);
-}
-
-.footer h4 {
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--spacing-md);
-}
-
-.footer__links {
-  list-style: none;
-}
-
-.footer__links li {
-  margin-bottom: 0.75rem;
-}
-
-.footer__links a {
-  color: var(--color-gray-light);
-  transition: color 0.2s;
-}
-
-.footer__links a:hover {
-  color: var(--color-white);
-}
-
-.footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: var(--spacing-lg);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  font-size: 0.75rem;
-}
-
-@media (max-width: 500px) {
-  .footer__bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+.footer { background: var(--color-black); color: var(--color-gray); padding: 4rem 0 2rem; font-size: 0.875rem; }
+.footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem; }
+.footer h4 { color: #fff; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; margin-bottom: 1.5rem; }
+.footer ul { list-style: none; } .footer li { margin-bottom: 0.75rem; } .footer a:hover { color: #fff; }
 </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="container">
-    <div class="nav__inner">
-      <div class="nav__brand">
-        <a href="index.html" class="nav__logo-text">Repowering Partners</a>
-      </div>
-      
-      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <svg id="hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-        <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      
-      <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="index.html" role="menuitem">About</a></li>
-        <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
-        <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
-        <li role="none"><a href="process.html" class="active" role="menuitem">Process</a></li>
-        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-      </ul>
-    </div>
+<nav class="nav" role="navigation">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo-text">Repowering Partners</a>
+    <button class="nav__toggle" aria-expanded="false"><svg width="24" height="24" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    <ul class="nav__links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="focus.html">Focus</a></li>
+      <li><a href="capabilities.html">Capabilities</a></li>
+      <li><a href="process.html" class="active" aria-current="page">Process</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<header class="hero" role="banner">
+<header class="hero">
   <div class="container">
-    <div class="hero__content">
-      <span class="hero__eyebrow">Methodology</span>
-      <h1>Transaction-to-Operations Process</h1>
-      <p>Five disciplined phases ensuring rigorous evaluation and measurable performance improvement.</p>
-    </div>
+    <span class="hero__eyebrow">Methodology</span>
+    <h1>Transaction-to-Operations Process</h1>
+    <p>Five disciplined phases ensuring rigorous evaluation and measurable performance improvement.</p>
   </div>
 </header>
 
 <main>
-  <!-- Process Section -->
-  <section id="process" class="section section--alt">
+  <section class="section section--alt">
     <div class="container">
       <div class="process">
         <div class="process__step">
           <h4>Initial Screening</h4>
-          <p>Rapid asset qualification based on vintage, technology, location, and distress indicators. We assess remaining useful life, performance ratios, and market context to prioritize opportunities.</p>
+          <p>Rapid asset qualification based on vintage, technology, location, and distress indicators. We assess remaining useful life to prioritize opportunities.</p>
         </div>
-        
         <div class="process__step">
           <h4>Due Diligence</h4>
-          <p>Integrated technical and financial review including on-site inspections, production data analysis, O&M record review, and evaluation of PPAs, leases, and interconnection agreements.</p>
+          <p>Integrated technical and financial review including on-site inspections, production data analysis, and evaluation of PPAs and interconnection agreements.</p>
         </div>
-        
         <div class="process__step">
           <h4>Transaction Execution</h4>
-          <p>Tax-efficient acquisition structuring with legal, tax, and financing coordination. We minimize friction while protecting investor interests and ensuring operational continuity.</p>
+          <p>Tax-efficient acquisition structuring with legal, tax, and financing coordination. We minimize friction while protecting investor interests.</p>
         </div>
-        
         <div class="process__step">
           <h4>Repowering & Optimization</h4>
-          <p>Prioritized improvement plan implementation: component replacements, protocol enhancements, and system optimizations with transparent stakeholder communication.</p>
+          <p>Prioritized improvement plan implementation: component replacements, protocol enhancements, and system optimizations.</p>
         </div>
-        
         <div class="process__step">
           <h4>Asset Management</h4>
-          <p>Steady-state operations with continuous monitoring, preventive maintenance, and strategic planning for future capital improvements and value creation.</p>
+          <p>Steady-state operations with continuous monitoring, preventive maintenance, and strategic planning for value creation.</p>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div>
         <h4>Company</h4>
-        <ul class="footer__links">
+        <ul>
           <li><a href="index.html">About</a></li>
           <li><a href="focus.html">Focus</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="process.html">Process</a></li>
         </ul>
       </div>
-      
-      <div>
-        <h4>Resources</h4>
-        <ul class="footer__links">
-          <li><a href="#">Market Insights</a></li>
-          <li><a href="#">Evaluation Criteria</a></li>
-          <li><a href="#">White Papers</a></li>
-          <li><a href="#">Industry Reports</a></li>
-        </ul>
-      </div>
-      
       <div>
         <h4>Contact</h4>
-        <ul class="footer__links">
+        <ul>
           <li><a href="mailto:info@repoweringpartners.com">info@repoweringpartners.com</a></li>
           <li><a href="contact.html">Portfolio Inquiries</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="#">Careers</a></li>
         </ul>
       </div>
     </div>
-    
-    <div class="footer__bottom">
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
       <p>&copy; 2026 Repowering Partners. All rights reserved.</p>
-      <div style="display: flex; gap: var(--spacing-md);">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
     </div>
   </div>
 </footer>
 
 <script>
-(function() {
-  const navToggle = document.querySelector('.nav__toggle');
-  const navMenu = document.querySelector('.nav__links');
-  const hamburger = document.querySelector('#hamburger');
-  const closeIcon = document.querySelector('#close-icon');
-  const body = document.body;
-  
-  function toggleNav() {
-    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-    
-    navToggle.setAttribute('aria-expanded', !isExpanded);
-    navMenu.classList.toggle('is-active');
-    
-    // Toggle scroll lock on body
-    if (!isExpanded) {
-      body.classList.add('no-scroll');
-      hamburger.style.display = 'none';
-      closeIcon.style.display = 'block';
-    } else {
-      body.classList.remove('no-scroll');
-      hamburger.style.display = 'block';
-      closeIcon.style.display = 'none';
-    }
-  }
-  
-  navToggle.addEventListener('click', toggleNav);
-  
-  // Close menu when clicking a link
-  document.querySelectorAll('.nav__links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navMenu.classList.remove('is-active');
-      body.classList.remove('no-scroll');
-      hamburger.style.display = 'block';
-      closeIcon.style.display = 'none';
-    });
+  const btn = document.querySelector('.nav__toggle');
+  const menu = document.querySelector('.nav__links');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('is-active');
+    document.body.classList.toggle('no-scroll');
   });
-  
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
-      toggleNav();
-    }
-  });
-
-  // Handle Resize implies closing menu
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900 && navMenu.classList.contains('is-active')) {
-       navToggle.setAttribute('aria-expanded', 'false');
-       navMenu.classList.remove('is-active');
-       body.classList.remove('no-scroll');
-       hamburger.style.display = 'block';
-       closeIcon.style.display = 'none';
-    }
-  });
-})();
 </script>
-
 </body>
 </html>
