@@ -276,7 +276,7 @@ a {
   font-weight: 500;
 }
 
-/* Buttons - HIGH CONTRAST FIX */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -292,14 +292,14 @@ a {
 }
 
 .btn--primary {
-  background-color: #ffffff; /* Explicit white background */
-  color: #0F1115; /* Explicit black text */
+  background-color: #ffffff;
+  color: #0F1115;
   border: 1px solid #ffffff;
 }
 
 .btn--primary:hover {
   background-color: transparent;
-  color: #ffffff; /* White text on black bg for hover */
+  color: #ffffff;
 }
 
 /* Main Sections */
@@ -358,7 +358,6 @@ a {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  /* Initial state handled by JS now */
   opacity: 0;
 }
 
@@ -382,6 +381,13 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-2xl);
+}
+
+/* Mobile Footer Centering */
+@media (max-width: 600px) {
+  .footer__grid {
+    text-align: center;
+  }
 }
 
 .footer h4 {
@@ -419,7 +425,15 @@ a {
   font-size: 0.75rem;
 }
 
-/* Initial States for Animation */
+@media (max-width: 500px) {
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* Initial States */
 .hero__eyebrow, .hero__title, .hero-btn-wrapper {
   opacity: 0;
 }
@@ -467,7 +481,6 @@ a {
   <div class="container">
     <span class="hero__eyebrow">Who We Are</span>
     <h1 class="hero__title">Strategic Partners in Solar Asset Optimization</h1>
-    <!-- Removed class wrapper that was causing double opacity issue -->
     <div class="hero-btn-wrapper">
         <a href="contact.html" class="btn btn--primary">Get in Touch</a>
     </div>
@@ -566,7 +579,6 @@ document.addEventListener('DOMContentLoaded', () => {
       body.classList.add('no-scroll');
       hamburger.style.display = 'none';
       closeIcon.style.display = 'block';
-      // Animate Menu Items In
       anime({
         targets: '.nav__links a',
         translateY: [20, 0],
@@ -593,8 +605,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. Initial Page Load Animation (Navbar & Hero)
-  // Ensure elements start hidden to avoid flash
+  // 2. Initial Page Load Animation
   anime.set('.nav, .hero__eyebrow, .hero__title, .hero-btn-wrapper', { opacity: 0 });
 
   const tl = anime.timeline({
@@ -629,7 +640,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, '-=600');
 
   // 3. Scroll Triggered Animations
-  // Increased speed (600ms) for snappy feel
   const scrollElements = document.querySelectorAll('.anim-scroll');
   const imgElements = document.querySelectorAll('.anim-scroll-img');
 
@@ -641,18 +651,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Standard Text/Card Fade Up - FASTER
         if(entry.target.classList.contains('anim-scroll')) {
           anime({
             targets: entry.target,
             translateY: [50, 0],
             opacity: [0, 1],
-            duration: 600, // Reduced from 1000 to 600
+            duration: 600,
             easing: 'easeOutCubic'
           });
         }
         
-        // Image Reveal (Scale + Fade)
         if(entry.target.classList.contains('anim-scroll-img')) {
           anime({
             targets: entry.target,
@@ -670,7 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   scrollElements.forEach(el => {
-    el.style.opacity = 0; // Ensure hidden before JS runs
+    el.style.opacity = 0;
     observer.observe(el);
   });
   
