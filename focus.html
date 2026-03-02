@@ -434,9 +434,13 @@ a {
   <div class="container">
     <div class="nav__inner">
       <div class="nav__brand">
-        <a href="index.html" class="nav__logo-text">Repowering Partners</a>
+        <!-- Logo points to index.html -->
+        <a href="index.html">
+          <img src="./images/to.png" alt="Repowering Partners" class="nav__logo" />
+        </a>
       </div>
       
+      <!-- Mobile Toggle Button -->
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
         <svg id="hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -449,8 +453,10 @@ a {
         </svg>
       </button>
       
+      <!-- Menu Links -->
       <ul class="nav__links" id="nav-menu" role="menubar">
-        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <!-- 'About' link now points to index.html -->
+        <li role="none"><a href="index.html" role="menuitem">About</a></li>
         <li role="none"><a href="focus.html" role="menuitem">Focus</a></li>
         <li role="none"><a href="capabilities.html" role="menuitem">Capabilities</a></li>
         <li role="none"><a href="process.html" role="menuitem">Process</a></li>
